@@ -1,0 +1,1397 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+ /* Page Definitions */
+ @page Section1
+	{size:21.0cm 842.0pt;
+	margin:2.0cm 65.2pt 3.0cm 65.2pt;}
+div.Section1
+	{page:Section1;}
+.style1 {
+	vertical-align: middle;
+}
+.style4 {
+				vertical-align: text-bottom;
+}
+.style5 {
+				font-weight: bold;
+				text-align: center;
+				font-size: 12pt;
+}
+.style6 {
+				text-align: justify;
+				margin-left: 35.4pt;
+				margin-top: 0;
+				margin-bottom: 0;
+}
+a:link
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;
+}
+.style7 {
+				color: #008000;
+}
+.style8 {
+				font-size: 12pt;
+}
+.style9 {
+				font-size: 12pt;
+				font-style: italic;
+				font-weight: bold;
+}
+.style10 {
+				text-align: justify;
+				font-size: 12pt;
+}
+.style11 {
+				text-align: center;
+				font-size: 12pt;
+}
+.style13 {
+				text-align: center;
+				line-height: 150%;
+				font-size: 12pt;
+}
+.style14 {
+				line-height: 150%;
+				font-size: 12pt;
+}
+.style15 {
+				text-align: justify;
+				font-size: 12pt;
+				margin-top: 0;
+				margin-bottom: 0;
+}
+.style16 {
+				font-family: Arial, sans-serif;
+				font-weight: bold;
+				text-align: justify;
+				font-size: 14pt;
+}
+-->
+</style>
+<title>0.6. Математическая модель деформирования конструкций вращения</title>
+</head>
+
+<body lang=RU>
+
+<div class=Section1>
+
+<p class=style16><em>0.6. Математическая модель деформирования конструкций вращения</em></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:13.0pt'>&nbsp;</span></p>
+
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.1">0.6.1. Основные соотношения для круговых шпангоутов</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.2">0.6.2. Предварительно напряженные шпангоуты</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.3">0.6.3. Задачи статики и динамики</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.4">0.6.4. Матрицы реакций связей</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.5">0.6.5. Матрицы и векторы реакций полюсных элементов</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.6">0.6.6. Матрицы и векторы реакций оболочечных элементов в 
+глобальной системе координат</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.7">0.6.7. Алгоритмы решения задач статики и динамики для 
+конструкций</a></p>
+<p class=style6 style='text-underline: single;'>
+<a href="#0.6.8">0.6.8. Еще один алгоритм решения задач динамики (метод Фурье)</a></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:13.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.1"></a>0.6.1.
+Основные соотношения для круговых шпангоутов</span></b></p>
+
+<p class=style10>В
+качестве расчетной схемы кругового шпангоута рассматривается <b><i>круговое
+кольцо</i></b>, размеры поперечного сечения которого малы по сравнению с
+расстоянием  <span>
+<img width=15 height=19
+src="Common_6.files/image001.png" class="style1"></span>  от оси вращения до линии центров
+тяжести его поперечного сечения (срединной линии). </p>
+
+<p class=style10>Предполагается,
+что деформации <span>
+<img width=79
+height=31 src="Common_6.files/image002.png" class="style1"></span> в плоскости поперечного
+сечения отсутствуют.</p>
+<p class=style10>Положение
+точки кольца определим координатами  <span>
+<img
+width=131 height=31 src="Common_6.files/image003.png" class="style1"></span>,  положительные
+направления которых показаны на рис. 1.</p>
+<p class=style10>&nbsp;</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11"><img width=631 height=381
+src="Common_6.files/image004.jpg"></td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1141px" class="style11">Рис. 1</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Перемещения
+точки, расположенной на срединной линии кольца, в направлениях  <span>
+<img width=65 height=25
+src="Common_6.files/image005.png" class="style1"></span>  обозначаются через  <span>
+<img width=215 height=31
+src="Common_6.files/image006.png" class="style1"></span>  соответственно, а угол поворота
+поперечного сечения относительно этой линии - через  <span>
+<img width=66 height=31 src="Common_6.files/image007.png" class="style1"></span>.</p>
+
+<p class=style10>Углы
+поворота поперечного сечения относительно осей  <span>
+<img width=40 height=25 src="Common_6.files/image008.png" class="style1"></span>  выражаются
+через перемещения срединной линии кольца по формулам</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=351 height=60
+src="Common_6.files/image009.png" class="style1">.</td>
+								<td class="style8">(1)</td>
+				</tr>
+</table>
+
+<p class=style10>Относительное
+удлинение срединной линии кольца выражается через перемещения этой линии и углы
+поворота сечения по формуле</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=331 height=60
+src="Common_6.files/image010.png" class="style1"></td>
+								<td class="style8">(2)</td>
+				</tr>
+</table>
+
+<p class=style10>Изменение кривизн и кручение срединной линии кольца выражаются через перемещения этой
+линии и углы поворота сечения по формулам</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=699 height=74
+src="Common_6.files/image011.png" class="style1">.</td>
+								<td class="style8">(3)</td>
+				</tr>
+</table>
+
+<p class=style10>Деформация
+точки с координатами  <span>
+<img width=65
+height=25 src="Common_6.files/image005.png" class="style1"></span>  определяется по формуле</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=301 height=31
+src="Common_6.files/image012.png" class="style1"></td>
+								<td class="style8">(4)</td>
+				</tr>
+</table>
+
+<p class=style10>Формулы
+(1)-(4) являются <b><i>геометрическими соотношениями</i></b> простейшего
+варианта нелинейной теории тонких круговых колец.</p>
+
+<p class=style10>Пусть 
+</p>
+
+<p class=style15>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>
+<img width=21 height=24
+src="Common_6.files/image013.png" class="style1"></span> - площадь поперечного сечения кольца; </p>
+
+<p class=style15>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>
+<img width=59 height=31
+src="Common_6.files/image014.png" class="style1"> </span>- моменты инерции сечения относительно
+осей <span>
+<img width=20 height=19
+src="Common_6.files/image015.png" class="style1"></span> и <span>
+<img width=16 height=19 src="Common_6.files/image016.png" class="style1"></span>&nbsp;соответственно;</p>
+<p class=style15>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width=36 height=31
+src="Common_6.files/image017.png" class="style1"> - центробежный момент инерции; </p>
+
+<p class=style15>          <span>
+<img width=29 height=31
+src="Common_6.files/image018.png" class="style1"> </span>- момент инерции при кручении; </p>
+
+<p class=style15>          <span>
+<img width=24 height=24
+src="Common_6.files/image019.png" class="style1"></span> -  модуль упругости в направлении  <span>
+<img width=21 height=20
+src="Common_6.files/image020.png" class="style1"></span>;  </p>
+
+<p class=style15>          <span>
+<img width=24 height=24
+src="Common_6.files/image021.png" class="style1"></span> -  модуль сдвига в плоскости  <span><img width=99 height=21
+src="Common_6.files/image022.png" class="style1"></span>;  </p>
+
+<p class=style15>          <span>
+<img width=19 height=31
+src="Common_6.files/image023.png" class="style1"></span> -  коэффициент температурного
+расширения в направлении  <span>
+<img
+width=21 height=20 src="Common_6.files/image020.png" class="style1"></span>; </p>
+
+<p class=style15>          <span>
+<img width=19 height=25
+src="Common_6.files/image024.png" class="style1"></span> - плотность материала кольца.</p>
+
+<p class=style10>Тогда
+нормальное напряжение в точке с координатами  <span>
+<img width=91 height=30 src="Common_6.files/image025.png" class="style1"></span>  связано
+с деформацией в этой точке соотношением </p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=351 height=31
+src="Common_6.files/image026.png" class="style1"></td>
+								<td class="style8">(5)</td>
+				</tr>
+</table>
+
+<p class=style10>где 
+<span>
+<img width=91 height=31
+src="Common_6.files/image027.png" class="style1"></span> -  температура в точке поперечного
+сечения шпангоута с координатами <span>
+<img
+width=80 height=35 src="Common_6.files/image028.png" class="style1">:</span></p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+								<img width=319 height=35
+src="Common_6.files/image029.png" class="style1"></td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><span class="style9">Физические
+соотношения</span><span class="style8"> в этом случае представляются в виде</span></p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=229 height=35
+src="Common_6.files/image030.png" class="style1"></td>
+								<td class="style8">(6)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=306 height=41
+src="Common_6.files/image031.png" class="style1"></td>
+								<td class="style8">(7)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=299 height=41
+src="Common_6.files/image032.png" class="style1">;</td>
+								<td class="style8">(8)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=340 height=165
+src="Common_6.files/image033.png" class="style1">;</td>
+								<td class="style8">(9)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=276 height=164
+src="Common_6.files/image034.png" class="style1">.</td>
+								<td class="style8">(10)</td>
+				</tr>
+</table>
+
+<p class=style10>Предполагается,
+что в срединной линии шпангоута приложены приведенные к этой линии
+поверхностные и объемные нагрузки</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=569 height=41
+src="Common_6.files/image035.png" class="style1">,</td>
+								<td class="style8">(11)</td>
+				</tr>
+</table>
+
+<p class=style8>положительные направления
+которых показаны на рис. 1.</p>
+
+<p class=MsoNormal style='text-align:justify'><span class="style9">С
+учетом инерционных нагрузок</span><span class="style8"> приведенные к срединной линии шпангоута
+нагрузки можно представить в форме</span></p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=309 height=74
+src="Common_6.files/image036.png" class="style1">;</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=309 height=74
+src="Common_6.files/image036.png" class="style1">;</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=361 height=74
+src="Common_6.files/image038.png" class="style1">;</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=370 height=75
+src="Common_6.files/image039.png" class="style1">.</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Тогда
+<b><i>нелинейные уравнения движения</i></b> кругового кольца записываются в
+следующем виде</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=579 height=79
+src="Common_6.files/image040.png" class="style1"></td>
+								<td rowspan="4" class="style8">(12)</td>
+				</tr>
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=549 height=79
+src="Common_6.files/image041.png" class="style1"></td>
+				</tr>
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=220 height=61
+src="Common_6.files/image042.png" class="style1"></td>
+				</tr>
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=399 height=69
+src="Common_6.files/image043.png" class="style1"></td>
+				</tr>
+</table>
+
+<p class=style10>Система
+14-ти дифференциальных и алгебраических уравнений (1)-(3), (6), (12) с
+14-ю неизвестными</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=449 height=78
+src="Common_6.files/image044.png" class="style1"></td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>описывает
+нелинейную деформацию упругого кругового кольца.</p>
+
+<p class=style10>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.2"></a>0.6.2.
+Предварительно напряженные шпангоуты</span></b></p>
+
+<p class=style10>Предположим,
+что кольцо имеет некоторое <b><i>начальное</i></b> НДС и получает <b><i>отклонение</i></b>
+от этого состояния вследствие приложения некоторой системы <b><i>дополнительных</i></b>
+внешних воздействий. Далее следуем рассуждениям п. <a href="Common_4.htm#0.4.2">
+«0.4.2. Линейная деформация предварительно напряженных оболочек»</a><span class="style7">.</span></p>
+<p class=style10>Дополнительные
+внешние статические воздействия представляются в виде рядов Фурье</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style5">
+<img
+width=546 height=145 src="Common_6.files/image045.png" class="style1"></td>
+								<td class="style8">(13)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style5">
+<img
+width=559 height=145 src="Common_6.files/image046.png" class="style1"></td>
+								<td class="style8">(14)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=540 height=69
+src="Common_6.files/image047.png" class="style1">,</td>
+								<td class="style8">(15)</td>
+				</tr>
+</table>
+<p class=style10>а
+решение полученной системы разыскивается в виде рядов (формулы
+<span class="style7"><a href="Common_4.htm#23">(23) из. п. «0.4. Статика и 
+динамика оболочек вращения</a></span><a href="Common_4.htm#23">»</a>). </p>
+<p class=style10>В
+результате применения метода разделения переменных для <span style='position:
+relative;top:2.0pt'>
+<img width=16 height=16 src="Common_6.files/image048.png" class="style4"></span>-й
+гармоники разложения получается следующий набор соотношений.</p>
+
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><span class="style9">Геометрические
+соотношения</span><span class="style8"> имеют вид</span></p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=176 height=45
+src="Common_6.files/image049.png" class="style1">,</td>
+								<td class="style8">(16)</td>
+				</tr>
+</table>
+
+<p class=style8>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=284 height=46
+src="Common_6.files/image050.png" class="style1">;</td>
+								<td class="style8">(17)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=405 height=46
+src="Common_6.files/image051.png" class="style1">;</td>
+								<td class="style8">(18)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=286 height=156
+src="Common_6.files/image052.png" class="style1"></td>
+								<td class="style8">(19)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=164 height=59
+src="Common_6.files/image053.png" class="style1">.</td>
+								<td class="style8">(20)</td>
+				</tr>
+</table>
+<font size="3">
+<br>
+</font>
+<p class=MsoNormal><span class="style9">Физические
+соотношения</span><span class="style8"> записываются в форме</span></p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=259 height=45
+src="Common_6.files/image054.png" class="style1">.</td>
+								<td class="style8">(21)</td>
+				</tr>
+</table>
+
+<p class=style10>Основополагающие
+матрицы и векторы <b><i>метода конечных элементов</i></b> в глобальной системе
+координат конструкции имеют вид:</p>
+
+<p class=style9>&nbsp;</p>
+<p class=style9>матрица
+реакций</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=244 height=40
+src="Common_6.files/image055.png" class="style1">;</td>
+								<td class="style8">(22)</td>
+				</tr>
+</table>
+
+<p class=style9>&nbsp;</p>
+<p class=style9>матрица масс</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=525 height=161
+src="Common_6.files/image056.png" class="style1">;</td>
+								<td class="style8">(23)</td>
+				</tr>
+</table>
+
+<p class=style9>&nbsp;</p>
+<p class=style9>матрица
+начальных усилий</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=261 height=160
+src="Common_6.files/image057.png" class="style1">.</td>
+								<td class="style8">(24)</td>
+				</tr>
+</table>
+
+<p class=style8>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.3"></a>0.6.3.
+Задачи статики и динамики</span></b></p>
+
+<p class=style10>Уравнения
+<b><i>статического равновесия</i></b> предварительно напряженного кругового
+кольца имеют вид</p>
+
+<p class=style8 align=right style='text-align:right'>&nbsp;</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=521 height=51
+src="Common_6.files/image058.png" class="style1">,</td>
+								<td class="style8">(25)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=266 height=147
+src="Common_6.files/image059.png" class="style1">.</td>
+								<td class="style8">(26)</td>
+				</tr>
+</table>
+
+<p class=style10>Пусть
+внешние нагрузки изменяются <b><i>по гармоническому закону</i></b>:</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=210 height=51
+src="Common_6.files/image060.png" class="style1"></td>
+								<td class="style8">(27)</td>
+				</tr>
+</table>
+
+<p class=style10>где 
+<span>
+<img width=21 height=20
+src="Common_6.files/image061.png" class="style1"></span> - частота возбуждения нагрузки.</p>
+
+<p class=style10>Тогда
+<b><i>уравнения равновесия</i></b> предварительно напряженного кругового кольца
+имеют вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=479 height=60
+src="Common_6.files/image062.png" class="style1">.</td>
+								<td class="style8">(28)</td>
+				</tr>
+</table>
+
+<p class=style10>Однородные
+уравнения для определения <b><i>собственных частот</i></b> колебаний имеют вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=390 height=51
+src="Common_6.files/image063.png" class="style1"></td>
+								<td class="style8">(29)</td>
+				</tr>
+</table>
+
+<p class=style10>Значения
+<span><img width=31 height=35
+src="Common_6.files/image064.png" class="style1"></span>, при которых существует нетривиальное
+решение этой системы, являются собственными частотами кругового кольца.</p>
+
+<p class=style10>Пусть
+внешние нагрузки и температура пропорциональны некоторому параметру <span>
+<img width=20 height=26
+src="Common_6.files/image065.png" class="style1"></span>.</p>
+
+<p class=style10>Однородные
+уравнения <b><i>устойчивости</i></b> кругового кольца имеют вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=304 height=52
+src="Common_6.files/image142.png" class="style1"></td>
+								<td class="style8">(30)</td>
+				</tr>
+</table>
+
+<p class=style10>Наименьшее
+значение параметра <span>
+<img width=26
+height=35 src="Common_6.files/image066.png" class="style1"></span>, при котором существует
+нетривиальное решение системы (30), является критическим параметром нагрузки.</p>
+
+<p class=style10>Уравнения
+движения при <b><i>произвольно изменяющейся нагрузке</i></b> на <span>
+<img width=15 height=19
+src="Common_6.files/image067.png" class="style1"></span>-м шаге интегрирования по времени имеют
+вид (индекс <span>
+<img width=15 height=19
+src="Common_6.files/image067.png" class="style1"></span> для простоты опущен)</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=611 height=91
+src="Common_6.files/image068.png" class="style1">,</td>
+								<td class="style8">(31)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=541 height=75
+src="Common_6.files/image069.png" class="style1">.</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:13.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:13.0pt'><a name="0.6.4"></a>0.6.4. Матрицы
+реакций связей</span></b></p>
+
+<p class=style10>В
+качестве расчетной схемы упругих связей рассматриваются связи типа упругих
+пружин. Перемещения начала связи в направлениях  <span>
+<img width=79 height=31 src="Common_6.files/image070.png" class="style1"></span>  обозначим
+через  <span>
+<img width=139 height=31
+src="Common_6.files/image071.png" class="style1"></span>, конца связей - через  <span>
+<img width=146 height=31
+src="Common_6.files/image072.png" class="style1"></span>.  Тогда матрица реакций связей
+запишется в виде</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=226 height=75
+src="Common_6.files/image073.png" class="style1">,</td>
+								<td class="style8">(32)</td>
+				</tr>
+</table>
+
+<p class=style8>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=271 height=140
+src="Common_6.files/image074.png" class="style1"></td>
+								<td class="style8">(33)</td>
+				</tr>
+</table>
+
+<p class=style10>Здесь 
+<span>
+<img width=144 height=31
+src="Common_6.files/image075.png" class="style1"></span> - коэффициенты жесткости связей.</p>
+
+<p class=style10>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.5"></a>0.6.5.
+Матрицы и векторы реакций полюсных элементов</span></b></p>
+
+<p class=style10>Система
+дифференциальных уравнений, описывающая поведение оболочек вращения, замкнутых
+в полюсе (рис. 2), имеет особенность: некоторые из коэффициентов при <span>
+<img width=70 height=31
+src="Common_6.files/image076.png" class="style1"></span>  обращаются в нуль.</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11"><img width=321 height=181
+src="Common_6.files/image078.png"></td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1141px">
+
+<p class=style11 align=center>Рис. 2</p>
+
+								</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Для
+устранения этой особенности в полюсе оболочки выделяется так называемый
+“полюсной элемент” с малым радиусом <span>
+<img
+width=90 height=31 src="Common_6.files/image077.png" class="style1"></span>. Для определения матрицы
+и вектора реакций этого элемента применяется стандартная процедура <b>МКЭ</b>. </p>
+
+<p class=MsoNormal style='text-align:justify'><span class="style9">Идея
+применения этой процедуры</span><span class="style8"> демонстрируется ниже на примере осесимметрично
+нагруженной оболочки.</span></p>
+<p class=style10>Вводятся
+следующие обозначения:</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=369 height=66
+src="Common_6.files/image079.png" class="style1"></td>
+								<td class="style8">(34)</td>
+				</tr>
+</table>
+
+<p class=style8>Выбираются функции
+обобщенных перемещений внутри элемента в виде</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=165 height=35
+src="Common_6.files/image080.png" class="style1">,</td>
+								<td class="style8">(35)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=660 height=165
+src="Common_6.files/image081.png" class="style1">.</td>
+								<td class="style8">(36)</td>
+				</tr>
+</table>
+
+<p class=style10>C
+учетом геометрических соотношений <span class="style7"><a href="Common_4.htm#1">(1) 
+из п. </a></span><a href="Common_4.htm#1">«0.4. Статика и динамика оболочек 
+вращения»</a> связь компонентов обобщенных деформаций
+с компонентами обобщенных перемещений можно записать в виде</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=144 height=35
+src="Common_6.files/image082.png" class="style1">,</td>
+								<td class="style8">(37)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=486 height=249
+src="Common_6.files/image083.png" class="style1">.</td>
+								<td class="style8">(38)</td>
+				</tr>
+</table>
+
+<p class=style10>Внутренние
+силовые факторы связаны с компонентами обобщенных деформаций соотношением</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=194 height=35
+src="Common_6.files/image084.png" class="style1">,</td>
+								<td class="style8">(39)</td>
+				</tr>
+</table>
+
+<p class=style10>где
+коэффициенты матрицы <span>
+<img width=35
+height=35 src="Common_6.files/image085.png" class="style1"></span> вычисляются по формулам 
+<span class="style7"><a href="Common_3.htm#31">(31) из п.<span lang="en">&nbsp;</span>«0.3. 
+Математическая модель деформирования оболочек</a></span><a href="Common_3.htm#31">»</a> или
+<span class="style7"><a href="Common_4.htm#11">(11) из п.<span lang="en">&nbsp;</span>«0.4. 
+Статика и динамика оболочек вращения</a></span><a href="Common_4.htm#11">»</a>.</p>
+<p class=style10>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><span class="style9">Матрица
+реакций</span><span class="style8"> полюсного элемента вычисляется по формуле</span></p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=361 height=86
+src="Common_6.files/image086.png" class="style1">,</td>
+								<td class="style8">(40)</td>
+				</tr>
+</table>
+
+<p class=style10>где 
+<span>
+<img width=101 height=31
+src="Common_6.files/image087.png" class="style1"></span>.</p>
+
+<p class=style10>Матрицу
+<span>
+<img width=74 height=42
+src="Common_6.files/image088.png" class="style1"></span>  можно вычислить, проинтегрировав
+систему <b><i>девяти</i></b> обыкновенных дифференциальных уравнений первого
+порядка</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=351 height=82
+src="Common_6.files/image089.png" class="style1"></td>
+								<td class="style8">(41)</td>
+				</tr>
+</table>
+
+<p class=style10>на
+интервале <span>
+<img width=109 height=35
+src="Common_6.files/image090.png" class="style1"></span> с начальными данными <span>
+<img width=101 height=46
+src="Common_6.files/image091.png" class="style1"></span>=0. Значение <span>
+<img width=31 height=31 src="Common_6.files/image092.png" class="style1"></span> можно
+выбрать, например, равным <span>
+<img
+width=209 height=40 src="Common_6.files/image093.png" class="style1"></span>.</p>
+
+<p class=style10>Интегрирование
+системы <b><i>трех</i></b> обыкновенных дифференциальных уравнений первого
+порядка </p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=326 height=74
+src="Common_6.files/image094.png" class="style1"></td>
+								<td class="style8">(42)</td>
+				</tr>
+</table>
+
+<p class=style10>на
+интервале <span>
+<img width=109 height=35
+src="Common_6.files/image090.png" class="style1"></span> с начальными данными <span>
+<img width=90 height=35
+src="Common_6.files/image095.png" class="style1"></span>=0  обеспечивает вычисление <b><i>вектора
+реакций от температуры</i></b>. Здесь компоненты вектора <span>
+<img width=24 height=24
+src="Common_6.files/image096.png" class="style1"></span> вычисляются по формулам 
+<span class="style7"><a href="Common_3.htm#32">(32) из п.<span lang="en">&nbsp;</span>«0.3. 
+Математическая модель деформирования оболочек</a></span><a href="Common_3.htm#32">»</a> или
+<span class="style7"><a href="Common_4.htm#13">(13) из п.<span lang="en">&nbsp;</span>«0.4. 
+Статика и динамика оболочек вращения</a></span><a href="Common_4.htm#13">»</a>.</p>
+
+<p class=style10>Интегрирование
+системы <b><i>трех</i></b> обыкновенных дифференциальных уравнений первого
+порядка </p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=314 height=79
+src="Common_6.files/image097.png" class="style1"></td>
+								<td class="style8">(43)</td>
+				</tr>
+</table>
+
+<p class=style10>на
+интервале <span>
+<img width=109 height=35
+src="Common_6.files/image090.png" class="style1"></span> с начальными данными <span>
+<img width=99 height=42
+src="Common_6.files/image098.png" class="style1"></span>=0  обеспечивает вычисление <b><i>вектора
+реакций от силовых нагрузок</i></b>. Здесь компоненты вектора <span>
+<img width=29 height=40
+src="Common_6.files/image099.png" class="style1"></span> имеют вид <span>
+<img width=200 height=44 src="Common_6.files/image100.png" class="style1"></span>.</p>
+
+<p class=style10>Интегрирование
+системы <b><i>девяти</i></b> обыкновенных дифференциальных уравнений первого
+порядка </p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=354 height=74
+src="Common_6.files/image101.png" class="style1"></td>
+								<td class="style8">(44)</td>
+				</tr>
+</table>
+
+<p class=style10>на
+интервале <span>
+<img width=109 height=35
+src="Common_6.files/image090.png" class="style1"></span> с начальными данными <span>
+<img width=141 height=34
+src="Common_6.files/image102.png" class="style1"></span>  обеспечивает вычисление <b><i>матрицы
+масс</i></b>. Здесь компоненты матрицы <span>
+<img width=49 height=45 src="Common_6.files/image103.png" class="style1"></span> вычисляются
+по формуле</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=255 height=156
+src="Common_6.files/image104.png" class="style1">.</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+<p class=style10>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.6"></a>0.6.6.
+Матрицы и векторы реакций оболочечных элементов в
+глобальной системе координат</span></b></p>
+
+<p class=style10>Пусть
+<span>
+<img width=21 height=24
+src="Common_6.files/image105.png" class="style1"></span>-я оболочка соединена с  <span>
+<img width=16 height=24
+src="Common_6.files/image106.png" class="style1"></span>-м (рис. 3)  и  <span>
+<img width=20 height=24 src="Common_6.files/image107.png" class="style1"></span>-м 
+кольцевыми элементами (аналогично рис.<span lang="en">&nbsp;</span>3).</p>
+<p class=style8 style='text-align:justify'>&nbsp;</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11"><img width=566 height=408
+src="Common_6.files/image116.png"></td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+				<tr>
+								<td style="width: 1141px" class="style11">Рис. 3</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Тогда
+связь между торцовыми перемещениями  <span>
+<img
+width=140 height=47 src="Common_6.files/image108.png" class="style1"></span>  этой оболочки и
+перемещениями  <span>
+<img width=119
+height=35 src="Common_6.files/image109.png" class="style1"></span> центров масс поперечных
+сечений колец имеет вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=465 height=50
+src="Common_6.files/image110.png" class="style1">,</td>
+								<td class="style8">(45)</td>
+				</tr>
+</table>
+
+<p class=style8>где  <span>
+<img width=69 height=28 src="Common_6.files/image111.png" class="style1"></span></p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=514 height=47
+src="Common_6.files/image112.png" class="style1">;</td>
+								<td class="style8">(46)</td>
+				</tr>
+</table>
+
+<p class=style8 align=right style='text-align:right'></p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=724 height=225
+src="Common_6.files/image113.png" class="style1"></td>
+								<td class="style8">(47)</td>
+				</tr>
+</table>
+
+<p class=style15>&nbsp;</p>
+<p class=style15>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>
+<img width=30 height=31
+src="Common_6.files/image114.png" class="style1"></span>  -  угол между осью вращения и
+нормалью к координатной поверхности оболочки;</p>
+
+<p class=style15>          <span>
+<img width=61 height=31
+src="Common_6.files/image115.png" class="style1"></span> - эксцентриситеты точки контакта
+оболочки с центром кольца.</p>
+
+<p class=style10>Разыскивая,
+как и ранее, решение в виде рядов (формулы <span class="style7">
+<a href="Common_4.htm#23">(23) из. п. «0.4. Статика и динамика оболочек вращения</a></span><a href="Common_4.htm#23">»</a>), находим</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style13">
+<img width=684 height=195 src="Common_6.files/image117.png" class="style1"></td>
+								<td class="style14">(48)</td>
+				</tr>
+</table>
+
+<p class=style10>Матрица
+реакций оболочечного элемента в глобальной системе координат записываются в
+форме</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=255 height=47
+src="Common_6.files/image118.png" class="style1">,</td>
+								<td class="style8">(49)</td>
+				</tr>
+</table>
+
+<p class=style10>а
+вектор реакций - в форме</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=232 height=50
+src="Common_6.files/image119.png" class="style1">,</td>
+								<td class="style8">(50)</td>
+				</tr>
+</table>
+
+<p class=style10>где</p>
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=274 height=102
+src="Common_6.files/image120.png" class="style1">.</td>
+								<td class="style8">(51)</td>
+				</tr>
+</table>
+
+<p class=style10>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.7"></a>0.6.7.
+Алгоритмы решения задач статики и динамики для конструкций</span></b></p>
+
+<p class=style10>Итак,
+с помощью метода ортогональной прогонки можно вычислить матрицы <span>
+<img width=54 height=35
+src="Common_6.files/image121.png" class="style1"></span> и векторы  <span>
+<img width=66 height=48 src="Common_6.files/image122.png" class="style1"></span> реакций
+для каждого <i>оболочечного</i> суперэлемента <b><i>с точностью до соотношений</i></b>,
+описывающих поведение этих элементов. По аналитическим соотношениям настоящей
+главы можно получить <b><i>точные</i></b> значения определяющих матриц и
+векторов реакций для круговых <b><i>шпангоутов</i></b> и упругих <b><i>связей</i></b>.
+</p>
+
+<p class=style10>Для
+определения узловых перемещений оболочечной конструкции применяется стандартный
+вариант <b><i>метода перемещений</i></b>. Для этого используются матрицы и
+векторы реакций перечисленных расчетных фрагментов, применяются стандартные
+операции метода перемещений и учитываются кинематические граничные условия,
+наложенные на конструкцию. </p>
+
+<p class=style10>В
+результате для <b><i>задач статики, гармонических колебаний и динамики</i></b>
+получается разрешающая система линейных алгебраических уравнений, которая имеет
+вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=265 height=35
+src="Common_6.files/image123.png" class="style1"></td>
+								<td class="style8">(52)</td>
+				</tr>
+</table>
+
+<p class=style10>где 
+<span>
+<img width=64 height=35
+src="Common_6.files/image124.png" class="style1"></span> -  глобальный вектор обобщенных
+перемещений всех узлов конструкции.</p>
+
+<p class=style10>Определив
+из решения этой системы перемещения узлов конструкции и используя формулы
+преобразования от локальной системы координат оболочки к глобальной системе
+координат конструкции (45), можно вычислить перемещения  <span>
+<img width=140 height=50
+src="Common_6.files/image108.png" class="style1"></span>  торцов каждой оболочки. Далее методом
+ортогональной прогонки решаем краевую задачу для системы обыкновенных
+дифференциальных уравнений (4.20)  с граничными условиями</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=351 height=45
+src="Common_6.files/image125.png" class="style1">.</td>
+								<td class="style8">(53)</td>
+				</tr>
+</table>
+
+<p class=style10>В
+результате определяются все компоненты НДС каждого оболочечного элемента
+конструкции.</p>
+
+<p class=style10>Общая
+схема алгоритма незначительно изменяется при решении <b><i>задач о собственных
+колебаниях</i></b> предварительно нагруженных конструкций. Разрешающая система
+однородных алгебраических уравнений метода перемещений имеет вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=201 height=51
+src="Common_6.files/image126.png" class="style1"></td>
+								<td class="style8">(54)</td>
+				</tr>
+</table>
+
+<p class=style10>Значения
+<span>
+<img width=34 height=40
+src="Common_6.files/image127.png" class="style1"></span>, при которых система (54) имеет
+нетривиальное решение, являются <b><i>собственными частотами</i></b> рассматриваемой
+конструкции.  Для определения этих частот необходимо решить нелинейное
+функциональное уравнение</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=156 height=51
+src="Common_6.files/image128.png" class="style1">.</td>
+								<td class="style8">(55)</td>
+				</tr>
+</table>
+
+<p class=style10>Алгоритм
+вычисления корней уравнения (55) строится на сочетании <b><i>шагового метода</i></b> 
+и <b><i>итерационного процесса Мюллера</i></b>.</p>
+
+<p class=style10>По
+найденной частоте <span>
+<img width=35
+height=40 src="Common_6.files/image129.png" class="style1"></span> собственных колебаний
+определяем узловые перемещения  конструкции  с точностью до заданного
+перемещения одного из ее узлов. </p>
+<p class=style10>Затем стандартным образом определяем решение
+внутри элемента, т.е. <b><i>форму собственных колебаний</i></b>.</p>
+
+<p class=style10>В
+задаче <b><i>устойчивости</i></b> система  линейных однородных алгебраических
+уравнений метода перемещений записывается в форме</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=165 height=32
+src="Common_6.files/image130.png" class="style1">.</td>
+								<td class="style8">(56)</td>
+				</tr>
+</table>
+
+<p class=style10>Минимальное
+значение <span>
+<img width=31 height=40
+src="Common_6.files/image131.png" class="style1"></span>, при котором существует нетривиальное
+решение системы (56), является <b><i>критическим значением параметра внешней
+нагрузки</i></b>. </p>
+<p class=MsoNormal style='text-align:justify'><span class="style9">Форма потери устойчивости</span><span class="style8"> строится так же, как
+и форма собственных колебаний.</span></p>
+
+<p class=style10>&nbsp;</p>
+
+<p class=MsoNormal style='text-align:justify'>&nbsp;</p>
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:13.0pt'>
+<a name="0.6.8"></a>0.6.8.
+Еще один алгоритм решения задач динамики (метод Фурье)</span></b></p>
+
+<p class=style10>Если
+внешние нагрузки <b><i>произвольно изменяются во времени</i></b>, уравнения
+движения имеют вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1142px" class="style11">
+<img width=434 height=71
+src="Common_6.files/image132.png" class="style1">.</td>
+								<td class="style8">(57)</td>
+				</tr>
+</table>
+
+<p class=style10>Уравнения
+движения узловых элементов имеют вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1141px" class="style11">
+<img width=404 height=80
+src="Common_6.files/image133.png" class="style1"></td>
+								<td class="style8">(58)</td>
+				</tr>
+</table>
+
+<p class=style10>Внешние
+нагрузки можно разложить по формам собственных колебаний:</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=265 height=69
+src="Common_6.files/image134.png" class="style1">,</td>
+								<td class="style8">(59)</td>
+				</tr>
+</table>
+
+<p class=style10>где
+<span>
+<img width=170 height=85
+src="Common_6.files/image135.png" class="style1"></span>;</p>
+
+<p class=style10>          <span>
+<img width=64 height=31
+src="Common_6.files/image136.png" class="style1"></span> - коэффициенты разложения; <span>
+<img width=59 height=35
+src="Common_6.files/image137.png" class="style1"></span>- вектор обобщенных перемещений <b><i>форм
+собственных</i></b> <b><i>колебаний </i></b>рассматриваемой конструкции.</p>
+
+<p class=style10>Возможность
+разложения внешней нагрузки по линейно-независимым функциям <span>
+<img width=59 height=35
+src="Common_6.files/image137.png" class="style1"></span> позволяет искать решение в виде</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1139px" class="style11">
+<img width=231 height=69
+src="Common_6.files/image138.png" class="style1">,</td>
+								<td class="style8">(60)</td>
+				</tr>
+</table>
+
+<p class=style10>где
+<span>
+<img width=54 height=31
+src="Common_6.files/image139.png" class="style1"></span> - коэффициенты, являющиеся решением
+обыкновенного дифференциального уравнения второго порядка</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+								<img width=216 height=75
+src="Common_6.files/image140.png" class="style1">.</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Это
+решение в общем случае имеет вид</p>
+
+<table style="width: 100%">
+				<tr>
+								<td style="width: 1140px" class="style11">
+<img width=725 height=74
+src="Common_6.files/image141.png" class="style1">.</td>
+								<td class="style8">&nbsp;</td>
+				</tr>
+</table>
+
+<p class=style10>Общее
+решение задачи находится с помощью суперпозиции частных решений, полученных для
+отдельных гармоник усеченного ряда (60).</p>
+
+<p class=style10>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

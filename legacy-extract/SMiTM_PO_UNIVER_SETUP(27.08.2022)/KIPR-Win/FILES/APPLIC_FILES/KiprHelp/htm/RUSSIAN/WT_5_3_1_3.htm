@@ -1,0 +1,3745 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="WT_5_3_1_3.files/filelist.xml">
+<link rel=Edit-Time-Data href="WT_5_3_1_3.files/editdata.mso">
+<link rel=OLE-Object-Data href="WT_5_3_1_3.files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>5.3.1.3. Режимы работы ПРЕПРОЦЕССОРА</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Kb</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>ABCDEFGHIJKL</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>2014</o:TotalTime>
+  <o:Created>2018-09-23T10:43:00Z</o:Created>
+  <o:LastSaved>2019-05-07T18:06:00Z</o:LastSaved>
+  <o:Pages>16</o:Pages>
+  <o:Words>3414</o:Words>
+  <o:Characters>19461</o:Characters>
+  <o:Company>Kb</o:Company>
+  <o:Lines>162</o:Lines>
+  <o:Paragraphs>45</o:Paragraphs>
+  <o:CharactersWithSpaces>22830</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="WT_5_3_1_3.files/themedata.thmx">
+<link rel=colorSchemeMapping href="WT_5_3_1_3.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>111</w:Zoom>
+  <w:ActiveWritingStyle Lang="RU" VendorID="1" DLLVersion="512" NLCheck="0">1</w:ActiveWritingStyle>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:"Times New Roman CYR";
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536858881 -1073711013 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 4 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;
+	mso-bidi-font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Схема документа Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:12.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.4
+	{mso-style-name:"Заголовок 4 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 4";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;
+	font-style:italic;}
+span.a
+	{mso-style-name:"Схема документа Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Схема документа";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.a0
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:42.55pt 1.0cm 42.55pt 70.9pt;
+	mso-header-margin:35.45pt;
+	mso-footer-margin:35.45pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:39138342;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1636005504 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:346255868;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1124505556 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:474839205;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1441585380 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:691340814;
+	mso-list-type:hybrid;
+	mso-list-template-ids:343984848 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l3:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4
+	{mso-list-id:958798994;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2113877736 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.style1 {
+				border-style: solid;
+				border-width: 1px;
+				padding: 1px 4px;
+}
+.style2 {
+				font-weight: normal;
+}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="8194"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>5.3.1. ПРЕПРОЦЕССОР<o:p></o:p></span></h3>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;color:#993300'><o:p>&nbsp;</o:p></span></b></p>
+
+<h4 style='margin-left:35.4pt'><b><span style='mso-fareast-font-family:"Times New Roman"'>5.3.1.3.
+Режимы работы ПРЕПРОЦЕССОРА<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;color:#993300'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:70.8pt;text-align:justify;mso-outline-level:
+1'><span class=MsoHyperlink><a href="#Menu_PREPROCESSORA">Меню ПРЕПРОЦЕССОРА</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:70.8pt;text-align:justify;mso-outline-level:
+1'><span class=MsoHyperlink><a href="#Univ_org_Upravlen">Универсальные органы
+управления ПРЕПРОЦЕССОРА</a></span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;color:#993300'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>При старте <b style='mso-bidi-font-weight:
+normal'>ПРЕПРОЦЕССОРА</b> на экране появляется “<b style='mso-bidi-font-weight:
+normal'>Окно ПРЕПРОЦЕССОРА</b>” (рис. 1). Если ранее был выбран файл <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CN</span></b> (например, в составе <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>файлов расчетного случая</i></b>), то в поле
+<span class=SpellE>отрисовки</span> этого окна (рис.1, поз. 4) появится
+двумерное изображение этой конструкции.</p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Pic_1"></a><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:475.5pt;
+ height:413.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=670 height=586
+src="WT_5_3_1_3.files/image001.png" v:shapes="_x0000_i1025"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1618768593">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 1</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Группы органов управления (<a
+href="#Pic_1">рис. 1</a>): “<b style='mso-bidi-font-weight:normal'>Меню
+ПРЕПРОЦЕССОРА</b>” (поз. 1); группа “<b style='mso-bidi-font-weight:normal'>Универсальные
+органы управления</b>” (поз. 2); группа “<b style='mso-bidi-font-weight:normal'>Объекты
+<span class=SpellE>отрисовки</span></b>” (поз. 3).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name="Menu_PREPROCESSORA"></a><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Меню ПРЕПРОЦЕССОРА<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+color:#993300'><o:p>&nbsp;</o:p></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#CN_1">1. <span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span><span class=GramE>,…</span></a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#ID_2">2. ИД</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#CN_3">3. <span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span></a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1026"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image003.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image004.png" v:shapes="_x0000_i1026"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1618768594">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#LD_4">4. <span
+lang=EN-US style='mso-ansi-language:EN-US'>LD</span> (расчетные фрагменты)</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1027"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image005.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image006.png" v:shapes="_x0000_i1027"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1027"
+  DrawAspect="Content" ObjectID="_1618768595">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#LD_5">5. <span
+lang=EN-US style='mso-ansi-language:EN-US'>LD</span> (конструкция</a>)<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1028"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image007.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image008.png" v:shapes="_x0000_i1028"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1028"
+  DrawAspect="Content" ObjectID="_1618768596">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#SERVICE_6">6.
+Сервис</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=16 height=15
+src="WT_5_3_1_3.files/image009.png" v:shapes="_x0000_i1029" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1029"
+  DrawAspect="Content" ObjectID="_1618768598">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#PROC_7">7.
+Проц.</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#HELP_8">8. Справка</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#EXIT_9">9. Выход</a></i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Меню
+ПРЕПРОЦЕССОРА</i></b> изображено на рис. 2.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_2"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" style='width:462pt;height:132pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image011.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=766 height=219
+src="WT_5_3_1_3.files/image011.png" v:shapes="_x0000_i1030" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1618768599">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 2</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="CN_1"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>1. </i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span><span class=GramE>,…</span></i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 1
+(1.</span> <span class=GramE><b style='mso-bidi-font-weight:normal'>CN</b>,…) <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к вызову <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="WT_5_3_1_1.htm#M_5_3_1_1_Pic2">Окна выбора исходных файлов</a></i></b><i
+style='mso-bidi-font-style:normal'>.</i> </span><i style='mso-bidi-font-style:
+normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><i style='mso-bidi-font-style:
+normal'><o:p>&nbsp;</o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="ID_2"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>2. ИД</i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 2
+(<b style='mso-bidi-font-weight:normal'>2.</b></span><b style='mso-bidi-font-weight:
+normal'> ИД</b>) <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><a href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к появлению
+выпадающего меню со списком файлов, предназначенных для редактирования или
+просмотра (рис. 2).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="CN_3"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>3. </i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span></i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 3
+(3.</span> <span class=GramE><b style='mso-bidi-font-weight:normal'>CN</b>) <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к появлению группы
+органов управления “<b style='mso-bidi-font-weight:normal'>Объекты <span
+class=SpellE>отрисовки</span></b>” (<a href="#Pic_1">рис. 1, поз. 3</a>),
+предназначенных для управления <span class=SpellE>отрисовкой</span> конструкции
+и ее элементов (именно эта группа изображена на <a href="#Pic_1">рис. 1</a>). </span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Pic_1"><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'></span></span></a></i></b><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=SpellE><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>Отрисовка</i></b></span><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'> расчетной схемы конструкции<span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+ type="#_x0000_t75" style='width:40.5pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image013.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=88 height=25
+src="WT_5_3_1_3.files/image013.png" v:shapes="_x0000_i1031"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1618768600">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_1">поз.
+5</a> предназначена для <span class=SpellE>отрисовки</span> расчетной схемы
+конструкции (пример расчетной схемы конструкции показана на <a href="#Pic_1">рис.
+1</a>). </span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Pic_1"><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'></span></span></a></i></b><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span style='color:windowtext;text-decoration:none;text-underline:
+none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'>Отрисовка
+<span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1 (шпангоуты)</span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=GramE>Кнопка<span style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:45.75pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image015.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=98 height=25
+src="WT_5_3_1_3.files/image015.png" v:shapes="_x0000_i1032"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1032"
+  DrawAspect="Content" ObjectID="_1618768601">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_1">поз.
+6</a> предназначена для <span class=SpellE>отрисовки</span> <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>1</b> (шпангоуты).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Pic_1"><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'></span></span></a></i></b><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span style='color:windowtext;text-decoration:none;text-underline:
+none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'>Отрисовка
+<span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2 (оболочек)</span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=GramE>Кнопка<span style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:38.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=82 height=25
+src="WT_5_3_1_3.files/image017.png" v:shapes="_x0000_i1033"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1033"
+  DrawAspect="Content" ObjectID="_1618768602">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_1">поз.
+7</a> предназначена для <span class=SpellE>отрисовки</span><b style='mso-bidi-font-weight:
+normal'> </b><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки). </span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a href="#Pic_1"><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_1\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Шпангоуты
+сопряжения оболочечных элементов<span class=MsoHyperlink><span
+style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка <!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" style='width:40.5pt;height:11.25pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=82 height=24
+src="WT_5_3_1_3.files/image019.png" v:shapes="_x0000_i1034"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1034"
+  DrawAspect="Content" ObjectID="_1618768603">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>в <a href="#Pic_1">поз.
+8</a> предназначена для автоматизации вычисления координат локальных узлов
+шпангоутов сопряжения оболочечных элементов.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Необходимым условием для
+автоматического вычисления этих координат является наличие информации о
+сопрягаемых оболочках в файле <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span></b><span lang=EN-US> </span>(ведь
+конструкцию можно “наращивать” поэтапно, поэтому на данном конкретном этапе
+формирования расчетной <span class=GramE>схемы</span> сопрягаемые оболочки, в
+принципе, могут отсутствовать).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Координатами глобального узла, в
+котором будет размещен шпангоут сопряжения, на первоначальном этапе могут быть
+любые положительные числа.</p>
+
+<p class=MsoNormal style='text-align:justify'>Нажатие на эту кнопку приводит к
+появлению на экране дисплея следующего запроса на ввод номера глобального узла,
+в котором необходимо <span class=GramE>разместить шпангоут</span> сопряжения:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1035"
+ type="#_x0000_t75" style='width:152.25pt;height:89.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=203 height=119
+src="WT_5_3_1_3.files/image021.png" v:shapes="_x0000_i1035"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1035"
+  DrawAspect="Content" ObjectID="_1618768604">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'>Над полем ввода указаны границы
+допускаемых для рассматриваемой расчетной схемы номеров глобальных узлов (<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>0</b>).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>После ввода номера глобального
+узла на экране дисплея (если нет ошибок в исходных данных) появляется окно
+редактора с результирующей информацией вида:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:double windowtext 1.5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=266 valign=top style='width:199.2pt;border:double windowtext 1.5pt;
+  border-bottom:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>Глобальный узел = 14</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>Число оболочек = 3</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'>Номера оболочек:</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span
+  style='mso-spacerun:yes'>         </span>14<span
+  style='mso-spacerun:yes'>        </span>15<span
+  style='mso-spacerun:yes'>         </span>19</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><a href="PBrush"><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><span
+  style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><span
+  class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+  text-underline:none'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=GramE>Строка
+  массива <span lang=EN-US style='mso-ansi-language:EN-US'>XR</span>1[1:</span><span
+  lang=EN-US style='mso-ansi-language:EN-US'>NR</span>1][0:4]</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span
+  style='mso-spacerun:yes'>     </span>14<span style='mso-spacerun:yes'>     
+  </span>0.0<span style='mso-spacerun:yes'>  </span><span class=SpellE>0.0</span><span
+  style='mso-spacerun:yes'>      </span>5<span style='mso-spacerun:yes'>   
+  </span>0</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><a href="PBrush"><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><span
+  style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><span
+  class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+  text-underline:none'><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE>Подмассив</span>
+  <span lang=EN-US style='mso-ansi-language:EN-US'>XZ</span>_<span lang=EN-US
+  style='mso-ansi-language:EN-US'>K</span>[1:5][0:1]</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>8.406000e-03<span
+  style='mso-spacerun:yes'>       </span>7.980000e-02<span class=MsoHyperlink><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>8.406000e-03<span
+  style='mso-spacerun:yes'>       </span>8.020000e-02<span class=MsoHyperlink><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>8.400500e-03<span
+  style='mso-spacerun:yes'>       </span>8.020000e-02<span class=MsoHyperlink><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width=266 valign=top style='width:199.2pt;border-top:none;border-left:
+  double windowtext 1.5pt;border-bottom:none;border-right:double windowtext 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>8.400500e-03<span
+  style='mso-spacerun:yes'>       </span>7.980000e-02<span class=MsoHyperlink><span
+  style='color:windowtext;text-decoration:none;text-underline:none'><o:p></o:p></span></span></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;mso-yfti-lastrow:yes'>
+  <td width=266 valign=top style='width:199.2pt;border:double windowtext 1.5pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>8.403950e-03<span
+  style='mso-spacerun:yes'>       </span>7.959373e-02<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'>При появлении сообщений об ошибках
+внести соответствующие коррективы. Ошибки могут быть следствием как некорректно
+заданного номера глобального узла (например, задан узел, с которым связана
+только одна оболочка или же задан узел, в котором точно состыкованы две
+оболочки) или же следствием некорректного описания сопрягаемых оболочек.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Результирующую информацию
+необходимо перенести в файл исходных данных (<b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CN</span></b>). </p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Рекомендуемая последовательность
+действий при этом следующая:</p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>выделить блок информации и скопировать ее в буфер
+     обмена;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>нажать клавишу &lt;<b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>Esc</span></b>&gt;
+     для выхода из редактора, в результате чего на экране дисплея появится
+     расчетная схема конструкции;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>с помощью команд <b style='mso-bidi-font-weight:
+     normal'><i style='mso-bidi-font-style:normal'>ОТРИСОВЩИКА</i></b> получить
+     крупным планом изображение фрагмента конструкции, в котором предполагается
+     <span class=GramE>разместить шпангоут</span> сопряжения;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>загрузить на редактирование файл <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>CN</span></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>скопировать информацию из буфера обмена;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>с помощью команд редактора перенести эту информацию
+     в отведенные для нее поля;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>увеличить на единицу параметр <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>NS</span>1</b>
+     (число шпангоутов);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>задать номер материала для добавленного шпангоута
+     сопряжения (в автоматически сформированной строке массива <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>XR</span>1</b> недопустимый номер материала - нуль);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>поправить координаты глобального узла, в котором
+     расположен шпангоут сопряжения (рекомендуемые значения новых координат -
+     нулевые);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>сохранить изменения в файле;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l3 level1 lfo1;
+     tab-stops:list 36.0pt'>нажать клавишу &lt;<b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>Esc</span></b>&gt;
+     для выхода из редактора.</li>
+</ol>
+
+<p class=MsoNormal style='text-align:justify'>В результате на экране дисплея
+(если программа диагностики не обнаружила ошибок) появится новое изображение
+фрагмента конструкции, в котором будет присутствовать добавленный шпангоут
+сопряжения. Убедившись, что добавление шпангоута завершилось корректно,
+продолжить работу.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Действия пользователя при
+обнаружении программой диагностики исходных данных ошибок стандартные.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Пространственное изображение
+конструкции</i></b></p>
+
+<p class=MsoNormal style='text-align:justify'>Кнопка <span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1036"
+ type="#_x0000_t75" style='width:46.5pt;height:15pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=77 height=25
+src="WT_5_3_1_3.files/image023.png" v:shapes="_x0000_i1036"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1036"
+  DrawAspect="Content" ObjectID="_1618768605">
+ </o:OLEObject>
+</xml><![endif]--></span><span lang=EN-US><span
+style='mso-spacerun:yes'> </span></span>(<a href="#Pic_1">поз. 9 на рис. 1</a>)
+предназначена для вызова режима работы ОТРИСОВЩИКА, в котором осуществляется
+пространственное изображение конструкции.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1037"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image003.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image004.png" v:shapes="_x0000_i1037"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1037"
+  DrawAspect="Content" ObjectID="_1618768606">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span></i></b><a
+href="PBrush"><span style='color:windowtext;text-decoration:none;text-underline:
+none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><a
+name="LD_4"></a><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>4. </i></b><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>LD</span><span
+lang=EN-US> </span>(расчетные фрагменты)<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 4
+(<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1038" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image003.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image004.png" v:shapes="_x0000_i1038"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1038"
+  DrawAspect="Content" ObjectID="_1618768607">
+ </o:OLEObject>
+</xml><![endif]--> </i></b>4.</span> <span class=GramE><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>LD</span></b>) <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к появлению группы
+органов управления “<b style='mso-bidi-font-weight:normal'>Объекты <span
+class=SpellE>отрисовки</span></b>” (<a href="#Pic_1">рис. 1, поз. 3</a>),
+предназначенных для управления <span class=SpellE>отрисовкой</span> типов
+нагрузок, а также нагрузок, действующих на элементы <span class=SpellE>коснтрукции</span>
+(рис. 3).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_3"></a><span
+lang=EN-US style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1039"
+ type="#_x0000_t75" style='width:477pt;height:144.75pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image025.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=786 height=239
+src="WT_5_3_1_3.files/image025.png" v:shapes="_x0000_i1039"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1039"
+  DrawAspect="Content" ObjectID="_1618768608">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a href="PBrush"><span style='color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'>Рис.
+3</span></span></a></p>
+
+<p class=MsoNormal><a href="PBrush"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Типы <span
+class=SpellE>нагружений</span><span class=MsoHyperlink><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1040"
+ type="#_x0000_t75" style='width:32.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image027.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=66 height=25
+src="WT_5_3_1_3.files/image027.png" v:shapes="_x0000_i1040"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1040"
+  DrawAspect="Content" ObjectID="_1618768609">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span><span class=GramE>в</span>
+<a href="#Pic_3">поз. 1</a> предназначена для <span class=SpellE>отрисовки</span>
+типов <span class=SpellE>нагружений</span>.</p>
+
+<p class=MsoNormal><a href="PBrush"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_3\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Погонные
+и сосредоточенные нагрузки (</i></b><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>0<span style='mso-spacerun:yes'>  </span>и<span
+style='mso-spacerun:yes'>  </span></i></b><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>1)<span class=MsoHyperlink><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1041"
+ type="#_x0000_t75" style='width:41.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image029.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=81 height=24
+src="WT_5_3_1_3.files/image029.png" v:shapes="_x0000_i1041"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1041"
+  DrawAspect="Content" ObjectID="_1618768610">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_3">поз.
+2</a> предназначена для <span class=SpellE>отрисовки</span> погонных и
+сосредоточенных нагрузок, действующих на <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>0</b> (глобальные узлы) и <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>1</b> (шпангоуты).</span></p>
+
+<p class=MsoNormal><a href="#Pic_3"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_3\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Поверхностные
+нагрузки на </i></b><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1 (шпангоуты)<span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1042"
+ type="#_x0000_t75" style='width:40.5pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image031.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=82 height=25
+src="WT_5_3_1_3.files/image031.png" v:shapes="_x0000_i1042"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1042"
+  DrawAspect="Content" ObjectID="_1618768611">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_3">поз.
+3</a> предназначена для <span class=SpellE>отрисовки</span> поверхностных
+нагрузок на <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты).</span></p>
+
+<p class=MsoNormal><a href="#Pic_3"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_3\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Температура<span
+style='mso-spacerun:yes'>  </span></i></b><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>1 (шпангоуты)<span class=MsoHyperlink><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1043"
+ type="#_x0000_t75" style='width:31.5pt;height:11.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image033.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=65 height=24
+src="WT_5_3_1_3.files/image033.png" v:shapes="_x0000_i1043"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1043"
+  DrawAspect="Content" ObjectID="_1618768612">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_3">поз.
+4</a> предназначена для <span class=SpellE>отрисовки</span> температурных
+нагрузок на <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты).</span></p>
+
+<p class=MsoNormal><a href="#Pic_3"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_3\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Поверхностные
+нагрузки на </i></b><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2 (оболочки)<span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1044"
+ type="#_x0000_t75" style='width:35.25pt;height:11.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image035.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=74 height=24
+src="WT_5_3_1_3.files/image035.png" v:shapes="_x0000_i1044"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1044"
+  DrawAspect="Content" ObjectID="_1618768613">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_3">поз.
+5</a> предназначена для <span class=SpellE>отрисовки</span> поверхностных
+нагрузок на <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки).</span></p>
+
+<p class=MsoNormal><a href="#Pic_3"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_3\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Температура
+слоев </i></b><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2 (оболочки)<span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1045"
+ type="#_x0000_t75" style='width:32.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image037.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=66 height=25
+src="WT_5_3_1_3.files/image037.png" v:shapes="_x0000_i1045"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1045"
+  DrawAspect="Content" ObjectID="_1618768614">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_3">поз.
+6</a> предназначена для <span class=SpellE>отрисовки</span> температурных
+нагрузок на <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="LD_5"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1046" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image005.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image006.png" v:shapes="_x0000_i1046"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1046"
+  DrawAspect="Content" ObjectID="_1618768615">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>5. </i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>LD</span> (конструкция)<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 5
+(<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1047" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image005.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image006.png" v:shapes="_x0000_i1047"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1047"
+  DrawAspect="Content" ObjectID="_1618768616">
+ </o:OLEObject>
+</xml><![endif]--> </i></b>5.</span> <span class=GramE><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>LD</span></b>) <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к появлению группы
+органов управления “<b style='mso-bidi-font-weight:normal'>Объекты <span
+class=SpellE>отрисовки</span></b>” (<a href="#Pic_1">рис. 1, поз. 3</a>), предназначенных
+для управления глобальной <span class=SpellE>отрисовкой</span> нагрузок,
+действующих на конструкцию (рис. 4).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_4"></a><span
+lang=EN-US style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1048"
+ type="#_x0000_t75" style='width:463.5pt;height:140.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image039.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=786 height=239
+src="WT_5_3_1_3.files/image039.png" v:shapes="_x0000_i1048"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1048"
+  DrawAspect="Content" ObjectID="_1618768617">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class=MsoNormal><a href="#Pic_1"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a href="PBrush"><span style='color:windowtext;text-decoration:none;
+text-underline:none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'>Рис.
+4</span></span></a></p>
+
+<p class=MsoNormal><a href="PBrush"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'></span></span></a><span
+class=MsoHyperlink><span style='color:windowtext;text-decoration:none;
+text-underline:none'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Зависимость
+нагрузок от времени<span class=MsoHyperlink><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p></o:p></span></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1049"
+ type="#_x0000_t75" style='width:35.25pt;height:11.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image041.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=74 height=24
+src="WT_5_3_1_3.files/image041.png" v:shapes="_x0000_i1049"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1049"
+  DrawAspect="Content" ObjectID="_1618768618">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span><span class=GramE>в</span>
+<a href="#Pic_4"><span class=GramE>поз</span>. 1</a> предназначена для <span
+class=SpellE>отрисовки</span> графика зависимости нагрузок от времени (в
+задачах динамики!!!).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1050"
+ type="#_x0000_t75" style='width:36.75pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image043.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=74 height=25
+src="WT_5_3_1_3.files/image043.png" v:shapes="_x0000_i1050"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1050"
+  DrawAspect="Content" ObjectID="_1618768619">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_4">поз.
+2</a> предназначена для <span class=SpellE>отрисовки</span> объемных нагрузок,
+действующих на всю конструкцию.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1051"
+ type="#_x0000_t75" style='width:58.5pt;height:11.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image045.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=121 height=24
+src="WT_5_3_1_3.files/image045.png" v:shapes="_x0000_i1051"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1051"
+  DrawAspect="Content" ObjectID="_1618768620">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_4">поз.
+3</a> предназначена для <span class=GramE><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>глобальной</i></b></span> <span
+class=SpellE>отрисовки</span> погонных и сосредоточенных нагрузок, действующих
+на <b style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>0</b> (глобальные узлы) и <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1052"
+ type="#_x0000_t75" style='width:59.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image047.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=121 height=25
+src="WT_5_3_1_3.files/image047.png" v:shapes="_x0000_i1052"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1052"
+  DrawAspect="Content" ObjectID="_1618768621">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_4">поз.
+4</a> предназначена для <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>глобальной</i></b> <span class=SpellE>отрисовки</span>
+поверхностных нагрузок на <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты) и на <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>2 </b>(оболочки).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1053"
+ type="#_x0000_t75" style='width:60pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image049.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=122 height=25
+src="WT_5_3_1_3.files/image049.png" v:shapes="_x0000_i1053"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1053"
+  DrawAspect="Content" ObjectID="_1618768623">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_4">поз.
+5</a> предназначена для <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>глобальной</i></b> <span class=SpellE>отрисовки</span>
+погонных и сосредоточенных нагрузок, действующих на <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>0</b>
+(глобальные узлы) и <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты), а также поверхностных
+нагрузок на <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты) и на <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>2 </b>(оболочки).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Кнопка<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1054"
+ type="#_x0000_t75" style='width:59.25pt;height:12pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image051.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=121 height=25
+src="WT_5_3_1_3.files/image051.png" v:shapes="_x0000_i1054"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1054"
+  DrawAspect="Content" ObjectID="_1618768624">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'>  </span>в <a href="#Pic_4">поз.
+6</a> предназначена для <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>глобальной </i></b><span class=SpellE>отрисовки</span>
+температурных нагрузок на <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты) и
+температурных нагрузок на <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки).</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="SERVICE_6"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1055" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image007.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image008.png" v:shapes="_x0000_i1055"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1055"
+  DrawAspect="Content" ObjectID="_1618768625">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>6. Сервис<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 6
+(<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1056" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image007.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=18 height=18
+src="WT_5_3_1_3.files/image008.png" v:shapes="_x0000_i1056"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1056"
+  DrawAspect="Content" ObjectID="_1618768626">
+ </o:OLEObject>
+</xml><![endif]--> </i>6.</b></span><b style='mso-bidi-font-weight:normal'>
+Сервис</b>) <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><a href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i></b> приводит к появлению
+сервисного меню (рис. 6).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_6"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1057" type="#_x0000_t75" style='width:423pt;height:58.5pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image053.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=705 height=97
+src="WT_5_3_1_3.files/image053.png" v:shapes="_x0000_i1057" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1057"
+  DrawAspect="Content" ObjectID="_1618768627">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 6</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=MsoHyperlink><i
+style='mso-bidi-font-style:normal'><a href="#Pic_6_Pos1">1. Прикладные
+программы расчета</a><o:p></o:p></i></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=MsoHyperlink><i
+style='mso-bidi-font-style:normal'><a href="#Pic_6_Pos2">2. Параметры <span
+class=SpellE>отрисовки</span>…</a><o:p></o:p></i></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=MsoHyperlink><i
+style='mso-bidi-font-style:normal'><a href="#Pic_6_Pos3">3. Диагностика</a><o:p></o:p></i></span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Pic_6_Pos1"></a>Позиция
+“<b style='mso-bidi-font-weight:normal'>1. Прикладные программы расчета</b>”
+этого меню <span class=GramE>предназначена</span>:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo2;
+     tab-stops:list 36.0pt'><a href="#Pic_7">для проведения предварительной
+     оценки некоторых методических параметров в задачах устойчивости и
+     колебаний</a>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo2;
+     tab-stops:list 36.0pt'><a href="#Sopr_CF">для проведения вспомогательных
+     расчетов при формировании расчетной схемы конструкции</a>.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'>Выбор этой
+позиции приводит к появлению <span lang=EN-US style='mso-ansi-language:EN-US'>“</span><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Окна
+прикладных программ</i></b><span lang=EN-US style='mso-ansi-language:EN-US'>” </span>(рис.
+7).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_7"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1058" type="#_x0000_t75" style='width:318pt;height:110.25pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image055.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=530 height=184
+src="WT_5_3_1_3.files/image055.png" v:shapes="_x0000_i1058"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1058"
+  DrawAspect="Content" ObjectID="_1618768628">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 7</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Позиция “<b style='mso-bidi-font-weight:
+normal'>1. ППР</b>” меню “<b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Окна прикладных программ</i></b>” <span
+class=GramE>предназначена</span> для вызова прикладных программ задач
+устойчивости, колебаний, определения напряженного состояния оболочек вращения.
+Эти программы дают <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>предварительную оценку</i></b> некоторых <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>методических параметров</i></b>
+для простейших видов оболочек (рис. 8-10).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_8"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1059" type="#_x0000_t75" style='width:426pt;height:60pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image057.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=811 height=114
+src="WT_5_3_1_3.files/image057.png" v:shapes="_x0000_i1059" class="style1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1059"
+  DrawAspect="Content" ObjectID="_1618768629">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 8</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1060" type="#_x0000_t75" style='width:426pt;height:1in' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image059.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=811 height=135
+src="WT_5_3_1_3.files/image059.png" v:shapes="_x0000_i1060"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1060"
+  DrawAspect="Content" ObjectID="_1618768630">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 9</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1061" type="#_x0000_t75" style='width:426pt;height:84pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image061.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=811 height=156
+src="WT_5_3_1_3.files/image061.png" v:shapes="_x0000_i1061"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1061"
+  DrawAspect="Content" ObjectID="_1618768631">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 10</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Рассматриваются цилиндрическая,
+коническая, сферическая оболочки и круглая пластина толщиной <span
+class=SpellE><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>h</i></b></span>. Остальные геометрические размеры представлены на рис.
+11-14.</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 3.5pt 0cm 3.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=293 valign=bottom style='width:219.5pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1062" type="#_x0000_t75" style='width:218.25pt;height:136.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image063.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=328 height=204
+  src="WT_5_3_1_3.files/image063.png" v:shapes="_x0000_i1062"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1062"
+    DrawAspect="Content" ObjectID="_1618768632">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. 11</p>
+  </td>
+  <td width=288 valign=bottom style='width:216.0pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1063" type="#_x0000_t75" style='width:170.25pt;height:159pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image065.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=270 height=252
+  src="WT_5_3_1_3.files/image065.png" v:shapes="_x0000_i1063"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1063"
+    DrawAspect="Content" ObjectID="_1618768633">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. 12</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 3.55pt 0cm 3.55pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=293 valign=bottom style='width:219.55pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1064" type="#_x0000_t75" style='width:183pt;height:153.75pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image067.gif" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=257 height=215
+  src="WT_5_3_1_3.files/image067.png" v:shapes="_x0000_i1064"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1064"
+    DrawAspect="Content" ObjectID="_1618768634">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. 13</p>
+  </td>
+  <td width=288 valign=bottom style='width:216.0pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1065" type="#_x0000_t75" style='width:219pt;height:172.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image068.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=344 height=272
+  src="WT_5_3_1_3.files/image068.png" v:shapes="_x0000_i1065"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1065"
+    DrawAspect="Content" ObjectID="_1618768635">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. 14</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'>Механические характеристики определяются модулем упругости
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>E</span></i></b>, коэффициентом
+Пуассона <b style='mso-bidi-font-weight:normal'><span style='font-family:Symbol;
+mso-bidi-font-family:Symbol'>n</span></b> и плотностью <b style='mso-bidi-font-weight:
+normal'><span style='font-family:Symbol;mso-bidi-font-family:Symbol'>r</span></b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>При выборе той или иной позиции
+из “<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Меню
+прикладных программ</i></b>“ (<a href="#Pic_8">рис.<span lang=EN-US
+style='mso-ansi-language:EN-US'>&nbsp;</span>8-10</a>) на экране дисплея
+появляются соответствующие расчетные схемы.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Для получения решения задачи
+необходимо нажать на кнопку<span style='mso-spacerun:yes'>  </span><span
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_42"
+ o:spid="_x0000_i1089" type="#_x0000_t75" style='width:29.25pt;height:12.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="WT_5_3_1_3.files/image070.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=60 height=26
+src="WT_5_3_1_3.files/image070.png" v:shapes="Рисунок_x0020_42"><![endif]></span><span
+style='mso-spacerun:yes'>  </span>(“<b style='mso-bidi-font-weight:normal'>СТАРТ</b>”,
+<a href="#Pic_7">рис.<span lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;</span>7</a>).
+В результате последовательно будут появляться окна с приглашением ввести те или
+иные <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>исходные
+данные задачи</i></b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Окна ввода могут иметь одну или
+более позиций. Если окно имеет одну позицию ввода (рис.<span lang=EN-US
+style='mso-ansi-language:EN-US'>&nbsp;</span>15), то в определенных в над полем
+ввода <span class=GramE>границах</span> вводится число и нажимается клавиша <b
+style='mso-bidi-font-weight:normal'>&lt;<span class=SpellE>Enter</span>&gt;</b>.
+На экране появляется следующее окно.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1066" type="#_x0000_t75" style='width:171.75pt;height:89.25pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image072.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=229 height=119
+src="WT_5_3_1_3.files/image072.png" v:shapes="_x0000_i1066"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1066"
+  DrawAspect="Content" ObjectID="_1618768636">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 15</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'>Если окно имеет более<span class=GramE>,</span> чем одну
+позицию ввода (рис. 16), то в указанных над <span class=SpellE>соответствующим</span>
+полем ввода вводится число и нажимается клавиша<span style='mso-spacerun:yes'> 
+</span><b style='mso-bidi-font-weight:normal'>&lt;</b><b style='mso-bidi-font-weight:
+normal'><span>&darr;</span>&gt;
+</b>или<b style='mso-bidi-font-weight:normal'> &lt;</b><b style='mso-bidi-font-weight:
+normal'><span>&uarr;</span>&gt;</b>.<span
+style='mso-spacerun:yes'>  </span>Числовое поле переходит на следующую или
+предыдущую позицию ввода.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1067" type="#_x0000_t75" style='width:253.5pt;height:199.5pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image074.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=338 height=266
+src="WT_5_3_1_3.files/image074.png" v:shapes="_x0000_i1067"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1067"
+  DrawAspect="Content" ObjectID="_1618768637">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 16</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>После введения последнего числа
+на экране дисплея появляется текст с исходными данными, рисунками и
+результатами расчета.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Ниже приведен пример текста с
+результатами расчета частот собственных колебаний для цилиндрической оболочки.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 3.55pt 0cm 3.55pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=605 colspan=6 valign=top style='width:453.55pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>Точное решение</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=60 valign=top style='width:45.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span class=SpellE>n</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Частота 1</p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Форма</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Частота 2</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Форма</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span class=SpellE>d_omega</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=60 valign=top style='width:45.35pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-top-alt:solid windowtext .75pt;
+  mso-border-left-alt:solid windowtext .75pt;mso-border-right-alt:solid windowtext .75pt;
+  padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE>n =</span> 3</p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-right-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>6.2365e+02</p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-right-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>Поперечные</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-right-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>2.0384e+03</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-right-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>Поперечные</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-right-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>1.4148e+03</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=60 valign=top style='width:45.35pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>n =</b></span><b style='mso-bidi-font-weight:
+  normal'> 4<o:p></o:p></b></p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>4.5211e+02<o:p></o:p></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>1.3273e+03<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>8.7515e+02<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=60 valign=top style='width:45.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>n =</b></span><b style='mso-bidi-font-weight:
+  normal'> 5<o:p></o:p></b></p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>4.2365e+02<o:p></o:p></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>9.9641e+02<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>4.9928e+02<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=60 valign=top style='width:45.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;mso-pattern:
+  gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>n =</b></span><b style='mso-bidi-font-weight:
+  normal'> 6<o:p></o:p></b></p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>6.5863e+02<o:p></o:p></b></p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>9.2047e+02<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>Поперечные<o:p></o:p></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;background:#F2F2F2;mso-shading:windowtext;
+  mso-pattern:gray-5 auto;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>2.6184e+02<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=60 valign=top style='width:45.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .75pt;mso-border-alt:
+  solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'><span class=SpellE>n =</span> 7</p>
+  </td>
+  <td width=100 valign=top style='width:75.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>8.8203e+02</p>
+  </td>
+  <td width=120 valign=top style='width:90.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>Поперечные</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>1.0223e+03</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>Поперечные</p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .75pt;mso-border-left-alt:solid windowtext .75pt;
+  mso-border-alt:solid windowtext .75pt;padding:0cm 3.55pt 0cm 3.55pt'>
+  <p class=MsoNormal style='text-align:justify'>1.4029e+02</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'>В этих результатах для каждой из пяти гармоник<span
+style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:normal'>3</b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span>&le;</span></i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-bidi-font-family:Symbol;mso-ansi-language:EN-US'>n</span></i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span>&le;</span></i></b><b
+style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-family:Symbol'>7</span></b><span
+style='mso-spacerun:yes'>  </span>вычислены две первые частоты собственных колебаний
+шарнирно опертой цилиндрической оболочки с заданными геометрическими и
+механическими характеристиками. В последнем столбце представлена “разница”
+между первой и второй частотой. Эта “разница” дает основание для выбора шага по
+частоте в случае использования программы <b style='mso-bidi-font-weight:normal'>CR040</b>
+для построения амплитудно-частотных характеристик или программы <b
+style='mso-bidi-font-weight:normal'>CR050</b> для определения частот и форм
+собственных колебаний. Этот шаг рекомендуется выбирать примерно <span
+class=GramE>равным</span> <b style='mso-bidi-font-weight:normal'><span>&Delta;&omega;=(&omega;<sub>2</sub>-&omega;<sub>1</sub>)/10</span></b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Для переноса результатов решения
+задачи в файл исходных данных необходимо выделить блок распечатки решения
+задачи и скопировать его в буфер обмена. Затем необходимо вызвать на
+редактирование соответствующий файл исходных данных и скопировать текст из
+буфера обмена в нужное место файла.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Sopr_CF"></a>Позиция “<span
+class=MsoHyperlink><b style='mso-bidi-font-weight:normal'><a href="#Pic_7">2.
+Сопряжения CF</a></b></span>” меню “<b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Окна прикладных программ</i></b>” (<a href="#Pic_17">рис. 17</a>) <span
+class=GramE>предназначена</span> для вызова прикладных программ, содержащих
+элементы конструирования.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1068" type="#_x0000_t75" style='width:6in;height:36pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image076.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<a name="Pic_17">
+<img width=811 height=72
+src="WT_5_3_1_3.files/image076.png" v:shapes="_x0000_i1068" class="style1" border="1"></a><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1068"
+  DrawAspect="Content" ObjectID="_1618768638">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 17</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=MsoHyperlink><i style='mso-bidi-font-style:normal'><a href="#Sopr_CON_TOR">Сопряжение
+конуса и эллиптического тора</a><o:p></o:p></i></span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=MsoHyperlink><i style='mso-bidi-font-style:normal'><a
+href="#Sopr_SFERA_TOR">Сопряжение сферы и кругового тора</a></i></span><b
+style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><span
+class=MsoHyperlink><i style='mso-bidi-font-style:normal'><a href="#Primer_SOPR">Пример
+использования прикладных программ</a></i><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a name="Sopr_CON_TOR"></a><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Сопряжение конуса и эллиптического тора<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Задача сопряжения конуса и
+эллиптического тора решается следующим образом.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Пусть <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>X</span><sub>0</sub></i></b>,<i
+style='mso-bidi-font-style:normal'> </i><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>R</span><sub>0</sub></i></b><span style='mso-spacerun:yes'>  </span>-
+координаты начала или конца конуса; <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>X<sub>C</sub></span></i></b><i style='mso-bidi-font-style:normal'>, </i><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>C</sub></span></i></b><span
+lang=EN-US> </span><span style='mso-spacerun:yes'> </span>- координаты центра
+тора; <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>B</span></i></b>, <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>A</span></i></b> - полудиаметры
+сечения тора (рис. 18).</p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1086"
+ type="#_x0000_t75" style='width:453pt;height:274.5pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image071.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=775 height=469
+src="WT_5_3_1_3.files/image071.png" v:shapes="_x0000_i1086"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1086"
+  DrawAspect="Content" ObjectID="_1618768639">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 18</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Исходными данными для этой задачи
+являются:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>координаты конуса <span
+     style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'>X<sub>0</sub></i></b> <span
+     style='mso-spacerun:yes'> </span>и <b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'>R<sub>0</sub></i></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>координаты центра тора<span
+     style='mso-spacerun:yes'>  </span><span class=GramE><b style='mso-bidi-font-weight:
+     normal'><i style='mso-bidi-font-style:normal'>X</i></b></span><b
+     style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><sub>С
+     </sub></i></b><sub><span style='mso-spacerun:yes'> </span></sub>и <span
+     style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>R<sub>C</sub></span></i></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>горизонтальный полудиаметр тора <b
+     style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>B</i></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>вертикальный полудиаметр тора <b style='mso-bidi-font-weight:
+     normal'><i style='mso-bidi-font-style:normal'>A</i></b>.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'>Результатом
+являются координаты сопряжения <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>X<sub>L</sub></span><sub>1</sub></i></b>, <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>X<sub>L</sub></span><sub>2</sub></i></b>, <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>L</sub></span><sub>1</sub></i></b>,
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>L</sub></span><sub>2</sub></i></b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a name="Sopr_SFERA_TOR"></a><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Сопряжение сферы и кругового тора<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Пусть <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>X<sub>C</sub></span></i></b>, <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>C</sub></span></i></b><span
+lang=EN-US> </span>- координаты центра тора, <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>r</span></i></b><span
+style='mso-spacerun:yes'>  </span>- радиус сечения тора, <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>R</span></i></b> - радиус сферы (<a
+href="#Pic_19">рис. 19-20</a>). Очевидно, если <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>R</span>&lt;<span lang=EN-US
+style='mso-ansi-language:EN-US'>R<sub>C</sub></span>-</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span></i></b>, то решение
+отсутствует; если <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>R</span>&gt;</i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>C</sub></span>+</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span></i></b>, то существует
+четыре решения (рис. 19-20); если <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>R<sub>C</sub></span>-</i></b><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>r</span><span>&le;</span><span lang=EN-US style='mso-ansi-language:
+EN-US'>R</span>&lt;</i></b><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>R<sub>C</sub></span>+</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span></i></b>, то существует два
+решения (<a href="#Pic_20">рис. 20</a>).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_19"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1087" type="#_x0000_t75" style='width:402.75pt;height:162pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image112.gif" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img width=561 height=225
+src="WT_5_3_1_3.files/image112.png" v:shapes="_x0000_i1087" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1087"
+  DrawAspect="Content" ObjectID="_1618768640">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 19</p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_20"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1088" type="#_x0000_t75" style='width:372.75pt;height:160.5pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image114.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img width=527 height=228
+src="WT_5_3_1_3.files/image114.png" v:shapes="_x0000_i1088" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1088"
+  DrawAspect="Content" ObjectID="_1618768641">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 20</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Исходными данными для этой задачи
+являются:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo4;
+     tab-stops:list 36.0pt'>координаты центра тора<span
+     style='mso-spacerun:yes'>  </span><span class=GramE><b style='mso-bidi-font-weight:
+     normal'><i style='mso-bidi-font-style:normal'>X</i></b></span><b
+     style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><sub>С
+     </sub></i></b><sub><span style='mso-spacerun:yes'> </span></sub>и <span
+     style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>R<sub>C</sub></span></i></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo4;
+     tab-stops:list 36.0pt'>радиус тора <b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>r</span></i></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo4;
+     tab-stops:list 36.0pt'>радиус сферы <b style='mso-bidi-font-weight:normal'><i
+     style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>R</span></i></b>.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'>Результатом являются координаты
+сопряжения <span class=SpellE><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>X<sub>ij</sub></span></i></b></span>, <span class=SpellE><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>R<sub>ij</sub></span></i></b></span>;
+координата центра сферы<span style='mso-spacerun:yes'>  </span><span
+class=SpellE><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>X<sub>Cj</sub></span></i></b></span>,
+а также угол сопряжения <b style='mso-bidi-font-weight:normal'><span>&alpha;</span></b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a name="Primer_SOPR"></a><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Пример использования прикладных программ<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Рассмотрим эскиз конструкции,
+представленный на рис. 21. Конструкция состоит из шести оболочек. Глобальные
+узлы конструкции пометим номерами с прямым шрифтом, оболочки - курсивом.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1069" type="#_x0000_t75" style='width:426pt;height:122.25pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image083.gif" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=584 height=168
+src="WT_5_3_1_3.files/image083.png" v:shapes="_x0000_i1069"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1069"
+  DrawAspect="Content" ObjectID="_1618768642">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 21</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Координаты узла <b
+style='mso-bidi-font-weight:normal'>4</b> и центра сферы <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>4</i></b><span
+style='mso-spacerun:yes'>  </span>вычислим с помощью прикладной программы 
+&quot;Сопряжение сферы и тора&quot; (<a href="#Pic_17">рис.&nbsp;17</a>).</p>
+
+<p class=MsoNormal style='text-align:justify'>Исходные данные имеют вид:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1070" type="#_x0000_t75" style='width:256.5pt;height:60.75pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image084.png" o:title=""/>
+</v:shape><![endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1070"
+  DrawAspect="Content" ObjectID="_1618768643">
+ </o:OLEObject>
+</xml><img src="WT_5_3_1_3.files/image084.png" width="428" height="101"><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>На экране дисплея последовательно
+высвечиваются четыре варианта ответа (<a href="#Pic_22">рис. 22-25</a>).
+Переходя от одного к другому с помощью клавиш “Стрелки” (или с помощью
+компьютерной мыши), необходимо выбрать нужный вариант ответа и нажать клавишу
+&lt;<span class=SpellE><b style='mso-bidi-font-weight:normal'>Enter</b></span>&gt;.
+</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Для нашей задачи подходит третий
+вариант (<a href="#Pic_24">рис. 24</a>). Результаты расчета имеют вид</p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1071" type="#_x0000_t75" style='width:325.5pt;height:69pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image086.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=427 height=85
+src="WT_5_3_1_3.files/image086.png" v:shapes="_x0000_i1071"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1071"
+  DrawAspect="Content" ObjectID="_1618768644">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-table-layout-alt:fixed;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 3.5pt 0cm 3.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=293 valign=top style='width:219.5pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal style='text-align:justify'><a name="Pic_22"></a><!--[if gte vml 1]><v:shape
+   id="_x0000_i1072" type="#_x0000_t75" style='width:207pt;height:139.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image088.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img width=414 height=276
+  src="WT_5_3_1_3.files/image088.png" v:shapes="_x0000_i1072"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1072"
+    DrawAspect="Content" ObjectID="_1618768645">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. <span
+  lang=EN-US style='mso-ansi-language:EN-US'>22<o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=288 valign=top style='width:216.0pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal style='text-align:justify'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1073" type="#_x0000_t75" style='width:204.75pt;height:138pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image090.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=414 height=276
+  src="WT_5_3_1_3.files/image090.png" v:shapes="_x0000_i1073"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1073"
+    DrawAspect="Content" ObjectID="_1618768646">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. <span
+  lang=EN-US style='mso-ansi-language:EN-US'>23<o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=293 valign=top style='width:219.5pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal style='text-align:justify'><a name="Pic_24"></a><!--[if gte vml 1]><v:shape
+   id="_x0000_i1074" type="#_x0000_t75" style='width:210pt;height:148.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image092.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=411 height=294
+  src="WT_5_3_1_3.files/image092.png" v:shapes="_x0000_i1074"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1074"
+    DrawAspect="Content" ObjectID="_1618768647">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. <span
+  lang=EN-US style='mso-ansi-language:EN-US'>24<o:p></o:p></span></p>
+  </td>
+  <td width=288 valign=top style='width:216.0pt;padding:0cm 3.5pt 0cm 3.5pt'>
+  <p class=MsoNormal style='text-align:justify'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1075" type="#_x0000_t75" style='width:202.5pt;height:147pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_1_3.files/image094.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=412 height=293
+  src="WT_5_3_1_3.files/image094.png" v:shapes="_x0000_i1075"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1075"
+    DrawAspect="Content" ObjectID="_1618768648">
+   </o:OLEObject>
+  </xml><![endif]--></p>
+  <p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+  <p class=MsoNormal align=center style='text-align:center'>Рис. <span
+  lang=EN-US style='mso-ansi-language:EN-US'>25<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><a
+name="Pic_26"></a>Эти результаты подчеркнуты в файле <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>bottle.cn</b></span> (рис. 26).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:14.4pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:191;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=600 valign=top style='width:450.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** <b style='mso-bidi-font-weight:normal'>bottle.cn</b>
+  ************************************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** </span>Параметры<span lang=EN-US
+  style='mso-ansi-language:EN-US'> *** NR0, NS1, NS2, NS3, NS4, M, ME
+  *************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span lang=EN-US style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'><span
+  style='mso-spacerun:yes'>                                   </span></span></b><b
+  style='mso-bidi-font-weight:normal'><span style='font-family:"Arial","sans-serif";
+  mso-bidi-font-family:"Times New Roman"'>7<span
+  style='mso-spacerun:yes'>         </span>1<span
+  style='mso-spacerun:yes'>       </span>6<span style='mso-spacerun:yes'>      
+  </span>2<span style='mso-spacerun:yes'>      </span>0<span
+  style='mso-spacerun:yes'>   </span>1<span style='mso-spacerun:yes'>   
+  </span>0<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'>***** Массив<span
+  style='mso-spacerun:yes'>  </span>XR0[NR0][0:1]<span
+  style='mso-spacerun:yes'>  </span>**********************************</p>
+  <p class=MsoNormal style='text-align:justify'>*<span
+  style='mso-spacerun:yes'>     </span>Xc0<span
+  style='mso-spacerun:yes'>             </span>Rc0</p>
+  <p class=MsoNormal style='text-align:justify'>*************************************************************</p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>       </span>0<span
+  style='mso-spacerun:yes'>                 </span><span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>                           </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>                 
+  </span>10<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>     </span>50<span
+  style='mso-spacerun:yes'>               </span>10<span
+  style='mso-spacerun:yes'>                         </span><u>63.3609</u><span
+  style='mso-spacerun:yes'>  </span><span
+  style='mso-spacerun:yes'>       </span><u>18.1818</u><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><i style='mso-bidi-font-style:normal'><span style='font-family:"Arial","sans-serif";
+  mso-bidi-font-family:"Times New Roman"'><span style='mso-spacerun:yes'>  
+  </span>100.3193</span></i></b><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+  style='mso-spacerun:yes'>      </span><i style='mso-bidi-font-style:normal'>39.9779<span
+  style='mso-spacerun:yes'>                  </span></i>0<span
+  style='mso-spacerun:yes'>                    </span><span class=SpellE>0</span><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>       </span>0<span
+  style='mso-spacerun:yes'>                 </span><span class=SpellE>0</span></span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:14.4pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:191;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=600 valign=top style='width:450.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** </span>Массив<span lang=EN-US
+  style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+  </span>XR1[NS1][0:4]<span style='mso-spacerun:yes'> 
+  </span>**********************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*<span style='mso-spacerun:yes'>      
+  </span>IK<span style='mso-spacerun:yes'>        </span>XK0<span
+  style='mso-spacerun:yes'>        </span>RK0<span
+  style='mso-spacerun:yes'>         </span>N_K<span
+  style='mso-spacerun:yes'>              </span><span class=SpellE>m_K</span><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'>*************************************************************</p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>        </span>1<span
+  style='mso-spacerun:yes'>         </span>250<span
+  style='mso-spacerun:yes'>          </span>30<span
+  style='mso-spacerun:yes'>             </span>4<span
+  style='mso-spacerun:yes'>                   </span>1<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'>***** Массив<span
+  style='mso-spacerun:yes'>  </span>XZ1[M1][0:1], где M1=sum{XR1[*][4]}
+  **************</p>
+  <p class=MsoNormal style='text-align:justify'>*<span
+  style='mso-spacerun:yes'>            </span><span class=SpellE>xKi</span><span
+  style='mso-spacerun:yes'>         </span><span class=SpellE>zKi</span></p>
+  <p class=MsoNormal style='text-align:justify'>*************************************************************</p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial","sans-serif";
+  mso-bidi-font-family:"Times New Roman"'>=01<span
+  style='mso-spacerun:yes'>        </span><b style='mso-bidi-font-weight:normal'>0<span
+  style='mso-spacerun:yes'>           </span>5<span
+  style='mso-spacerun:yes'>                     </span>4.8<span
+  style='mso-spacerun:yes'>           </span>3.6<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>            
+  </span>4.8<span style='mso-spacerun:yes'>         </span>7.998<span
+  style='mso-spacerun:yes'>              </span>0.1<span
+  style='mso-spacerun:yes'>           </span>7.998</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:14.4pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:191;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=600 valign=top style='width:450.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** </span>Массив<span lang=EN-US
+  style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+  </span>XR2[NS2][0:12]<span style='mso-spacerun:yes'> 
+  </span>*********************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*</span>конус<span lang=EN-US
+  style='mso-ansi-language:EN-US'>: *1*<span style='mso-spacerun:yes'> 
+  </span>X0<span style='mso-spacerun:yes'>  </span>R0<span
+  style='mso-spacerun:yes'>  </span>XL<span style='mso-spacerun:yes'> 
+  </span>RL<span style='mso-spacerun:yes'>  </span>*0***0***0***0***0*<span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Ip</span><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Jp</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>Np</span><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*</span>тор<span lang=EN-US style='mso-ansi-language:
+  EN-US'>:<span style='mso-spacerun:yes'>     </span>*2*<span
+  style='mso-spacerun:yes'>    </span>A<span style='mso-spacerun:yes'>   
+  </span>B<span style='mso-spacerun:yes'>  </span><span class=SpellE>Xc</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>Rc</span><span
+  style='mso-spacerun:yes'>   </span>R0<span style='mso-spacerun:yes'>  
+  </span>RL<span style='mso-spacerun:yes'>   </span>k0<span
+  style='mso-spacerun:yes'>    </span><span class=SpellE>kL</span><span
+  style='mso-spacerun:yes'>    </span><span class=SpellE>Ia</span><span
+  style='mso-spacerun:yes'>       </span><span class=SpellE>Ip</span><span
+  style='mso-spacerun:yes'>     </span><span class=SpellE>Jp</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>Np</span><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*************************************************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=01<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>  </span>2<span style='mso-spacerun:yes'>    
+  </span>0<span style='mso-spacerun:yes'>              </span>0.1<span
+  style='mso-spacerun:yes'>            </span>0<span style='mso-spacerun:yes'> 
+  </span><span style='mso-spacerun:yes'>           </span>10<span
+  style='mso-spacerun:yes'>     </span>0<span style='mso-spacerun:yes'>      
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>           
+  </span><span class=SpellE>0</span> <span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span><span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span>1 2 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=02<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>  </span>1<span style='mso-spacerun:yes'>    
+  </span>0<span style='mso-spacerun:yes'>             </span>10<span
+  style='mso-spacerun:yes'>             </span>50<span
+  style='mso-spacerun:yes'>             </span>10<span
+  style='mso-spacerun:yes'>    </span>0<span style='mso-spacerun:yes'>      
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>           
+  </span><span class=SpellE>0</span> <span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span><span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span>2 3 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=03<span style='mso-spacerun:yes'>  </span><b
+  style='mso-bidi-font-weight:normal'>2<span style='mso-spacerun:yes'>   
+  </span>15<span style='mso-spacerun:yes'>            </span><span
+  class=SpellE>15</span><span style='mso-spacerun:yes'>            
+  </span>50<span style='mso-spacerun:yes'>             </span>25<span
+  style='mso-spacerun:yes'>   </span>10<span style='mso-spacerun:yes'>   
+  </span><u>18.1818</u><span style='mso-spacerun:yes'>  </span>39.9779<span
+  style='mso-spacerun:yes'>  </span>0 1 -1<span style='mso-spacerun:yes'> 
+  </span>3 4 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=04<span style='mso-spacerun:yes'>  </span><b
+  style='mso-bidi-font-weight:normal'>2<span style='mso-spacerun:yes'>   
+  </span>40<span style='mso-spacerun:yes'>            </span><span
+  class=SpellE>40</span><span style='mso-spacerun:yes'>             </span><u>98.98989</u><span
+  style='mso-spacerun:yes'>    </span>0<span style='mso-spacerun:yes'>  
+  </span>10<span style='mso-spacerun:yes'>    </span><u>18.1818</u><span
+  style='mso-spacerun:yes'>  </span>0 1 -1<span style='mso-spacerun:yes'> 
+  </span>4 5 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=05<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>  </span>1<span style='mso-spacerun:yes'>  </span><i
+  style='mso-bidi-font-style:normal'>100.3193</i><span
+  style='mso-spacerun:yes'>   </span><i style='mso-bidi-font-style:normal'>39.9779<span
+  style='mso-spacerun:yes'>   </span></i>250<span
+  style='mso-spacerun:yes'>            </span>35<span
+  style='mso-spacerun:yes'>     </span>0<span style='mso-spacerun:yes'>     
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>          
+  </span><span class=SpellE>0</span> <span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span><span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>  </span>5 6 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=06<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>  </span>1<span style='mso-spacerun:yes'> 
+  </span>125<span style='mso-spacerun:yes'>           </span><span
+  class=SpellE>125</span><span style='mso-spacerun:yes'>          
+  </span>370<span style='mso-spacerun:yes'>              </span>0<span
+  style='mso-spacerun:yes'>     </span>1<span style='mso-spacerun:yes'>   
+  </span>35<span style='mso-spacerun:yes'>          </span>-1 -1 1<span
+  style='mso-spacerun:yes'>   </span>7 6 1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** </span>Массив<span lang=EN-US
+  style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+  </span>HJ2[MJ][0:3], </span>где<span lang=EN-US style='mso-ansi-language:
+  EN-US'> M1=sum{XR2[*][12]}************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*<span style='mso-spacerun:yes'>      
+  </span><span class=SpellE>zj</span>(a10)<span
+  style='mso-spacerun:yes'>        </span><span class=SpellE>zj</span>(a1c)<span
+  style='mso-spacerun:yes'>          </span><span class=SpellE>zj</span>(a1L)<span
+  style='mso-spacerun:yes'>           </span><span class=SpellE>m_jp</span><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*************************************************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=01<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>    </span>-5<span style='mso-spacerun:yes'>    
+  </span>-5<span style='mso-spacerun:yes'>    </span>-5<span
+  style='mso-spacerun:yes'>   </span>0<span style='mso-spacerun:yes'>        
+  </span>5<span style='mso-spacerun:yes'>   </span><span class=SpellE>5</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>5</span><span
+  style='mso-spacerun:yes'>   </span>1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=02<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>     </span>0<span style='mso-spacerun:yes'>     
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>     </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>   </span><span
+  style='mso-spacerun:yes'> </span><span class=SpellE>0</span><span
+  style='mso-spacerun:yes'>         </span>3<span style='mso-spacerun:yes'>  
+  </span><span class=SpellE>3</span><span style='mso-spacerun:yes'>   </span><span
+  class=SpellE>3</span><span style='mso-spacerun:yes'>   </span>1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=03<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>    </span>-3<span style='mso-spacerun:yes'>    
+  </span>-3<span style='mso-spacerun:yes'>    </span>-3<span
+  style='mso-spacerun:yes'>   </span>0<span style='mso-spacerun:yes'>        
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>   </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>   </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>    </span>1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=04<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>     </span>0<span style='mso-spacerun:yes'>     
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>     </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>    </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>         </span>3<span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>3</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>3</span><span
+  style='mso-spacerun:yes'>   </span>1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=05<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>     </span>0<span style='mso-spacerun:yes'>     
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>     </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>    </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>         </span>3<span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>3</span><span
+  style='mso-spacerun:yes'>   </span><span class=SpellE>3</span><span
+  style='mso-spacerun:yes'>   </span>1<o:p></o:p></b></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>=06<b style='mso-bidi-font-weight:normal'><span
+  style='mso-spacerun:yes'>    </span>-5<span style='mso-spacerun:yes'>    
+  </span>-5<span style='mso-spacerun:yes'>    </span>-5<span
+  style='mso-spacerun:yes'>   </span>0<span style='mso-spacerun:yes'>        
+  </span><span class=SpellE>0</span><span style='mso-spacerun:yes'>   </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>   </span><span
+  class=SpellE>0</span><span style='mso-spacerun:yes'>   </span>1</b></span><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:14.4pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:191;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=600 valign=top style='width:450.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>***** </span>Массив<span lang=EN-US
+  style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> 
+  </span>XR3[NS3][0:2] <span
+  style='mso-spacerun:yes'> </span>**********************************<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>*<span style='mso-spacerun:yes'>     
+  </span>I<span style='mso-spacerun:yes'>              </span>P<span
+  style='mso-spacerun:yes'>          </span>key=</span><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:Symbol;mso-bidi-font-family:Symbol'>±</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>1<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'>*************************************************************</p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>1<span style='mso-spacerun:yes'>     </span><span class=SpellE>1</span><span
+  style='mso-spacerun:yes'>     </span>-1<o:p></o:p></b></p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'>7<span style='mso-spacerun:yes'>    </span>6<span
+  style='mso-spacerun:yes'>       </span>1<o:p></o:p></b></p>
+  <p class=MsoNormal style='text-align:justify'>***** Массив<span
+  style='mso-spacerun:yes'>  </span>MAT[M]<span style='mso-spacerun:yes'> 
+  </span>**************************************</p>
+  <p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+  normal'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+  "Times New Roman"'>mat_1<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify'>***** Конец файла <b
+  style='mso-bidi-font-weight:normal'>CN</b> ****************************************</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 26</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Координаты узла <b
+style='mso-bidi-font-weight:normal'>5</b> вычислим с помощью помощью прикладной 
+программы &quot;Сопряжение конуса и тора&quot; (<a href="#Pic_17">рис.&nbsp;17</a>).</p>
+
+<p class=MsoNormal style='text-align:justify'>Исходные данные имеют вид:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1076" type="#_x0000_t75" style='width:315pt;height:99pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image096.gif" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=424 height=133
+src="WT_5_3_1_3.files/image096.png" v:shapes="_x0000_i1076"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1076"
+  DrawAspect="Content" ObjectID="_1618768649">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>На экране дисплея последовательно
+высвечиваются два варианта ответа, аналогичных <a href="#Pic_22">рис. 22-25</a>.
+Для нашей задачи подходит первый вариант. Результаты расчета имеют вид</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1077" type="#_x0000_t75" style='width:339pt;height:46.5pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image097.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=425 height=52
+src="WT_5_3_1_3.files/image097.png" v:shapes="_x0000_i1077"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1077"
+  DrawAspect="Content" ObjectID="_1618768650">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Эти результаты выделены курсивом
+в файле <span class=SpellE><b style='mso-bidi-font-weight:normal'>bottle.cn</b></span>
+(<a href="#Pic_26">рис. 26</a>).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Радиус и координату центра сферы <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>4</i></b><span
+style='mso-spacerun:yes'>  </span><span class=SpellE>c</span> помощью <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>КАЛЬКУЛЯТОРА</i></b>
+вычислим по формулам (<span class=GramE>см</span>. рис. 27): <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span>=(</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>a</span><sup>2</sup>+</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span><sup>2</sup>)/(2</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span>)</i></b>; <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>X<sub>C</sub></span>=</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>X</span><sub>6</sub>+</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>r</span>-</i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>b</span></i></b>.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1078" type="#_x0000_t75" style='width:179.25pt;height:97.5pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image099.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img width=297 height=162
+src="WT_5_3_1_3.files/image099.png" v:shapes="_x0000_i1078"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1078"
+  DrawAspect="Content" ObjectID="_1618768651">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 27</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Координаты шпангоута просто
+снимем с рисунка-изображения конструкции с помощью режима “<b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>окно в окне</i></b>”. Расчетная
+схема спроектированной подобным образом конструкции изображена на рис. 28.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1079" type="#_x0000_t75" style='width:371.25pt;height:171.75pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image101.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=638 height=295
+src="WT_5_3_1_3.files/image101.png" v:shapes="_x0000_i1079"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1079"
+  DrawAspect="Content" ObjectID="_1618768652">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>Рис. 28</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Pic_6_Pos2"></a>Позиция
+“<b style='mso-bidi-font-weight:normal'><a href="#Pic_6">2. Параметры <span
+class=SpellE>отрисовки</span></a></b>” сервисного меню <span class=GramE>предназначена</span>
+для настройки опций <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>ОТРИСОВЩИКА</i></b> и функционально дублирует <a
+href="WT_5_4_1.htm#Pic_3">кнопку<![if !vml]><![endif]></a>
+<a
+href="WT_5_4_1.htm#Pic_3"><span lang=EN-US style='mso-ansi-language:
+EN-US'><![if !vml]>
+<img border=0 width=34 height=21
+src="WT_5_3_1_3.files/image103.png" v:shapes="_x0000_i1080"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1080"
+  DrawAspect="Content" ObjectID="_1618768654">
+ </o:OLEObject>
+</xml><![endif]--></span></a>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Pic_6_Pos3"></a>Позиция
+“<b style='mso-bidi-font-weight:normal'><a href="#Pic_6">3. Диагностика</a></b>”
+сервисного меню предназначена для реализации некоторых функций диагностики
+исходных данных. Выбор этой позиции приводит к появлению подменю, изображенному
+на рис. 29.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1081" type="#_x0000_t75" style='width:341.25pt;height:69.75pt'
+ o:ole="" o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image105.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=569 height=116
+src="WT_5_3_1_3.files/image105.png" v:shapes="_x0000_i1081" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1081"
+  DrawAspect="Content" ObjectID="_1618768655">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 29</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Позиция “<b style='mso-bidi-font-weight:
+normal'>1. Независимые <span class=SpellE>подконструкции</span></b>” этого
+подменю <span class=GramE>предназначена</span> для поиска ошибок в исходных
+данных, приводящих к появлению независимых <span class=SpellE>подконструкций</span>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Позиция “<b style='mso-bidi-font-weight:
+normal'>2. Привязка </b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2, </b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>4 к </b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>CF</span>0</b>” этого подменю предназначена для визуальной диагностики
+корректности привязки узлов оболочечных элементов и упругих связей к узловым
+элементам. Этот же режим автоматически включается, если <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>ОТРИСОВЩИК</i></b> настроен на <span
+class=SpellE>отрисовку</span> номеров глобальных узлов (<b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>0</b>)
+конструкции. На рис. 30 приводится пример такой диагностики. Жирной красной
+линией показана связь оболочки 158 с глобальным узлом 107 конструкции.
+Пунктирными линиями обозначено соединение глобальных узлов 107 и 159, а также
+глобальных узлов 107 и 160 посредством эксцентрично расположенных упругих
+связей (упругие связи обозначаются в виде соединенных прямой линией двух
+окружностей, причем начало упругой связи обозначается окружностью большего
+диаметра, а конец связи – окружностью меньшего диаметра).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1082"
+ type="#_x0000_t75" style='width:414.75pt;height:284.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image107.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=772 height=529
+src="WT_5_3_1_3.files/image107.png" v:shapes="_x0000_i1082"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1082"
+  DrawAspect="Content" ObjectID="_1618768656">
+ </o:OLEObject>
+</xml><![endif]--></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 30</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="PROC_7"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1083" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=16 height=15
+src="WT_5_3_1_3.files/image009.png" v:shapes="_x0000_i1083" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1083"
+  DrawAspect="Content" ObjectID="_1618768657">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>7. Проц.<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 7
+(<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1084" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_1_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img width=16 height=15
+src="WT_5_3_1_3.files/image009.png" v:shapes="_x0000_i1084" class="style1" border="1"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1084"
+  DrawAspect="Content" ObjectID="_1618768658">
+ </o:OLEObject>
+</xml><![endif]--> </i>7.</b></span><b style='mso-bidi-font-weight:normal'> <span
+class=GramE>Проц<span style='font-weight:normal'>.) </span><i style='mso-bidi-font-style:
+normal'><a href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i><span style='font-weight:
+normal'> приводит к следующей последовательности действий:</span></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;mso-list:l1 level1 lfo5;
+     tab-stops:list 36.0pt'>перевод исходных данных из внутреннего
+     представления (файлы <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>CN</span></b>, <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>MT</span></b>, <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>LD</span></b>, <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>MD</span></b>) во внешнее представление с формированием
+     соответствующих файлов (файлы <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>CNX</span></b>, <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>LDX</span></b>, <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>MDX</span></b>);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l1 level1 lfo5;
+     tab-stops:list 36.0pt'>выход из <b style='mso-bidi-font-weight:normal'>ПРЕПРОЦЕССОРА</b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l1 level1 lfo5;
+     tab-stops:list 36.0pt'>старт <b style='mso-bidi-font-weight:normal'>ПРОЦЕССОРА</b>.</li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><a
+name="HELP_8"></a><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>8. Справка<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Позиция 8 (<b
+style='mso-bidi-font-weight:normal'>8.</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=GramE>Справка) <i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a> </i><span style='font-weight:normal'>предназначена
+для вызова инструкции пользователя и информации о версии программы.</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify;mso-outline-level:1'><a
+name="EXIT_9"></a><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>9. Выход<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 9
+(<b style='mso-bidi-font-weight:normal'>9.</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=GramE>Выход<span class="style2">)</span> <i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></i><span style='font-weight:normal'>
+приводит к выходу из </span>ПРЕПРОЦЕССОРА<span style='font-weight:normal'> в <a
+href="WT_5_2.htm#ShellMenu">программную оболочку системы</a>.</span></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name="Univ_org_Upravlen"></a><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Универсальные органы управления
+ПРЕПРОЦЕССОРА<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Группа “<b style='mso-bidi-font-weight:
+normal'>Универсальные органы управления ПРЕПРОЦЕССОРА</b>” (<a href="#Pic_1">рис.1,
+поз. 2</a>; рис. 31) предназначена для управления общими режимами работы <a
+name="Pic_5"></a><b style='mso-bidi-font-weight:normal'>ОТРИСОВЩИКА</b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1085" type="#_x0000_t75" style='width:283.5pt;height:37.5pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_1_3.files/image109.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=473 height=63
+src="WT_5_3_1_3.files/image109.png" v:shapes="_x0000_i1085"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1085"
+  DrawAspect="Content" ObjectID="_1618768659">
+ </o:OLEObject>
+</xml><![endif]--><a href="#Pic_4"><span style='color:windowtext;text-decoration:
+none;text-underline:none'><span style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_5\0022 "'></span></span></a></p>
+
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'>&nbsp;</p>
+<p class=MsoNormal align=center style='text-align:center;mso-outline-level:
+1'><a href="PBrush">
+<span style='color:windowtext;text-decoration:none;
+text-underline:none'>
+<span style='mso-field-code:" HYPERLINK \0022PBrush\0022 "'>Рис.
+</span></span></a>31</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>На рис. 31 в
+поз 1-4 показаны органы управления, отличающиеся от стандартных <b
+style='mso-bidi-font-weight:normal'><a href="WT_5_4_1.htm#Oblast_Otrisovki">Универсальных
+органов управления ОТРИСОВЩИКА</a></b>. Эти органы управления предназначены для
+загрузки файлов <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>CN</span></b>, <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>MT</span></b>, <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>LD</span></b>, <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>MD</span></b><span lang=EN-US> </span>соответственно
+в <b style='mso-bidi-font-weight:normal'>РЕДАКТОР </b>(эту загрузку можно
+осуществить и с помощью позиции 2 (2.</span> <span class=GramE><b
+style='mso-bidi-font-weight:normal'>ИД)</b> <b style='mso-bidi-font-weight:
+normal'><a href="#Pic_2">Меню ПРЕПРОЦЕССОРА</a></b>).<a href="PBrush"><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='mso-field-code:" HYPERLINK \0022\0022 \\l \0022Pic_2\0022 "'></span></span></a></span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

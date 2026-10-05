@@ -1,0 +1,1885 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="WT_5_3_3.files/filelist.xml">
+<link rel=Edit-Time-Data href="WT_5_3_3.files/editdata.mso">
+<link rel=OLE-Object-Data href="WT_5_3_3.files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>5.3.3. ПОСТПРОЦЕССОР</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Kb</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>ABCDEFGHIJKL</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>1852</o:TotalTime>
+  <o:Created>2018-09-23T10:44:00Z</o:Created>
+  <o:LastSaved>2018-09-23T10:44:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1415</o:Words>
+  <o:Characters>8069</o:Characters>
+  <o:Company>Kb</o:Company>
+  <o:Lines>67</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9466</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="WT_5_3_3.files/themedata.thmx">
+<link rel=colorSchemeMapping href="WT_5_3_3.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>120</w:Zoom>
+  <w:ActiveWritingStyle Lang="RU" VendorID="1" DLLVersion="512" NLCheck="0">1</w:ActiveWritingStyle>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 4 Знак";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;
+	mso-bidi-font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.4
+	{mso-style-name:"Заголовок 4 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 4";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;
+	font-style:italic;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:42.55pt 1.0cm 42.55pt 70.9pt;
+	mso-header-margin:35.45pt;
+	mso-footer-margin:35.45pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:128019846;
+	mso-list-type:hybrid;
+	mso-list-template-ids:164537480 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:435711280;
+	mso-list-template-ids:1293718760;}
+@list l2
+	{mso-list-id:898134625;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1389622074 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l2:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1109281890;
+	mso-list-template-ids:951994780;}
+@list l4
+	{mso-list-id:1293638660;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1966571332 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l4:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5
+	{mso-list-id:1966958465;
+	mso-list-template-ids:2053666602;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.style1 {
+				font-family: "Times New Roman";
+}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="10242"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<h3><span style='mso-fareast-font-family:"Times New Roman"'>5.3.3.
+ПОСТПРОЦЕССОР<o:p></o:p></span></h3>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-align:justify'><span
+class=MsoHyperlink>5.3.3.1. <a href="#Start_POSTPROCESSORA">Старт
+ПОСТПРОЦЕССОРА</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-align:justify'><span
+class=MsoHyperlink>5.3.3.2. <a href="#Menu_POSTPROCESSORA">Меню ПОСТПРОЦЕССОРА</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-align:justify'><span
+class=MsoHyperlink>5.3.3.3. <a href="#Univers_Organ_Upravlen">Универсальные органы
+управления ПОСТПРОЦЕССОРА</a></span><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;color:#993300'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>ПОСТПРОЦЕССОР</i></b> системы <b
+style='mso-bidi-font-weight:normal'>КИПР-</b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>Win</span></b>
+предназначен для визуализации <span class=GramE>результатов работы программ <b
+style='mso-bidi-font-weight:normal'>ПРОЦЕССОРА</b> системы</span> и выпуска
+расчетной документации. Исходными данными для <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>ПОСТПРОЦЕССОРА </i></b>являются
+файлы<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>
+</i>FW</b>, формируемые программами <b style='mso-bidi-font-weight:normal'>ПРОЦЕССОРА</b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<h4 style='margin-left:35.4pt'><a name="Start_POSTPROCESSORA"></a><span
+style='mso-fareast-font-family:"Times New Roman"'>5.3.3.1. Старт ПОСТПРОЦЕССОРА<o:p></o:p></span></h4>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>При старте <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>ПОСТПРОЦЕССОРА</i></b> могут
+возникнуть две ситуации.</p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Ситуация 1</i></b>. Старт <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>ПОСТПРОЦЕССОРА</i></b>
+из “<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="WT_5_2.htm#ShellMenu">ОБОЛОЧКИ системы</a></i></b>” <span class=GramE>был
+осуществлен <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>без решения задачи ПРОЦЕССОРОМ системы </i></b>приводит</span> к
+появлению сообщения вида</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:230.25pt;
+ height:110.25pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=307 height=147
+src="WT_5_3_3.files/image001.png" v:shapes="_x0000_i1025"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1599215519">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Реакция пользователя</i></b>:</p>
+
+<p class=MsoNormal style='text-align:justify'><a href="WT_5_3_2.htm#M_2_1">Стартовать
+<b style='mso-bidi-font-weight:normal'>ПРОЦЕССОР</b></a> и после завершения его
+работы запустить <b style='mso-bidi-font-weight:normal'>ПОСТПРОЦЕССОР</b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Ситуация 2</i></b>. До старта <b
+style='mso-bidi-font-weight:normal'>ПОСТПРОЦЕССОРА</b> в <b style='mso-bidi-font-weight:
+normal'>ПРЕПРОЦЕССОРЕ</b> системы был отредактирован один из файлов исходных
+данных во внешнем представлении (<b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CN</span></b>, <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>MT</span></b>, <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>LD</span></b>, <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>MD</span></b>) и выход из <b style='mso-bidi-font-weight:
+normal'>ПРЕПРОЦЕССОРА</b> был осуществлен с помощью позиции “<b
+style='mso-bidi-font-weight:normal'>9. Выход</b>” <b style='mso-bidi-font-weight:
+normal'><a href="WT_5_3_1_3.htm#Menu_PREPROCESSORA">Меню ПРЕПРОЦЕССОРА</a></b>.
+В этом случае на экране дисплея <span class=SpellE>появлется</span> сообщение
+вида</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:285pt;height:125.25pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=380 height=167
+src="WT_5_3_3.files/image003.png" v:shapes="_x0000_i1026"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1599215520">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Реакция пользователя</i></b>:</p>
+
+<p class=MsoNormal style='text-align:justify'>Стартовать <b style='mso-bidi-font-weight:
+normal'>ПРЕПРОЦЕССОР</b> и выйти из него с помощью позиции “<!--[if gte vml 1]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image005.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=16 height=15
+src="WT_5_3_3.files/image005.png" v:shapes="_x0000_i1027"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1027"
+  DrawAspect="Content" ObjectID="_1599215521">
+ </o:OLEObject>
+</xml><![endif]--><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'> </i>7. Проц.</b>” <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><a href="WT_5_3_1_3.htm#Menu_PREPROCESSORA">Меню
+ПРЕПРОЦЕССОРА</a></i></b>. В этом случае вновь будут созданы файлы исходных
+данных во внешнем представлении (<b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CNX</span></b>, <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>LDX</span></b>, <b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+EN-US'>MDX</span></b>), обновлен файл-проект <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>KPR</span></b><span
+lang=EN-US style='mso-ansi-language:EN-US'> </span>и автоматически запущен <b
+style='mso-bidi-font-weight:normal'>ПРОЦЕССОР </b>системы (с одновременным
+выходом из <b style='mso-bidi-font-weight:normal'>ПРЕПРОЦЕССОРА)</b>. После
+того, как <b style='mso-bidi-font-weight:normal'><a href="WT_5_3_2.htm#M_2_2">ПРОЦЕССОР<span
+style='font-weight:normal'> завершит работу</span></a></b>, необходимо вновь
+запустить <b style='mso-bidi-font-weight:normal'>ПОСТПРОЦЕССОР</b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>После удачного входа в <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>ПОСТПРОЦЕССОР</i></b>
+на экране дисплея появляется “<b style='mso-bidi-font-weight:normal'>Окно
+ПОСТПРОЦЕССОРА</b>” (рис. 1)<span style='mso-spacerun:yes'>  </span>с
+изображением расчетной схемы конструкции.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_1"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:540.75pt;height:468pt'
+ o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=0 width=768 height=663
+src="WT_5_3_3.files/image007.png" v:shapes="_x0000_i1028"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1028"
+  DrawAspect="Content" ObjectID="_1599215522">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 1</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Группы органов управления (рис.
+1): “<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Menu_POSTPROCESSORA">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА<span
+style='font-weight:normal;font-style:normal'>”</span></a></i></b> (поз. 1);
+группа “<b style='mso-bidi-font-weight:normal'><a href="#Univers_Organ_Upravlen">Универсальные
+органы управления</a></b>” (поз. 2); группа “<b style='mso-bidi-font-weight:
+normal'>Объекты <span class=SpellE>отрисовки</span></b>” (поз. 3).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Menu_POSTPROCESSORA"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<h4 style='margin-left:35.4pt'><span style='mso-fareast-font-family:"Times New Roman"'>5.3.3.2.
+Меню ПОСТПРОЦЕССОРА</span><span style='font-size:14.0pt;mso-fareast-font-family:
+"Times New Roman";color:#993300'><o:p></o:p></span></h4>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+color:#993300'><o:p>&nbsp;</o:p></span></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=18 height=18
+src="WT_5_3_3.files/image009.png" v:shapes="_x0000_i1029"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1029"
+  DrawAspect="Content" ObjectID="_1599215523">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#Epuri_2">1.
+Эпюры</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1030"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image011.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=21 height=18
+src="WT_5_3_3.files/image011.png" v:shapes="_x0000_i1030"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1599215524">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><a href="#Grafiki_3">2.
+Графики</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#ID_4">3. ИД</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Spravka_5">4. Справка</a><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+ type="#_x0000_t75" style='width:18pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image013.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=33 height=18
+src="WT_5_3_3.files/image013.png" v:shapes="_x0000_i1031"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1599215525">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span></i></b><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><a href="#PrePROC_5"><span lang=RU
+style='mso-ansi-language:RU'>5. <span class=SpellE>ПреПРОЦ</span>.</span></a></span><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Exit_6">6. Выход</a></i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Меню</i></b><i style='mso-bidi-font-style:
+normal'> <b style='mso-bidi-font-weight:normal'>ПОСТПРОЦЕССОРА</b> </i>изображено
+на рис. 2.</p>
+
+<p class=MsoNormal><a name="Pic_2"></a><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:376.5pt;height:54pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image015.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=627 height=90
+src="WT_5_3_3.files/image015.png" v:shapes="_x0000_i1032"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1032"
+  DrawAspect="Content" ObjectID="_1599215526">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 2</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Epuri_2"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=18 height=18
+src="WT_5_3_3.files/image009.png" v:shapes="_x0000_i1033"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1033"
+  DrawAspect="Content" ObjectID="_1599215527">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>1. Эпюры</i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 1
+(<!--[if gte vml 1]><v:shape id="_x0000_i1034" type="#_x0000_t75" style='width:12pt;
+ height:12pt' o:ole="" o:bordertopcolor="this" o:borderleftcolor="this"
+ o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image009.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=18 height=18
+src="WT_5_3_3.files/image009.png" v:shapes="_x0000_i1034"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1034"
+  DrawAspect="Content" ObjectID="_1599215528">
+ </o:OLEObject>
+</xml><![endif]--> <b style='mso-bidi-font-weight:normal'>1.</b></span><b
+style='mso-bidi-font-weight:normal'> Эпюры</b>) <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><a href="#Pic_2">Меню<span
+style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i></b> приводит к
+появлению группы органов управления “<b style='mso-bidi-font-weight:normal'>Объекты
+<span class=SpellE>отрисовки</span></b>” (<a href="#Pic_1">рис. 1, поз. 3</a>),
+предназначенной для управления <span class=SpellE>отрисовкой</span> результатов
+расчета на <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'>элементах конструкции</i></b> (рис. 3).</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:441.75pt;height:45pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=736 height=75
+src="WT_5_3_3.files/image017.png" v:shapes="_x0000_i1035"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1035"
+  DrawAspect="Content" ObjectID="_1599215529">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 3</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Кнопки на рис. 3 имеют следующее назначение:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1036"
+      type="#_x0000_t75" style='width:44.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image019.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image019.png" v:shapes="_x0000_i1036"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1036"
+       DrawAspect="Content" ObjectID="_1599215531">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 1 – <span class=SpellE>отрисовка</span>
+     деформированного состояния конструкции;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <span lang=EN-US style='mso-ansi-language:
+     EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1037" type="#_x0000_t75"
+      style='width:46.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image021.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=77 height=25
+     src="WT_5_3_3.files/image021.png" v:shapes="_x0000_i1037"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1037"
+       DrawAspect="Content" ObjectID="_1599215532">
+      </o:OLEObject>
+     </xml><![endif]--></span><span lang=EN-US><span
+     style='mso-spacerun:yes'> </span></span>в поз. 2 – пространственное
+     изображение деформированного состояния конструкции (этот режим
+     активизируется лишь после <span class=SpellE>отрисовки</span>
+     деформированного состояния конструкции - кнопка <!--[if gte vml 1]><v:shape
+      id="_x0000_i1038" type="#_x0000_t75" style='width:44.25pt;height:15pt'
+      o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image019.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image019.png" v:shapes="_x0000_i1038"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1038"
+       DrawAspect="Content" ObjectID="_1599215533">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> поз. 1);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1039"
+      type="#_x0000_t75" style='width:22.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image023.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=38 height=25
+     src="WT_5_3_3.files/image023.png" v:shapes="_x0000_i1039"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1039"
+       DrawAspect="Content" ObjectID="_1599215534">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 3 – увеличить масштаб <span
+     class=SpellE>избражения</span> перемещений;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1040"
+      type="#_x0000_t75" style='width:22.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image025.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=38 height=25
+     src="WT_5_3_3.files/image025.png" v:shapes="_x0000_i1040"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1040"
+       DrawAspect="Content" ObjectID="_1599215535">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 4 – уменьшить масштаб
+     изображения перемещений;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1041"
+      type="#_x0000_t75" style='width:22.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image027.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=38 height=25
+     src="WT_5_3_3.files/image027.png" v:shapes="_x0000_i1041"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1041"
+       DrawAspect="Content" ObjectID="_1599215536">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> поз. 5 – <span class=SpellE>отрисовка</span>
+     перемещений по окружности;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1042"
+      type="#_x0000_t75" style='width:44.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image029.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image029.png" v:shapes="_x0000_i1042"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1042"
+       DrawAspect="Content" ObjectID="_1599215537">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 6 – <span class=SpellE>отрисовка</span>
+     напряжений в <b style='mso-bidi-font-weight:normal'><span lang=EN-US
+     style='mso-ansi-language:EN-US'>CF</span>1</b> (шпангоуты);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1043"
+      type="#_x0000_t75" style='width:44.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image031.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image031.png" v:shapes="_x0000_i1043"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1043"
+       DrawAspect="Content" ObjectID="_1599215538">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 7 – <span class=SpellE>отрисовка</span>
+     напряжений в слоях в <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'><span class=GramE>Кнопка <!--[if gte vml 1]><v:shape
+      id="_x0000_i1044" type="#_x0000_t75" style='width:44.25pt;height:15pt'
+      o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image033.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image033.png" v:shapes="_x0000_i1044"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1044"
+       DrawAspect="Content" ObjectID="_1599215539">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span>в поз. 8 –
+     глобальная <span class=SpellE>отрисовка</span> напряжений (на всей
+     конструкции);</span></li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1045"
+      type="#_x0000_t75" style='width:44.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image035.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=74 height=25
+     src="WT_5_3_3.files/image035.png" v:shapes="_x0000_i1045"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1045"
+       DrawAspect="Content" ObjectID="_1599215540">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> поз. 9 – <span class=SpellE>отрисовка</span>
+     напряжений по окружности;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1046"
+      type="#_x0000_t75" style='width:22.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image037.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=38 height=25
+     src="WT_5_3_3.files/image037.png" v:shapes="_x0000_i1046"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1046"
+       DrawAspect="Content" ObjectID="_1599215541">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 10 – выбор типа
+     изображаемого напряжения;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt;mso-layout-grid-align:none;text-autospace:none'>Кнопка
+     <!--[if gte vml 1]><v:shape id="_x0000_i1047" type="#_x0000_t75" style='width:20.25pt;
+      height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image039.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=34 height=25
+     src="WT_5_3_3.files/image039.png" v:shapes="_x0000_i1047"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1047"
+       DrawAspect="Content" ObjectID="_1599215542">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 11 (альтернатива –
+     комбинация клавиш &lt;<b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Alt</span></b><b
+     style='mso-bidi-font-weight:normal'><span style='font-family:Symbol;
+     mso-bidi-font-family:Symbol'>+</span></b><span
+     style='mso-bidi-font-family:Symbol'><span class="style1"><strong>стрелка 
+	влево</strong></span></span><span style='mso-bidi-font-family:
+     Symbol'>&gt;</span>) – переход к предыдущей точке ортогонализации <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>CF</span>2</b> (оболочки);</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1048"
+      type="#_x0000_t75" style='width:20.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image041.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=34 height=25
+     src="WT_5_3_3.files/image041.png" v:shapes="_x0000_i1048"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1048"
+       DrawAspect="Content" ObjectID="_1599215543">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 12 (после нажатия
+     принимает вид <!--[if gte vml 1]><v:shape id="_x0000_i1049" type="#_x0000_t75"
+      style='width:20.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image043.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=34 height=25
+     src="WT_5_3_3.files/image043.png" v:shapes="_x0000_i1049"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1049"
+       DrawAspect="Content" ObjectID="_1599215544">
+      </o:OLEObject>
+     </xml><![endif]-->) – <span class=SpellE>отрисовка</span> положения
+     текущей точки ортогонализации <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b> (оболочки);
+     нажатие на кнопку <!--[if gte vml 1]><v:shape id="_x0000_i1050" type="#_x0000_t75"
+      style='width:20.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image043.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=34 height=25
+     src="WT_5_3_3.files/image043.png" v:shapes="_x0000_i1050"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1050"
+       DrawAspect="Content" ObjectID="_1599215545">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span>возвращает в
+     предыдущий режим <span class=SpellE>отрисовки</span>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l4 level1 lfo3;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1051"
+      type="#_x0000_t75" style='width:20.25pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image045.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=34 height=25
+     src="WT_5_3_3.files/image045.png" v:shapes="_x0000_i1051"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1051"
+       DrawAspect="Content" ObjectID="_1599215546">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 13 (альтернатива –
+     комбинация клавиш &lt;<b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Alt</span></b><b
+     style='mso-bidi-font-weight:normal'><span style='font-family:Symbol;
+     mso-bidi-font-family:Symbol'>+</span></b><b
+     style='mso-bidi-font-weight:normal'><span
+     style='mso-bidi-font-family:Symbol' class="style1">стрелка вправо</span></b><span style='mso-bidi-font-family:
+     Symbol'>&gt;</span>) – переход к следующей точке ортогонализации <b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>CF</span>2</b> (оболочки).</li>
+</ol>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Grafiki_3"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1052" type="#_x0000_t75" style='width:12pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image011.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=21 height=18
+src="WT_5_3_3.files/image011.png" v:shapes="_x0000_i1052"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1052"
+  DrawAspect="Content" ObjectID="_1599215547">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>2. Графики</i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 2
+(<!--[if gte vml 1]><v:shape id="_x0000_i1053" type="#_x0000_t75" style='width:12pt;
+ height:12pt' o:ole="" o:bordertopcolor="this" o:borderleftcolor="this"
+ o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image011.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=21 height=18
+src="WT_5_3_3.files/image011.png" v:shapes="_x0000_i1053"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1053"
+  DrawAspect="Content" ObjectID="_1599215548">
+ </o:OLEObject>
+</xml><![endif]--><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'> </i>2.</b></span><b style='mso-bidi-font-weight:normal'> Графики</b>) <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i></b>
+приводит к появлению группы органов управления “<b style='mso-bidi-font-weight:
+normal'>Объекты <span class=SpellE>отрисовки</span></b>” (<a href="#Pic_1">рис.
+1, поз. 3</a>), предназначенной для управления <span class=SpellE>отрисовкой</span>
+результатов расчета в <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>режиме графиков</i></b> (рис. 4). </p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:191;mso-padding-alt:2.85pt 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=138 style='width:103.35pt;border:solid windowtext 1.0pt;mso-border-alt:
+  solid windowtext .5pt;padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>Программа</p>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>ПРОЦЕССОРА<o:p></o:p></b></p>
+  </td>
+  <td width=335 style='width:251.5pt;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal>Органы управления</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=138 style='width:103.35pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>CR030</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=335 style='width:251.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1054" type="#_x0000_t75"
+   style='width:234pt;height:43.5pt' o:ole="">
+   <v:imagedata src="WT_5_3_3.files/image047.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=390 height=73
+  src="WT_5_3_3.files/image047.png" v:shapes="_x0000_i1054"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1054"
+    DrawAspect="Content" ObjectID="_1599215549">
+   </o:OLEObject>
+  </xml><![endif]--><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=138 style='width:103.35pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>CR</span>010</b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>, <b style='mso-bidi-font-weight:normal'>CR020</b><o:p></o:p></span></p>
+  </td>
+  <td width=335 style='width:251.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape id="_x0000_i1055" type="#_x0000_t75"
+   style='width:237pt;height:28.5pt' o:ole="">
+   <v:imagedata src="WT_5_3_3.files/image049.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=395 height=47
+  src="WT_5_3_3.files/image049.png" v:shapes="_x0000_i1055"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1055"
+    DrawAspect="Content" ObjectID="_1599215550">
+   </o:OLEObject>
+  </xml><![endif]--><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=138 style='width:103.35pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>CR040</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width=335 style='width:251.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1056" type="#_x0000_t75" style='width:236.25pt;height:31.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_3.files/image051.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=394 height=53
+  src="WT_5_3_3.files/image051.png" v:shapes="_x0000_i1056"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1056"
+    DrawAspect="Content" ObjectID="_1599215551">
+   </o:OLEObject>
+  </xml><![endif]--><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=138 style='width:103.35pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+  style='mso-ansi-language:EN-US'>CR</span>060</b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>, <b style='mso-bidi-font-weight:normal'>CR070</b>,
+  <b style='mso-bidi-font-weight:normal'>CR080</b><o:p></o:p></span></p>
+  </td>
+  <td width=335 style='width:251.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:2.85pt 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1057" type="#_x0000_t75" style='width:240pt;height:43.5pt'
+   o:ole="">
+   <v:imagedata src="WT_5_3_3.files/image053.png" o:title=""/>
+  </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=400 height=73
+  src="WT_5_3_3.files/image053.png" v:shapes="_x0000_i1057"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1057"
+    DrawAspect="Content" ObjectID="_1599215552">
+   </o:OLEObject>
+  </xml><![endif]--><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 4</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Здесь используются следующие обозначения:</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><span>&Delta;</span></b><span
+lang=EN-US style='mso-ansi-language:EN-US'> </span>– перемещения; <b
+style='mso-bidi-font-weight:normal'><span>&sigma;</span></b><span lang=EN-US style='mso-ansi-language:
+EN-US'> </span>- напряжения; <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>P</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> </span>– <a href="WT_5_3_2.htm#M_2_4">номер
+порции</a> (для программы <b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>CR</span>030</b> – номер <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>n</span></i></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> </span>гармоники разложения внешней нагрузки в
+ряды Фурье по координате <b style='mso-bidi-font-weight:normal'><span>&alpha;</span><sub>2</sub></b>);
+<b style='mso-bidi-font-weight:normal'><span>&lambda;</span></b><span lang=EN-US style='font-family:
+Symbol;mso-ansi-language:EN-US'> - </span>параметр <span class=SpellE>нагружения</span>;
+<b style='mso-bidi-font-weight:normal'><span>&omega;</span></b><span lang=EN-US style='font-family:
+Symbol;mso-ansi-language:EN-US'> - </span>частота возбуждения; <b
+style='mso-bidi-font-weight:normal'><span>&tau;</span></b><span lang=EN-US style='font-family:Symbol;
+mso-ansi-language:EN-US'> - </span>текущее время.</p>
+
+<p class=MsoNormal style='text-align:justify'>Кнопки на рис. 4 управляют <span
+class=SpellE>отрисовкой</span> графиков:</p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo6;
+     tab-stops:list 36.0pt'>кнопка <span class=GramE>в</span> <span
+     class=GramE>поз</span>. 1 - перемещений <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>0</b>
+     (глобальные узлы) <a href="WT_5_3_2.htm#M_2_4">как функций
+     соответствующего методического параметра расчета</a>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo6;
+     tab-stops:list 36.0pt'>кнопка <span class=GramE>в</span> <span
+     class=GramE>поз</span>. 2 – напряжений в <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>1</b>
+     (шпангоуты) <a href="WT_5_3_2.htm#M_2_4">как функций соответствующего
+     методического параметра расчета</a>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo6;
+     tab-stops:list 36.0pt'>кнопка <span class=GramE>в</span> <span
+     class=GramE>поз</span>. 3 – напряжений в слоях <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b>
+     (оболочки) <a href="WT_5_3_2.htm#M_2_4">как функций соответствующего
+     методического параметра расчета</a>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo6;
+     tab-stops:list 36.0pt'>кнопка <span class=GramE>в</span> <span
+     class=GramE>поз</span>. 4 – локальных перемещений в <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b>
+     (оболочки) как функций локальной координаты <b style='mso-bidi-font-weight:
+     normal'><span>&alpha;</span><sub>1</sub></b>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l0 level1 lfo6;
+     tab-stops:list 36.0pt'>кнопка <span class=GramE>в</span> <span
+     class=GramE>поз</span>. 5 – напряжений в слоях <b style='mso-bidi-font-weight:
+     normal'><span lang=EN-US style='mso-ansi-language:EN-US'>CF</span>2</b>
+     (оболочки) как функций локальной координаты <b style='mso-bidi-font-weight:
+     normal'><span>&alpha;</span><sub>1</sub></b>.</li>
+</ol>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="ID_4"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>3. ИД</i></b><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 3
+(<b style='mso-bidi-font-weight:normal'>3.</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=GramE>ИД<span style='font-weight:normal'>) </span><i
+style='mso-bidi-font-style:normal'><a href="#Pic_2">Меню<span style='font-weight:
+normal'> </span>ПОСТПРОЦЕССОРА</a></i><span style='font-weight:normal'>
+приводит к появлению выпадающего меню, предназначенного для вызова
+инструментария просмотра информации о </span><i style='mso-bidi-font-style:
+normal'>расчетном случае</i><span style='font-weight:normal'>.</span></span></b>
+Эта информация представлена в двух видах: графическом (путь доступа к <span
+class=SpellE>этому</span> режиму показан на <a href="#Pic_2">рис. 2</a>) и
+текстовом (путь доступа к этому режиму показан на рис. 5).</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name="Pic_5"></a><!--[if gte vml 1]><v:shape
+ id="_x0000_i1058" type="#_x0000_t75" style='width:450pt;height:162pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image055.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=750 height=270
+src="WT_5_3_3.files/image055.png" v:shapes="_x0000_i1058"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1058"
+  DrawAspect="Content" ObjectID="_1599215554">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 5</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Графическое
+представление информации о расчетном случае аналогично тому, что было описано в
+соответствующих разделах (<b style='mso-bidi-font-weight:normal'>3.</b></span><b
+style='mso-bidi-font-weight:normal'> </b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><a href="WT_5_3_1_3.htm#CN_3"><span
+class=GramE>CN</span></a></span></b><span class=GramE>;<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1059"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image057.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=16 height=16
+src="WT_5_3_3.files/image057.png" v:shapes="_x0000_i1059"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1059"
+  DrawAspect="Content" ObjectID="_1599215555">
+ </o:OLEObject>
+</xml><![endif]--><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span style='mso-spacerun:yes'> </span></i>4.</b></span><b
+style='mso-bidi-font-weight:normal'> </b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><a href="WT_5_3_1_3.htm#LD_4"><span
+class=GramE>LD</span></a></span></b><span class=GramE>;<span
+style='mso-spacerun:yes'>  </span><!--[if gte vml 1]><v:shape id="_x0000_i1060"
+ type="#_x0000_t75" style='width:12pt;height:12pt' o:ole="" o:bordertopcolor="this"
+ o:borderleftcolor="this" o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image059.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=16 height=16
+src="WT_5_3_3.files/image059.png" v:shapes="_x0000_i1060"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1060"
+  DrawAspect="Content" ObjectID="_1599215556">
+ </o:OLEObject>
+</xml><![endif]--><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span style='mso-spacerun:yes'> </span></i>5.</b></span><b
+style='mso-bidi-font-weight:normal'> </b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><a href="WT_5_3_1_3.htm#LD_5"><span
+class=GramE>LD</span></a></span></b><span class=GramE>), посвященных технологии
+работы с <b style='mso-bidi-font-weight:normal'>ПРЕПРОЦЕССОРОМ</b> системы.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>В текстовом режиме вызывается
+редактор с загрузкой выбранного из меню файла. Следует заметить, что все файлы <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>расчетного
+случая</i></b> загружаются<b style='mso-bidi-font-weight:normal'>
+ПОСТПРОЦЕССОРОМ</b> системы лишь для просмотра.</p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Spravka_5"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>4.
+Справка<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Позиция 4 (<b
+style='mso-bidi-font-weight:normal'>4.</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=GramE>Справка) <i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i><i
+style='mso-bidi-font-style:normal'><span style='font-weight:normal'> </span></i><span
+style='font-weight:normal'>предназначена для вызова инструкции пользователя и
+информации о версии программы.</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="PrePROC_5"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1061" type="#_x0000_t75" style='width:18pt;height:12pt' o:ole=""
+ o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image013.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=33 height=18
+src="WT_5_3_3.files/image013.png" v:shapes="_x0000_i1061"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1061"
+  DrawAspect="Content" ObjectID="_1599215557">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span>5. <span class=SpellE>ПреПРОЦ</span>.<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 5
+(<!--[if gte vml 1]><v:shape id="_x0000_i1062" type="#_x0000_t75" style='width:18pt;
+ height:12pt' o:ole="" o:bordertopcolor="this" o:borderleftcolor="this"
+ o:borderbottomcolor="this" o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image013.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=33 height=18
+src="WT_5_3_3.files/image013.png" v:shapes="_x0000_i1062"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1062"
+  DrawAspect="Content" ObjectID="_1599215558">
+ </o:OLEObject>
+</xml><![endif]--> <b style='mso-bidi-font-weight:normal'>5.</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE><span class=GramE>ПреПРОЦ</span></span><span
+class=GramE>.<span style='font-weight:normal'>)</span></span></b> <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i></b><i
+style='mso-bidi-font-style:normal'> </i>приводит к выходу из <b
+style='mso-bidi-font-weight:normal'>ПОСТПРОЦЕССОРА</b> и автоматической
+загрузке <b style='mso-bidi-font-weight:normal'>ПРЕПРОЦЕССОРА</b> системы.<b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><a name="Exit_6"></a><b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>6.
+Выход<o:p></o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>Выбор позиции 6
+(<b style='mso-bidi-font-weight:normal'>6.</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=GramE>Выход) <i style='mso-bidi-font-style:normal'><a
+href="#Pic_2">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i><i
+style='mso-bidi-font-style:normal'><span style='font-weight:normal'> </span></i><span
+style='font-weight:normal'>приводит к выходу из </span>ПОСТПРОЦЕССОРА<span
+style='font-weight:normal'> в <a href="WT_5_2.htm#ShellMenu">программную
+оболочку системы</a>.</span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'><o:p>&nbsp;</o:p></i></b></p>
+
+<h4 style='margin-left:35.4pt'><a name="Univers_Organ_Upravlen"></a><span
+style='mso-fareast-font-family:"Times New Roman"'>5.3.3.3. Универсальные органы
+управления ПОСТПРОЦЕССОРА<o:p></o:p></span></h4>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Группа “<b style='mso-bidi-font-weight:
+normal'>Универсальные органы управления ПОСТПРОЦЕССОРА</b>” (<a href="#Pic_1">рис.1,
+поз. 2</a>; рис. 6) предназначена для управления общими режимами работы <b
+style='mso-bidi-font-weight:normal'>ОТРИСОВЩИКА</b>.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1063" type="#_x0000_t75" style='width:304.5pt;height:46.5pt'
+ o:ole="" o:bordertopcolor="this" o:borderleftcolor="this" o:borderbottomcolor="this"
+ o:borderrightcolor="this">
+ <v:imagedata src="WT_5_3_3.files/image062.png" o:title=""/>
+ <w:bordertop type="single" width="4"/>
+ <w:borderleft type="single" width="4"/>
+ <w:borderbottom type="single" width="4"/>
+ <w:borderright type="single" width="4"/>
+</v:shape><![endif]--><![if !vml]>
+<img border=1 width=508 height=77
+src="WT_5_3_3.files/image062.png" v:shapes="_x0000_i1063"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1063"
+  DrawAspect="Content" ObjectID="_1599215559">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 6</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>На рис. 6 <span class=GramE>в</span>
+<span class=GramE>поз</span> 1-5 показаны органы управления, отличающиеся от
+стандартных <b style='mso-bidi-font-weight:normal'>Универсальных органов
+управления ОТРИСОВЩИКА</b>.</p>
+
+<p class=MsoNormal>Кнопки на рис. 6 имеют следующее назначение:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo9;
+     tab-stops:list 36.0pt'><span class=GramE>Кнопка <!--[if gte vml 1]><v:shape
+      id="_x0000_i1064" type="#_x0000_t75" style='width:34.5pt;height:15pt'
+      o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image064.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=58 height=25
+     src="WT_5_3_3.files/image064.png" v:shapes="_x0000_i1064"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1064"
+       DrawAspect="Content" ObjectID="_1599215560">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span>в поз. 1 - для
+     загрузки файла протокола <b style='mso-bidi-font-weight:normal'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>RES</span></b><span lang=EN-US>
+     </span>работы <b style='mso-bidi-font-weight:normal'>ПРОЦЕССОРА</b>
+     системы в<span style='mso-spacerun:yes'>  </span><b style='mso-bidi-font-weight:
+     normal'>РЕДАКТОР<span style='mso-spacerun:yes'>  </span></b>для просмотра
+     (эту загрузку можно осуществить и с помощью позиции 4 (4.</span> <span
+     class=GramE><b style='mso-bidi-font-weight:normal'>ИД</b>) <b
+     style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><a
+     href="#Pic_2">Меню<span style='font-weight:normal'> </span>ПОСТПРОЦЕССОРА</a></i></b>);</span></li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo9;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1065"
+      type="#_x0000_t75" style='width:21.75pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image066.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=36 height=25
+     src="WT_5_3_3.files/image066.png" v:shapes="_x0000_i1065"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1065"
+       DrawAspect="Content" ObjectID="_1599215561">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> поз. 2 (альтернатива – комбинация клавиш &lt;<b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>Ctrl</span></b><span
+     style='font-family:Symbol;mso-bidi-font-family:Symbol'><b style='mso-bidi-font-weight:normal'>+</b></span><span
+     style='mso-bidi-font-family:Symbol'><span class="style1"><strong>стрелка 
+	влево</strong></span>&gt;</span>) - для перехода к
+     предыдущей <a href="WT_5_3_2.htm#M_2_4">порции</a> результатов расчета;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo9;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1066"
+      type="#_x0000_t75" style='width:21.75pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image068.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=36 height=25
+     src="WT_5_3_3.files/image068.png" v:shapes="_x0000_i1066"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1066"
+       DrawAspect="Content" ObjectID="_1599215562">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> поз. 3 (альтернатива – комбинация клавиш &lt;<b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ansi-language:
+     EN-US'>Ctrl</span><span
+     style='font-family:Symbol;mso-bidi-font-family:Symbol'>+</span><span
+     style='mso-bidi-font-family:Symbol' class="style1">стрелка вправо</span></b><span
+     style='mso-bidi-font-family:Symbol'>&gt;</span>) - для перехода к
+     следующей <a href="WT_5_3_2.htm#M_2_4">порции</a> результатов расчета;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo9;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1067"
+      type="#_x0000_t75" style='width:21.75pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image070.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=36 height=25
+     src="WT_5_3_3.files/image070.png" v:shapes="_x0000_i1067"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1067"
+       DrawAspect="Content" ObjectID="_1599215563">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span>или <!--[if gte vml 1]><v:shape
+      id="_x0000_i1068" type="#_x0000_t75" style='width:22.5pt;height:15pt'
+      o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image072.png" o:title=""/>
+     </v:shape><![endif]--><![if !vml]>
+	<img border=0 width=38 height=25
+     src="WT_5_3_3.files/image072.png" v:shapes="_x0000_i1068"><![endif]><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1068"
+       DrawAspect="Content" ObjectID="_1599215564">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 4
+     (кнопка-переключатель) – для включения<span style='mso-spacerun:yes'> 
+     </span>(<!--[if gte vml 1]><v:shape id="_x0000_i1069" type="#_x0000_t75"
+      style='width:21.75pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image070.png" o:title=""/>
+     </v:shape><![endif]-->
+	<img src="WT_5_3_3.files/image070.png" width="36" height="25"><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1069"
+       DrawAspect="Content" ObjectID="_1599215565">
+      </o:OLEObject>
+     </xml><![endif]-->) или выключения (<!--[if gte vml 1]><v:shape id="_x0000_i1070"
+      type="#_x0000_t75" style='width:22.5pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image072.png" o:title=""/>
+     </v:shape><![endif]-->
+	<img src="WT_5_3_3.files/image072.png" width="38" height="25"><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1070"
+       DrawAspect="Content" ObjectID="_1599215566">
+      </o:OLEObject>
+     </xml><![endif]-->) режима масштабирования результатов расчета для <b
+     style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>всех</i></b>
+     просматриваемых элементов в текущем режиме <span class=SpellE>отрисовки</span>
+     глобально по <b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+     normal'>всем</i></b> <a href="WT_5_3_2.htm#M_2_4">порциям</a>;</li>
+ <li class=MsoNormal style='text-align:justify;mso-list:l2 level1 lfo9;
+     tab-stops:list 36.0pt'>Кнопка <!--[if gte vml 1]><v:shape id="_x0000_i1071"
+      type="#_x0000_t75" style='width:21.75pt;height:15pt' o:ole="">
+      <v:imagedata src="WT_5_3_3.files/image074.png" o:title=""/>
+     </v:shape><![endif]-->
+	<img src="WT_5_3_3.files/image074.png" width="36" height="25"><!--[if gte mso 9]><xml>
+      <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1071"
+       DrawAspect="Content" ObjectID="_1599215567">
+      </o:OLEObject>
+     </xml><![endif]--><span style='mso-spacerun:yes'> </span><span
+     class=GramE>в</span> <span class=GramE>поз</span>. 5 – для определения
+     номера текущей <a href="WT_5_3_2.htm#M_2_4">порции</a> результатов
+     расчета.</li>
+</ol>
+
+<p class=MsoNormal style='margin-left:1.0cm;text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>При нажатии на кнопку <!--[if gte vml 1]><v:shape
+ id="_x0000_i1072" type="#_x0000_t75" style='width:21.75pt;height:15pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image074.png" o:title=""/>
+</v:shape><![endif]-->
+<img src="WT_5_3_3.files/image074.png" width="36" height="25"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1072"
+  DrawAspect="Content" ObjectID="_1599215568">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-spacerun:yes'> </span><span class=GramE>в</span>
+<span class=GramE>поз</span>. 5 появляется следующее окно:</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1073" type="#_x0000_t75" style='width:375pt;height:208.5pt' o:ole="">
+ <v:imagedata src="WT_5_3_3.files/image076.png" o:title=""/>
+</v:shape><![endif]-->
+<img src="WT_5_3_3.files/image076.png" width="694" height="386"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1073"
+  DrawAspect="Content" ObjectID="_1599215570">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'>Рис. 7</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>В левой <span class=GramE>колонке</span>
+изображенной на рис. 7 таблице – номера <a href="WT_5_3_2.htm#M_2_4">порций</a>
+результатов расчета (звездочкой обозначена текущая порция); в правой колонке – <span
+class=SpellE>соответствующее</span> значение методического параметра (в
+зависимости от номера решаемой задачи – это <span class=SpellE>параметр</span> <span
+class=SpellE>нагружения</span>, текущее время; частота возбуждающей нагрузки).</p>
+
+</div>
+
+</body>
+
+</html>
