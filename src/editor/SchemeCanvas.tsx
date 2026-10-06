@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type PointerEvent, type WheelEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type WheelEvent } from "react";
 import type { Project } from "../model";
 import type { AnalysisSuccess } from "../solver";
 import type { Selection } from "./projectActions";
@@ -16,6 +16,7 @@ interface Props {
   result: AnalysisSuccess | null;
   resultLayer: ResultLayer;
   deformationScale: number;
+  onResultLayer?: (layer: ResultLayer) => void;
   onSelect: (selection: Selection) => void;
   onCreateNode: (x: number, y: number) => void;
   onCreateElement: (nodeId: string) => void;
@@ -26,8 +27,23 @@ const WIDTH = 900;
 const HEIGHT = 560;
 
 export function SchemeCanvas(props: Props) {
+  const [diagramScale, setDiagramScale] = useState(1);
+  const [diagramNumbers, setDiagramNumbers] = useState(true);
+  const [showLoads, setShowLoads] = useState(false);
+  const diagramMode = !!props.result && ["axial", "shear", "moment"].includes(props.resultLayer);
   const svgRef = useRef<SVGSVGElement>(null);
-  const [view, setView] = useState({ x: 2, y: 1.5, scale: 90 });
+  const fitView = () => {
+    const nodes = props.project.model.nodes;
+    if (!nodes.length) return { x: 2, y: 1.5, scale: 90 };
+    const xs = nodes.map(n => n.x), ys = nodes.map(n => n.y);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const minY = Math.min(...ys), maxY = Math.max(...ys);
+    const span = Math.max(maxX - minX, maxY - minY) || 4;
+    return { x: (minX + maxX) / 2, y: (minY + maxY) / 2,
+      scale: Math.min((WIDTH - 240) / Math.max(maxX - minX, span / 4), (HEIGHT - 240) / Math.max(maxY - minY, span / 4)) };
+  };
+  const [view, setView] = useState(fitView);
+  useEffect(() => { setView(fitView()); }, [props.project.metadata.id]);
   const [drag, setDrag] = useState<{ type: "pan"; px: number; py: number; x: number; y: number } | { type: "node"; id: string; x: number; y: number } | null>(null);
   const [preview, setPreview] = useState<{ id: string; x: number; y: number } | null>(null);
 
@@ -92,7 +108,7 @@ export function SchemeCanvas(props: Props) {
   const onWheel = (event: WheelEvent<SVGSVGElement>) => {
     event.preventDefault();
     const before = world(event.clientX, event.clientY);
-    const nextScale = Math.max(20, Math.min(500, view.scale * Math.exp(-event.deltaY * 0.001)));
+    const nextScale = Math.max(1e-6, Math.min(1e9, view.scale * Math.exp(-event.deltaY * 0.001)));
     const rect = event.currentTarget.getBoundingClientRect();
     const sx = (event.clientX - rect.left) * WIDTH / rect.width;
     const sy = (event.clientY - rect.top) * HEIGHT / rect.height;
@@ -101,9 +117,18 @@ export function SchemeCanvas(props: Props) {
 
   const resultByElement = new Map(props.result?.elements.map((item) => [item.elementId, item]) ?? []);
   const resultValues = props.result?.elements.flatMap((item) => item.diagram.map((point) => props.resultLayer === "axial" ? point.axialForce : props.resultLayer === "shear" ? point.shearForce : point.bendingMoment)) ?? [];
-  const diagramMax = Math.max(1, ...resultValues.map((value) => Math.abs(value)));
+  const diagramMax = Math.max(Number.EPSILON, ...resultValues.map((value) => Math.abs(value)));
 
   return <div className="canvas-wrap">
+    {props.result && props.onResultLayer && <div className="scheme-result-controls">
+      <strong>Эпюры вдоль стержней</strong>
+      {(["axial", "shear", "moment"] as const).map(layer => <button key={layer} aria-pressed={props.resultLayer === layer} className={props.resultLayer === layer ? "active" : ""} onClick={() => props.onResultLayer?.(layer)}>{{axial:"N, кН",shear:"Q, кН",moment:"M, кН·м"}[layer]}</button>)}
+      <button onClick={() => props.onResultLayer?.("none")}>Схема</button>
+      {diagramMode && <><label>Высота эпюр <input type="range" min="0.25" max="2" step="0.05" value={diagramScale} onChange={event => setDiagramScale(Number(event.target.value))}/></label>
+        <label><input type="checkbox" checked={diagramNumbers} onChange={event => setDiagramNumbers(event.target.checked)}/> Значения</label>
+        <label><input type="checkbox" checked={showLoads} onChange={event => setShowLoads(event.target.checked)}/> Нагрузки</label></>}
+    </div>}
+
     <svg ref={svgRef} className={`editor-canvas tool-${props.tool}`} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} onPointerDown={onBackgroundDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onWheel={onWheel}>
       <defs>
         <marker id="load-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" /></marker>
@@ -115,7 +140,7 @@ export function SchemeCanvas(props: Props) {
         if (!ni || !nj) return null;
         const a = screen(ni.x, ni.y); const b = screen(nj.x, nj.y);
         const selected = props.selection?.kind === "element" && props.selection.id === element.id;
-        const load = props.project.loadCases[0]?.elementLoads.find((item) => item.elementId === element.id);
+        const load = diagramMode && !showLoads ? undefined : props.project.loadCases[0]?.elementLoads.find((item) => item.elementId === element.id);
         const dx = b.x - a.x; const dy = b.y - a.y; const len = Math.hypot(dx, dy) || 1; const nx = dy / len; const ny = -dx / len;
         return <g key={element.id} data-object="element" onPointerDown={(event) => { event.stopPropagation(); props.onSelect({ kind: "element", id: element.id }); }}>
           <line className="hit-line" x1={a.x} y1={a.y} x2={b.x} y2={b.y} />
@@ -132,7 +157,7 @@ export function SchemeCanvas(props: Props) {
         const shown = displayNode(node.id)!; const p = screen(shown.x, shown.y);
         const selected = props.selection?.kind === "node" && props.selection.id === node.id;
         const support = props.project.model.supports.find((item) => item.nodeId === node.id);
-        const load = props.project.loadCases[0]?.nodalLoads.find((item) => item.nodeId === node.id);
+        const load = diagramMode && !showLoads ? undefined : props.project.loadCases[0]?.nodalLoads.find((item) => item.nodeId === node.id);
         return <g key={node.id} data-object="node" onPointerDown={(event) => {
           event.stopPropagation();
           if (props.tool === "element") props.onCreateElement(node.id);
@@ -156,10 +181,24 @@ export function SchemeCanvas(props: Props) {
       })}
       {props.result && ["axial","shear","moment"].includes(props.resultLayer) && props.project.model.elements.map((element) => {
         const ni=props.project.model.nodes.find((n)=>n.id===element.nodeI)!; const nj=props.project.model.nodes.find((n)=>n.id===element.nodeJ)!; const a=screen(ni.x,ni.y); const b=screen(nj.x,nj.y); const dx=b.x-a.x; const dy=b.y-a.y; const l=Math.hypot(dx,dy); const nx=dy/l; const ny=-dx/l; const er=resultByElement.get(element.id)!;
-        const points=er.diagram.map((point,index)=>{const t=index/(er.diagram.length-1); const value=props.resultLayer==="axial"?point.axialForce:props.resultLayer==="shear"?point.shearForce:point.bendingMoment; const off=value/diagramMax*70; return `${a.x+dx*t+nx*off},${a.y+dy*t+ny*off}`;}).join(" ");
-        return <polyline key={element.id} className={`diagram ${props.resultLayer}`} points={points}/>;
+        const points=er.diagram.map((point)=>{const t=point.x/er.length; const value=props.resultLayer==="axial"?point.axialForce:props.resultLayer==="shear"?point.shearForce:point.bendingMoment; const off=value/diagramMax*70*diagramScale; return `${a.x+dx*t+nx*off},${a.y+dy*t+ny*off}`;}).join(" ");
+        return <g key={element.id} className="member-epure" style={{pointerEvents:"none"}}>
+          <polygon className={`diagram-fill ${props.resultLayer}`} points={`${a.x},${a.y} ${points} ${b.x},${b.y}`}/>
+          {er.diagram.filter((_,index)=>index%2===0).map((point,index)=>{
+            const t=point.x/er.length, value=props.resultLayer==="axial"?point.axialForce:props.resultLayer==="shear"?point.shearForce:point.bendingMoment;
+            const off=value/diagramMax*70*diagramScale;
+            return <line key={index} className={`diagram-ordinate ${props.resultLayer}`} x1={a.x+dx*t} y1={a.y+dy*t} x2={a.x+dx*t+nx*off} y2={a.y+dy*t+ny*off}/>;
+          })}
+          <polyline className={`diagram ${props.resultLayer}`} points={`${a.x},${a.y} ${points} ${b.x},${b.y}`}/>
+          {diagramNumbers && [er.diagram[0]!, er.diagram[er.diagram.length-1]!].map((point, index) => {
+            const value = props.resultLayer === "axial" ? point.axialForce : props.resultLayer === "shear" ? point.shearForce : point.bendingMoment;
+            const t = point.x / er.length, off = value / diagramMax * 70 * diagramScale;
+            return <text key={index} className="member-label" x={a.x+dx*t+nx*off+(index? -8:8)} y={a.y+dy*t+ny*off-8} textAnchor={index?"end":"start"}>{(value/1000).toLocaleString("ru-RU",{maximumFractionDigits:3})}</text>;
+          })}
+        </g>;
       })}
     </svg>
-    <div className="canvas-status">Масштаб вида: {view.scale.toFixed(0)} px/м · сетка {props.gridStep} м · X →, Y ↑</div>
+    <button className="fit-scheme-button" onClick={() => setView(fitView())}>Вписать схему</button>
+    <div className="canvas-status">Масштаб вида: {view.scale.toLocaleString("ru-RU", {maximumFractionDigits:2})} px/м · сетка {props.gridStep} м{["axial","shear","moment"].includes(props.resultLayer) && ` · Эпюра вдоль стержней: ${props.resultLayer === "moment" ? "кН·м" : "кН"}`} · X →, Y ↑</div>
   </div>;
 }

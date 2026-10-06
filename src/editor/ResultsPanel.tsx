@@ -1,7 +1,10 @@
+import { ResultsDiagrams } from "./ResultsDiagrams";
+import type { Project } from "../model";
 import type { AnalysisResult } from "../solver";
 import type { ResultLayer } from "./SchemeCanvas";
 
 interface Props {
+  project: Project;
   analysis: AnalysisResult | null;
   stale: boolean;
   layer: ResultLayer;
@@ -12,7 +15,7 @@ interface Props {
 
 const f = (value: number) => value.toExponential(5);
 
-export function ResultsPanel({ analysis, stale, layer, deformationScale, onLayer, onDeformationScale }: Props) {
+export function ResultsPanel({ project, analysis, stale, layer, deformationScale, onLayer, onDeformationScale }: Props) {
   return <section className={`results-dock panel ${stale ? "stale" : ""}`}>
     <div className="panel-title"><h2>Результаты</h2>{analysis?.ok && <span>{analysis.solverVersion}</span>}</div>
     {!analysis && <div className="results-empty">Выполните расчёт корректной модели. Результаты показываются только после успешного решения.</div>}
@@ -20,6 +23,7 @@ export function ResultsPanel({ analysis, stale, layer, deformationScale, onLayer
     {analysis?.ok && <>
       {stale && <div className="stale-banner">Результаты неактуальны: модель изменена. Пересчитайте схему.</div>}
       <div className="result-controls">
+        <strong>На расчётной схеме:</strong>
         <button className={layer==="none"?"active":""} onClick={()=>onLayer("none")}>Таблицы</button>
         <button className={layer==="deformed"?"active":""} onClick={()=>onLayer("deformed")}>Деформации</button>
         <button className={layer==="axial"?"active":""} onClick={()=>onLayer("axial")}>N, кН</button>
@@ -27,6 +31,7 @@ export function ResultsPanel({ analysis, stale, layer, deformationScale, onLayer
         <button className={layer==="moment"?"active":""} onClick={()=>onLayer("moment")}>M, кН·м</button>
         {layer==="deformed" && <label>Масштаб перемещений × <input type="number" min="0" step="10" value={deformationScale} onChange={(e)=>onDeformationScale(e.target.valueAsNumber)}/></label>}
       </div>
+      {!stale && <ResultsDiagrams project={project} analysis={analysis}/>}
       <div className="results-tables">
         <div><h3>Перемещения</h3><table><thead><tr><th>Узел</th><th>Ux, м</th><th>Uy, м</th><th>Rz, рад</th></tr></thead><tbody>{analysis.displacements.map((item)=><tr key={item.nodeId}><td>{item.nodeId}</td><td>{f(item.ux)}</td><td>{f(item.uy)}</td><td>{f(item.rz)}</td></tr>)}</tbody></table></div>
         <div><h3>Реакции</h3><table><thead><tr><th>Узел</th><th>Rx, кН</th><th>Ry, кН</th><th>Mz, кН·м</th></tr></thead><tbody>{analysis.reactions.map((item)=><tr key={item.nodeId}><td>{item.nodeId}</td><td>{f(item.fx/1000)}</td><td>{f(item.fy/1000)}</td><td>{f(item.mz/1000)}</td></tr>)}</tbody></table></div>
