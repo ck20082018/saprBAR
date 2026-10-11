@@ -1,3 +1,4 @@
+import {useNumberFormat} from "../display/NumberFormat";
 import { ResultsDiagrams } from "./ResultsDiagrams";
 import type { Project } from "../model";
 import type { AnalysisResult } from "../solver";
@@ -13,9 +14,10 @@ interface Props {
   onDeformationScale: (value: number) => void;
 }
 
-const f = (value: number) => value.toExponential(5);
+
 
 export function ResultsPanel({ project, analysis, stale, layer, deformationScale, onLayer, onDeformationScale }: Props) {
+  const {n:f}=useNumberFormat();
   return <section className={`results-dock panel ${stale ? "stale" : ""}`}>
     <div className="panel-title"><h2>Результаты</h2>{analysis?.ok && <span>{analysis.solverVersion}</span>}</div>
     {!analysis && <div className="results-empty">Выполните расчёт корректной модели. Результаты показываются только после успешного решения.</div>}
@@ -37,7 +39,7 @@ export function ResultsPanel({ project, analysis, stale, layer, deformationScale
         <details open><summary>Реакции</summary><div className="result-table-scroll" tabIndex={0}><table><thead><tr><th>Узел</th><th>Rx, кН</th><th>Ry, кН</th><th>Mz, кН·м</th></tr></thead><tbody>{analysis.reactions.map((item)=><tr key={item.nodeId}><td>{project.model.nodes.find(n=>n.id===item.nodeId)?.number??"—"}</td><td>{f(item.fx/1000)}</td><td>{f(item.fy/1000)}</td><td>{f(item.mz/1000)}</td></tr>)}</tbody></table></div></details>
         <details open><summary>Концевые действия узлов на элементы</summary><div className="result-table-scroll" tabIndex={0}><table><thead><tr><th>Элемент</th><th>Fxᵢ</th><th>Fyᵢ</th><th>Mᵢ</th><th>Fxⱼ</th><th>Fyⱼ</th><th>Mⱼ</th></tr></thead><tbody>{analysis.elements.map((item)=><tr key={item.elementId}><td>{project.model.elements.find(e=>e.id===item.elementId)?.number??"—"}</td>{item.localNodeActions.map((value,index)=><td key={index}>{f(value/1000)}</td>)}</tr>)}</tbody></table></div><p className="table-note">Силы — кН, моменты — кН·м. Это действия узлов на элемент; действия элемента на узлы имеют обратный знак.</p></details>
       </div>
-      <div className="sign-rules">Знаки: N&gt;0 — растяжение; dM/dx=Q; M&gt;0 растягивает нижнее волокно; +Rz и +Mz — против часовой стрелки. Остаток равновесия: {analysis.equilibrium.relativeResidual.toExponential(3)}.</div>
+      <div className="sign-rules">Знаки: N&gt;0 — растяжение; dM/dx=Q; M&gt;0 растягивает нижнее волокно; +Rz и +Mz — против часовой стрелки. Остаток равновесия: {f(analysis.equilibrium.relativeResidual)}.</div>
     </>}
   </section>;
 }

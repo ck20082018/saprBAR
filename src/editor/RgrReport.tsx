@@ -1,63 +1,20 @@
+import {useNumberFormat} from "../display/NumberFormat";
+import {formatNumber} from "../display/formatNumber";
+import {ShortRgrReport} from "./ShortRgrReport";
 import type { Project } from "../model";
 import type { AnalysisSuccess } from "../solver";
 import { axialReportData, positiveValue, type RgrOptions } from "./axialReport";
 
-export const reportNumber=(v:number)=> Math.abs(v)<1e-9 ? "0" : Number(v.toPrecision(7)).toLocaleString("ru-RU",{maximumSignificantDigits:7});
-const n=reportNumber;
-const signed=(v:number)=>`${v>1e-9?"+":""}${n(v)}`;
-type Data=Extract<ReturnType<typeof axialReportData>,{ok:true}>;
+export const reportNumber=formatNumber;
+import {Scheme,ChainDiagram} from "./AxialReportFigures";
+import {hasCurrentAreaSizing} from "./areaSizing";
 
-function Scheme({data}:{data:Data}){
-  const px=(x:number)=>65+x/data.total*620;
-  const maxArea=Math.max(...data.rows.map(r=>r.section.area));
-  const nodePositions=new Map([[data.origin.id,0],...data.rows.map(r=>[r.end.id,r.x1] as [string,number])]);
-  return <svg className="rgr-scheme" viewBox="0 0 750 260" role="img" aria-label="Ступенчатый стержень с заделкой и осевыми силами">
-    {data.restraints.map(s=>{const x=px(s.x),side=s.x===data.total?1:-1;return <g key={s.node.id} aria-label={`Заделка в узле ${s.node.number}`}><line x1={x} y1="55" x2={x} y2="190" stroke="#111" strokeWidth="4"/>{Array.from({length:11},(_,i)=><line key={i} x1={x+side*17} y1={65+i*12} x2={x} y2={55+i*12} stroke="#555"/>)}</g>;})}
-    <line x1="65" y1="125" x2="685" y2="125" stroke="#888" strokeDasharray="5 4"/>
-    {data.rows.map(r=>{const height=70*Math.sqrt(r.section.area/maxArea);return <g key={r.member.id}>
-      <rect x={px(r.x0)} y={125-height/2} width={px(r.x1)-px(r.x0)} height={height} fill="none" stroke="#111" strokeWidth="2"/>
-      <text x={px((r.x0+r.x1)/2)} y={110-height/2} textAnchor="middle">{r.section.name}</text>
-      <line x1={px(r.x0)} y1="205" x2={px(r.x1)} y2="205" stroke="#555"/>
-      <line x1={px(r.x0)} y1="193" x2={px(r.x0)} y2="214" stroke="#555"/>
-      <line x1={px(r.x1)} y1="193" x2={px(r.x1)} y2="214" stroke="#555"/>
-      <text x={px((r.x0+r.x1)/2)} y="229" textAnchor="middle">ℓ{r.member.number} = {n(r.length)} м</text>
-    </g>;})}
-    {data.loads.map((l,i)=>{const x=px(nodePositions.get(l.nodeId)!),end=x+Math.sign(l.force)*35;return <g key={i}>
-      <line x1={x} y1="125" x2={end} y2="125" stroke="#9a2518" strokeWidth="2"/>
-      <path d={`M ${end-Math.sign(l.force)*8} 120 L ${end} 125 L ${end-Math.sign(l.force)*8} 130`} fill="none" stroke="#9a2518" strokeWidth="2"/>
-      <text x={x} y="44" textAnchor="middle">{signed(l.force/1000)} кН</text>
-    </g>;})}
-    <text x="65" y="249">x = 0</text><text x="685" y="249" textAnchor="end">x = {n(data.total)} м →</text>
-  </svg>;
-}
-function ChainDiagram({data,kind,confirmed}:{data:Data;kind:"N"|"sigma"|"u";confirmed:boolean}){
-  const px=(x:number)=>65+x/data.total*620;
-  const rows=data.rows;
-  const value=(r:Data["rows"][number],end=false)=>kind==="N"?r.N/1000:kind==="sigma"?r.stress/1e6:(end?r.u1:r.u0)*1000;
-  const max=Math.max(1e-12,...rows.flatMap(r=>[Math.abs(value(r)),Math.abs(value(r,true))]));
-  const py=(v:number)=>95-v/max*48;
-  const points=rows.flatMap(r=>[[px(r.x0),py(value(r))],[px(r.x1),py(value(r,true))]]);
-  const curve=points.map(p=>p.join(",")).join(" ");
-  const title=kind==="N"?"N, кН":kind==="sigma"?"σ, МПа":`u, мм${confirmed?"":" (при принятом E; условно)"}`;
-  return <figure className="rgr-figure"><svg className="rgr-chain-diagram" viewBox="0 0 750 185" role="img" aria-label={`Эпюра ${title} вдоль всего стержня`}>
-    <text x="15" y="22" fontWeight="700">{title}</text>
-    <line x1="65" y1="95" x2="685" y2="95" stroke="#555"/>
-    <polygon points={`65,95 ${curve} 685,95`} fill="#d9e7ed"/>
-    <polyline points={`65,95 ${curve} 685,95`} fill="none" stroke="#163d54" strokeWidth="2"/>
-    {rows.map(r=><g key={r.member.id}>
-      <line x1={px(r.x0)} y1="36" x2={px(r.x0)} y2="150" stroke="#b0b8bc" strokeDasharray="3 3"/>
-      <text x={px((r.x0+r.x1)/2)} y="165" textAnchor="middle">Участок {r.member.number}</text>
-      {kind!=="u" && <text x={px((r.x0+r.x1)/2)} y={py(value(r))+(value(r)<0?16:-8)} textAnchor="middle">{signed(value(r))}</text>}
-    </g>)}
-    {kind==="u"&&[{x:0,v:rows[0]!.u0*1000},...rows.map(r=>({x:r.x1,v:r.u1*1000}))].map((p,i)=><text key={i} x={px(p.x)} y={py(p.v)+(p.v<0?16:-8)} textAnchor={i===0?"start":i===rows.length?"end":"middle"}>{signed(p.v)}</text>)}
-    {[0,...rows.map(r=>r.x1)].map((x,i)=><text key={i} x={px(x)} y="181" textAnchor={i===0?"start":i===rows.length?"end":"middle"}>{n(x)}</text>)}
-    <text x="716" y="181">x, м</text>
-  </svg></figure>;
-}
-
-export function RgrReport({project,analysis,options}:{project:Project;analysis:AnalysisSuccess;options:RgrOptions}){
+export function RgrReport({project,analysis,options,stale=false}:{project:Project;analysis:AnalysisSuccess;options:RgrOptions;stale?:boolean}){
+  const {n,signed}=useNumberFormat();
+  if(stale)return <article className="rgr-document"><p className="rgr-note">Модель изменена: пересчитайте её перед выводом отчёта.</p></article>;
   const data=axialReportData(project,analysis);
   if(!data.ok)return <article className="rgr-document"><h1>Отчёт РГР</h1><p className="rgr-note">{data.reason}</p><p>Для этой схемы доступен обычный отчёт с таблицами и эпюрами N/Q/M. Осевые формулы здесь не применяются.</p></article>;
+  if(options.reportKind==="short")return <ShortRgrReport project={project} data={data} options={options}/>;
   const tension=positiveValue(options.tensionMPa),compression=positiveValue(options.compressionMPa),allowedU=positiveValue(options.displacementMM);
   const required=data.rows.map(r=>({row:r,ratio:r.section.area/data.baseArea,allow:r.N>=0?tension:compression}));
   const canSize=required.every(r=>r.allow!==null);
@@ -75,7 +32,7 @@ export function RgrReport({project,analysis,options}:{project:Project;analysis:A
     </section>
     <section><h2>Исходные данные и расчётная схема</h2>
       <p>{project.metadata.description}</p>
-      <Scheme data={data}/>
+      {options.includeGraphics!==false&&<Scheme data={data}/>}
       <p>Закрепления в узлах {data.restraints.map(s=>s.node.number).join(", ")}; в каждой заделке u = 0. Ось x направлена от узла {data.origin.number} вдоль цепочки. N &gt; 0 — растяжение; N &lt; 0 — сжатие. Полная длина L = {n(data.total)} м.</p>
       <table><thead><tr><th>Участок</th><th>x, м</th><th>ℓ, м</th><th>A, мм²</th><th>A/Aбаз</th><th>E, ГПа</th></tr></thead><tbody>{data.rows.map(r=><tr key={r.member.id}><td>{r.member.number}</td><td>{n(r.x0)}…{n(r.x1)}</td><td>{n(r.length)}</td><td>{n(r.section.area*1e6)}</td><td>{n(r.section.area/data.baseArea)}</td><td>{n(r.material.elasticModulus/1e9)}</td></tr>)}</tbody></table>
       <p>Материал модели: {[...new Set(data.rows.map(r=>r.material.name))].join("; ")}. E {options.modulusConfirmed?"подтверждён пользователем по условию задания":"не подтверждён по условию: численные перемещения ниже условные"}.</p>
@@ -86,18 +43,18 @@ export function RgrReport({project,analysis,options}:{project:Project;analysis:A
       <p className="rgr-formula">ΣFx = 0: ΣR + ΣF = 0; ΣR + ({signedLoads||"0"}) = 0 ⇒ ΣR = {signed(reaction/1000)} кН.</p>
       {data.compatibility.map((c,i)=><div key={i}><p>Условие совместности между заделками в узлах {c.start.node.number} и {c.end.node.number}: uкон − uнач = 0.</p><p className="rgr-formula">Σ Nᵢℓᵢ/(EᵢAᵢ) = 0; участки: {c.segments.map(r=>r.member.number).join(", ")}.</p><p className="rgr-formula">{c.coefficients.map((a,j)=>`${n(a*1e6)} × R(узел ${data.restraints[j]!.node.number})`).join(" + ")} = {n(c.rhs*1000)} мм (R в кН).</p><p className="rgr-formula">Подстановка: {c.coefficients.map((a,j)=>`(${n(a*1e6)} × ${signed(data.restraints[j]!.reaction/1000)})`).join(" + ")} = {n(c.rhs*1000)} мм. Проверка ΣΔℓ = {n(c.residual*1000)} мм.</p></div>)}
       <p>Решение системы:</p><table><thead><tr><th>Заделка, узел</th><th>x, м</th><th>R, кН</th><th>u, мм</th></tr></thead><tbody>{data.restraints.map(s=><tr key={s.node.id}><td>{s.node.number}</td><td>{n(s.x)}</td><td>{signed(s.reaction/1000)}</td><td>0</td></tr>)}</tbody></table>
-      <p>ΣFy = 0 ⇒ Ry = 0; ΣMz = 0 ⇒ Mзад = 0: все нагрузки действуют вдоль оси. Проверка: R + ΣF = {n((reaction+sum)/1000)} кН. Остаток равновесия ядра: {analysis.equilibrium.relativeResidual.toExponential(3)}.</p>
+      <p>ΣFy = 0 ⇒ Ry = 0; ΣMz = 0 ⇒ Mзад = 0: все нагрузки действуют вдоль оси. Проверка: R + ΣF = {n((reaction+sum)/1000)} кН. Остаток равновесия ядра: {n(analysis.equilibrium.relativeResidual)}.</p>
     </section>
     <section><h2>2. Расчёт по участкам</h2><p>Метод сечений: рассматривается часть справа от сечения. −N + ΣFсправа + ΣRсправа = 0, поэтому N = ΣFсправа + ΣRсправа. Реакции заделок входят в сумму внешних сил. Далее σ = N/A; Δℓ = Nℓ/(EA); uкон = uнач + Δℓ. Формулы относятся к постоянному осевому усилию и линейно упругому материалу.</p>
       {data.rows.map(r=><div className="rgr-section-calculation" key={r.member.id}><h3>Участок {r.member.number}: x = {n(r.x0)}…{n(r.x1)} м</h3>
-        <p className="rgr-formula">N{r.member.number} = {[...r.rightLoads,...r.rightReactions].map(l=>signed(l.force/1000)).join(" ")||"0"} = {signed(r.N/1000)} кН ({r.N>1e-7?"растяжение":r.N< -1e-7?"сжатие":"не нагружен"}).</p>
+        <p className="rgr-formula">N{r.member.number} = {[...r.rightLoads,...r.rightReactions].map(l=>signed(l.force/1000)).join(" ")||"0"} = {signed(r.N/1000)} кН ({r.N>0?"растяжение":r.N<0?"сжатие":"не нагружен"}).</p>
         <p className="rgr-formula">σ{r.member.number} = N/A = ({n(r.N)} Н)/({n(r.section.area*1e6)} мм²) = {signed(r.stress/1e6)} МПа.</p>
         <p className="rgr-formula">Δℓ{r.member.number} = Nℓ/(EA) = ({n(r.N)} × {n(r.length*1000)}) / ({n(r.material.elasticModulus/1e6)} × {n(r.section.area*1e6)}) = {signed(r.delta*1000)} мм.</p>
         <p className="rgr-formula">uкон = {signed(r.u0*1000)} + ({signed(r.delta*1000)}) = {signed(r.u1*1000)} мм.</p>
         <p>По длине участка: u(x) = {signed(r.u0*1000)} + ({signed(r.N)}/({n(r.material.elasticModulus/1e6)} × {n(r.section.area*1e6)})) × (x − {n(r.x0*1000)}), мм; здесь x подставляется в мм.</p>
       </div>)}
     </section>
-    <section><h2>3. Проверки прочности и жёсткости</h2><h3>Подбор площадей по прочности</h3>
+    <section><h2>3. Проверки прочности и жёсткости</h2><h3>{hasCurrentAreaSizing(project,tension,compression)?"Подбор площадей по прочности":"Проверка принятых площадей по прочности"}</h3>
       <p>При Aᵢ = kᵢAбаз условие |Nᵢ|/Aᵢ ≤ [σ]ᵢ даёт Aбаз ≥ |Nᵢ|/(kᵢ[σ]ᵢ). Для растяжения используется [σ]р, для сжатия — [σ]сж.</p>
       {required.map(({row:r,ratio,allow})=><p key={r.member.id} className="rgr-formula">Участок {r.member.number}: Aбаз ≥ {allow===null?"нельзя определить без допускаемого напряжения":`${n(Math.abs(r.N))}/(${n(ratio)} × ${n(allow)}) = ${n(Math.abs(r.N)/(ratio*allow))} мм²`}.</p>)}
       <p>Aбаз,min = {baseRequired===null?"не определено":`${n(baseRequired*1e6)} мм²`}; принято Aбаз = {n(data.baseArea*1e6)} мм².</p>
@@ -106,9 +63,9 @@ export function RgrReport({project,analysis,options}:{project:Project;analysis:A
       <h3>Проверка жёсткости</h3><p>|u|max = {n(data.maximumDisplacement*1000)} мм {options.modulusConfirmed?"":"при принятом в модели E (условное значение)"}. Условие: |u|max ≤ [u].</p>
       <p>{!options.modulusConfirmed?"Проверка жёсткости не завершена: требуется подтвердить E по условию задания.":allowedU===null?"Проверка жёсткости не завершена: допускаемое перемещение [u] не задано.":`Сравнение: ${n(data.maximumDisplacement*1000)} ${data.maximumDisplacement*1000<=allowedU?"≤":" >"} ${n(allowedU)} мм. Жёсткость ${data.maximumDisplacement*1000<=allowedU?"обеспечена":"не обеспечена"}.`}</p>
     </section>
-    <section className="rgr-epures"><h2>4. Эпюры</h2><p>Единая ось x от начала цепочки; участки подписаны в порядке схемы. Положительные значения выше оси, отрицательные ниже. Вертикальные масштабы N, σ и u независимы. Q = 0 и M = 0 на всех участках.</p>
+    {options.includeGraphics!==false&&<section className="rgr-epures"><h2>4. Эпюры</h2><p>Единая ось x от начала цепочки; участки подписаны в порядке схемы. Положительные значения выше оси, отрицательные ниже. Вертикальные масштабы N, σ и u независимы. Q = 0 и M = 0 на всех участках.</p>
       <ChainDiagram data={data} kind="N" confirmed={options.modulusConfirmed}/><ChainDiagram data={data} kind="sigma" confirmed={options.modulusConfirmed}/><ChainDiagram data={data} kind="u" confirmed={options.modulusConfirmed}/>
-    </section>
+    </section>}
     <section><h2>5. Итоговые результаты</h2><p>Реакции заделок: {data.restraints.map(s=>`узел ${s.node.number}: ${signed(s.reaction/1000)} кН`).join("; ")}. Принятая базовая площадь: {n(data.baseArea*1e6)} мм². Наибольшее абсолютное напряжение: {n(Math.max(...data.rows.map(r=>Math.abs(r.stress)))/1e6)} МПа.</p>
       <table><thead><tr><th>Участок</th><th>N, кН</th><th>A, мм²</th><th>σ, МПа</th><th>Δℓ, мм</th><th>uкон, мм</th></tr></thead><tbody>{data.rows.map(r=><tr key={r.member.id}><td>{r.member.number}</td><td>{signed(r.N/1000)}</td><td>{n(r.section.area*1e6)}</td><td>{signed(r.stress/1e6)}</td><td>{signed(r.delta*1000)}</td><td>{signed(r.u1*1000)}</td></tr>)}</tbody></table>
       <p>Перемещение конечного узла: {signed(data.rows.at(-1)!.u1*1000)} мм. Численные деформации относятся к указанному в модели E; {options.modulusConfirmed?"E подтверждён пользователем":"E по условию не подтверждён"}.</p>

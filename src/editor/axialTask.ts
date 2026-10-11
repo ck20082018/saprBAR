@@ -1,3 +1,4 @@
+import {sizingModelSnapshot} from "./areaSizing";
 import type { Project } from "../model";
 import {validateProject} from "../model";
 import {analyzeProject} from "../solver";
@@ -6,7 +7,7 @@ import {positiveValue} from "./axialReport";
 
 export interface TaskRow {number:number;lengthCM:string;ratio:string;areaLabel:string}
 export interface TaskNode {fixed:boolean;fixedSide?:"auto"|"left"|"right";forceKN:string;direction:"none"|"left"|"right"}
-export interface AxialTask {title:string;rows:TaskRow[];nodes:TaskNode[];baseAreaMM2:string;modulusGPa:string;tensionMPa:string;compressionMPa:string;material:string}
+export interface AxialTask {areaSizing?:{taskSnapshot:string;minimumBaseArea:number};title:string;rows:TaskRow[];nodes:TaskNode[];baseAreaMM2:string;modulusGPa:string;tensionMPa:string;compressionMPa:string;material:string}
 export const emptyTaskNode=():TaskNode=>({fixed:false,fixedSide:'auto',forceKN:'0',direction:'none'});
 export const newTaskRow=(number:number):TaskRow=>({number,lengthCM:'',ratio:'1',areaLabel:`A${number}`});
 export const emptyAxialTask=():AxialTask=>({title:'Мой ступенчатый стержень',rows:[newTaskRow(1)],nodes:[emptyTaskNode(),emptyTaskNode()],baseAreaMM2:'',modulusGPa:'',tensionMPa:'',compressionMPa:'',material:''});
@@ -76,8 +77,14 @@ export function projectFromTask(task:AxialTask):Project{
  p.model.elements=task.rows.map((r,i)=>({id:crypto.randomUUID(),number:r.number,nodeI:p.model.nodes[i]!.id,nodeJ:p.model.nodes[i+1]!.id,materialId:p.model.materials[0]!.id,sectionId:p.model.sections[i]!.id,releases:{rotationI:false,rotationJ:false}}));
  p.model.supports=task.nodes.flatMap((n,i)=>n.fixed?[{nodeId:p.model.nodes[i]!.id,ux:true,uy:true,rz:true}]:[]);
  p.loadCases[0]!.nodalLoads=task.nodes.flatMap((n,i)=>n.direction==='none'?[]:[{id:crypto.randomUUID(),nodeId:p.model.nodes[i]!.id,fx:Number(n.forceKN.replace(',','.'))*1000*(n.direction==='right'?1:-1),fy:0,mz:0}]);
+ if(task.areaSizing?.taskSnapshot===sizingTaskSnapshot(task)){p.metadata.areaSizing={modelSnapshot:sizingModelSnapshot(p),minimumBaseArea:task.areaSizing.minimumBaseArea,tensionMPa:positiveValue(task.tensionMPa)!,compressionMPa:positiveValue(task.compressionMPa)!};}
  const validation=validateProject(p);if(!validation.valid)throw Error(validation.diagnostics.filter(d=>d.severity==='error').map(d=>d.message).join(' '));
  return p;
+}
+export const sizingTaskSnapshot=(task:AxialTask)=>JSON.stringify({...task,areaSizing:undefined});
+export function taskWithSizedArea(task:AxialTask):AxialTask {
+ const minimum=sizeTaskArea(task),accepted={...task,baseAreaMM2:String(Math.ceil(minimum))};
+ return {...accepted,areaSizing:{taskSnapshot:sizingTaskSnapshot(accepted),minimumBaseArea:minimum*1e-6}};
 }
 export function sizeTaskArea(task:AxialTask):number{
  const errors=taskErrors(task,true);if(errors.length)throw Error(errors.join(' '));
@@ -106,8 +113,10 @@ export function taskFromProject(p:Project):AxialTask|null {
   rowData.push({e,section,length:b.x-a.x});
  }
  const baseMatch=p.metadata.description.match(/A₀=([\d.,eE+-]+) мм²/)?.[1],base=baseMatch&&positiveValue(baseMatch)?positiveValue(baseMatch)!*1e-6:Math.min(...rowData.map(r=>r.section.area));
- const rows=rowData.map(({e,section,length})=>({number:e.number,lengthCM:String(Number((length*100).toPrecision(12))),ratio:String(Number((section.area/base).toPrecision(12))),areaLabel:section.name}));
+ const rows=rowData.map(({e,section,length})=>({number:e.number,lengthCM:String(length*100),ratio:String(section.area/base),areaLabel:section.name}));
  const taskNodes:TaskNode[]=nodes.map(n=>{const force=lc.nodalLoads.filter(l=>l.nodeId===n.id).reduce((s,l)=>s+l.fx,0);return {fixed:p.model.supports.some(s=>s.nodeId===n.id),fixedSide:(p.metadata.description.match(new RegExp(`(?:Стороны заделок: |;)${nodes.indexOf(n)+1}=(auto|left|right)`))?.[1]??'auto') as NonNullable<TaskNode['fixedSide']>,forceKN:String(Math.abs(force)/1000),direction:Math.abs(force)<1e-12?'none':force<0?'left':'right'};});
  const tension=p.metadata.description.match(/\[σ\]р=([\d.,]+) МПа/)?.[1]??'',compression=p.metadata.description.match(/\[σ\]сж=([\d.,]+) МПа/)?.[1]??'';
- return {...emptyAxialTask(),title:p.metadata.title,rows,nodes:taskNodes,tensionMPa:tension,compressionMPa:compression,baseAreaMM2:String(Number((base*1e6).toPrecision(12))),modulusGPa:String(mat.elasticModulus/1e9),material:mat.name};
+ const task:AxialTask={...emptyAxialTask(),title:p.metadata.title,rows,nodes:taskNodes,tensionMPa:tension,compressionMPa:compression,baseAreaMM2:String(base*1e6),modulusGPa:String(mat.elasticModulus/1e9),material:mat.name};
+ if(p.metadata.areaSizing?.modelSnapshot===sizingModelSnapshot(p))task.areaSizing={taskSnapshot:sizingTaskSnapshot(task),minimumBaseArea:p.metadata.areaSizing.minimumBaseArea};
+ return task;
 }

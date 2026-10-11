@@ -1,3 +1,4 @@
+import {useNumberFormat} from "../display/NumberFormat";
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type WheelEvent } from "react";
 import type { Project } from "../model";
 import type { AnalysisSuccess } from "../solver";
@@ -27,6 +28,7 @@ const WIDTH = 900;
 const HEIGHT = 560;
 
 export function SchemeCanvas(props: Props) {
+  const {n}=useNumberFormat();
   const [diagramScale, setDiagramScale] = useState(1);
   const [diagramNumbers, setDiagramNumbers] = useState(true);
   const [showLoads, setShowLoads] = useState(false);
@@ -193,12 +195,12 @@ export function SchemeCanvas(props: Props) {
           {diagramNumbers && [er.diagram[0]!, er.diagram[er.diagram.length-1]!].map((point, index) => {
             const value = props.resultLayer === "axial" ? point.axialForce : props.resultLayer === "shear" ? point.shearForce : point.bendingMoment;
             const t = point.x / er.length, off = value / diagramMax * 70 * diagramScale;
-            return <text key={index} className="member-label" x={a.x+dx*t+nx*off+(index? -8:8)} y={a.y+dy*t+ny*off-8} textAnchor={index?"end":"start"}>{(value/1000).toLocaleString("ru-RU",{maximumFractionDigits:3})}</text>;
+            return <text key={index} className="member-label" x={a.x+dx*t+nx*off+(index? -8:8)} y={a.y+dy*t+ny*off-8} textAnchor={index?"end":"start"}>{n(value/1000)}</text>;
           })}
         </g>;
       })}
     </svg>
     <button className="fit-scheme-button" onClick={() => setView(fitView())}>Вписать схему</button>
-    <div className="canvas-status">Масштаб вида: {view.scale.toLocaleString("ru-RU", {maximumFractionDigits:2})} px/м · сетка {props.gridStep} м{["axial","shear","moment"].includes(props.resultLayer) && ` · Эпюра вдоль стержней: ${props.resultLayer === "moment" ? "кН·м" : "кН"}`} · X →, Y ↑</div>
+    <div className="canvas-status">Масштаб вида: {n(view.scale)} px/м · сетка {props.gridStep} м{["axial","shear","moment"].includes(props.resultLayer) && ` · Эпюра вдоль стержней: ${props.resultLayer === "moment" ? "кН·м" : "кН"}`} · X →, Y ↑</div>
   </div>;
 }

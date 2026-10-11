@@ -47,7 +47,7 @@ it('отчёт содержит все разделы, три вертикаль
  expect(markup).toContain('Расчётно-графическая работа');
  for(const title of ['Исходные данные и расчётная схема','1. Определение реакций','2. Расчёт по участкам','3. Проверки прочности и жёсткости','4. Эпюры','5. Итоговые результаты'])expect(markup).toContain(title);
  expect(markup.match(/class="rgr-chain-diagram"/g)).toHaveLength(3);
- expect(markup).toContain('611,1111 мм²');expect(markup).toContain('Прочность: обеспечена');
+ expect(markup).toContain('611,111 мм²');expect(markup).toContain('Прочность: обеспечена');
  expect(markup).toContain('требуется подтвердить E');expect(markup).not.toContain('Жёсткость обеспечена');
  expect(markup).not.toMatch(/NaN|Infinity/);
  const missing=renderToStaticMarkup(<RgrReport project={project} analysis={analysis} options={{...options,modulusConfirmed:true}}/>);

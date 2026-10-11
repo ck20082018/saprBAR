@@ -4,6 +4,8 @@ export const APP_VERSION = "0.1.0" as const;
 export type EntityId = string;
 
 export interface ProjectMetadata {
+  /** Optional provenance for a user-requested strength sizing; absent in older projects. */
+  areaSizing?: {modelSnapshot:string;minimumBaseArea:number;tensionMPa:number;compressionMPa:number};
   id: EntityId;
   title: string;
   description: string;

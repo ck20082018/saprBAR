@@ -1,3 +1,4 @@
+import {useNumberFormat} from "../display/NumberFormat";
 import { useState } from "react";
 import type { Project } from "../model";
 import type { AnalysisSuccess, DiagramPoint, ElementAnalysisResult } from "../solver";
@@ -7,12 +8,13 @@ const layers = [
   { key: "shearForce", title: "Qy", unit: "кН", color: "#087e8b" },
   { key: "bendingMoment", title: "Mz", unit: "кН·м", color: "#b76500" }
 ] as const;
-const format = (value: number) => Math.abs(value) < 1e-10 ? "0" : Number(value.toPrecision(5)).toLocaleString("ru-RU", {maximumSignificantDigits:5});
+
 
 export function ElementDiagram({ result, field, title, unit, color, scale=1, numbers=true }: {
   result: ElementAnalysisResult; field: keyof Pick<DiagramPoint,"axialForce"|"shearForce"|"bendingMoment">;
   title: string; unit: string; color: string; scale?: number; numbers?: boolean;
 }) {
+  const {n:format}=useNumberFormat();
   const points = result.diagram;
   const values = points.map(p=>p[field]/1000);
   const max = Math.max(...values.map(Math.abs));
@@ -37,6 +39,7 @@ export function ElementDiagram({ result, field, title, unit, color, scale=1, num
 }
 
 export function ResultsDiagrams({ project, analysis, interactive=true }: {project:Project;analysis:AnalysisSuccess;interactive?:boolean}) {
+  const {n:format}=useNumberFormat();
   const [selected,setSelected] = useState("all");
   const [scale,setScale] = useState(1);
   const [numbers,setNumbers] = useState(true);
@@ -52,7 +55,7 @@ export function ResultsDiagrams({ project, analysis, interactive=true }: {projec
     <h3>Эпюры по стержням</h3>
     {interactive && <div className="epures-controls">
       <label>Стержень <select value={selected} onChange={e=>setSelected(e.target.value)}><option value="all">Все стержни</option>{analysis.elements.map(e=><option key={e.elementId} value={e.elementId}>№ {project.model.elements.find(m=>m.id===e.elementId)?.number}</option>)}</select></label>
-      <label>Масштаб ординат <input type="range" min="0.25" max="1.25" step="0.05" value={scale} onChange={e=>setScale(Number(e.target.value))}/> ×{scale.toFixed(2)}</label>
+      <label>Масштаб ординат <input type="range" min="0.25" max="1.25" step="0.05" value={scale} onChange={e=>setScale(Number(e.target.value))}/> ×{format(scale)}</label>
       <label><input type="checkbox" checked={numbers} onChange={e=>setNumbers(e.target.checked)}/> Числовые значения</label>
     </div>}
     <p className="hint">x идёт от узла i к узлу j. Положительные значения выше оси. Масштаб каждого графика независимый; сравнивайте подписанные значения. Наведите на точку для просмотра координаты и усилия.</p>

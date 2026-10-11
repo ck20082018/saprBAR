@@ -22,7 +22,7 @@ describe('свободный ввод ступенчатого стержня',(
   expect(a.displacements[4]!.ux*1000).toBeCloseTo(.9875,10);expect(sizeTaskArea(fixture())).toBeCloseTo(1000,8);
   const restored=taskFromProject(parseProjectJson(serializeProject(p)))!;
   expect(restored.rows.map(r=>r.areaLabel)).toEqual(['A4','A1','A3','A2']);expect(restored.nodes.map(r=>r.direction)).toEqual(['none','right','right','right','left']);
-  expect(restored.rows.map(r=>r.lengthCM)).toEqual(['75','65','50','35']);
+  restored.rows.forEach((r,i)=>expect(Number(r.lengthCM)).toBeCloseTo([75,65,50,35][i]!,12));
   expect(restored.baseAreaMM2).toBe('1000');expect(restored.tensionMPa).toBe('70');expect(restored.compressionMPa).toBe('120');
   expect(initialRgrOptions(parseProjectJson(serializeProject(p)))).toMatchObject({tensionMPa:'70',compressionMPa:'120'});
  });

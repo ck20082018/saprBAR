@@ -3,6 +3,7 @@ import type { AnalysisSuccess } from "../solver";
 import { RecordReader } from "../legacy/parser";
 
 export interface RgrOptions {
+  reportKind?: "full" | "short"; includeGraphics?: boolean;
   institution: string; discipline: string; student: string; group: string;
   teacher: string; city: string; year: string;
   tensionMPa: string; compressionMPa: string; displacementMM: string;
@@ -24,13 +25,15 @@ export function initialRgrOptions(project: Project): RgrOptions {
     const t=project.metadata.description.match(/\[σ\]р=([\d.,]+) МПа/)?.[1],c=project.metadata.description.match(/\[σ\]сж=([\d.,]+) МПа/)?.[1];
     if(t&&positiveValue(t))tensionMPa=t; if(c&&positiveValue(c))compressionMPa=c;
   }
-  return {institution:"",discipline:"Сопротивление материалов",student:"",group:"",teacher:"",city:"",year:String(new Date().getFullYear()),tensionMPa,compressionMPa,displacementMM:"",modulusConfirmed:false};
+  return {reportKind:"full",includeGraphics:true,institution:"",discipline:"Сопротивление материалов",student:"",group:"",teacher:"",city:"",year:String(new Date().getFullYear()),tensionMPa,compressionMPa,displacementMM:"",modulusConfirmed:false};
 }
 export const positiveValue=(text:string):number|null=>{const value=Number(text.replace(",","."));return Number.isFinite(value)&&value>0?value:null;};
 
 export function axialReportData(project:Project,analysis:AnalysisSuccess){
   const fail=(reason:string)=>({ok:false as const,reason});
-  const loadCase=project.loadCases.find(c=>c.id===project.analysisSettings.activeLoadCaseId)!;
+  const loadCase=project.loadCases.find(c=>c.id===project.analysisSettings.activeLoadCaseId);
+  if(!loadCase)return fail("Расчётный случай нагрузки не найден.");
+  if(project.model.nodes.some(n=>!analysis.displacements.some(d=>d.nodeId===n.id))||project.model.elements.some(e=>!analysis.elements.some(r=>r.elementId===e.id)))return fail("Результаты относятся к другой модели; пересчитайте её.");
   if(loadCase.elementLoads.some(l=>l.qx!==0||l.qy!==0))return fail("Пошаговый осевой отчёт пока поддерживает узловые силы без распределённых нагрузок.");
   const supports=project.model.supports.filter(s=>s.ux||s.uy||s.rz);
   if(!supports.length)return fail("Нужна хотя бы одна опора с закреплённым осевым перемещением.");
@@ -58,6 +61,7 @@ export function axialReportData(project:Project,analysis:AnalysisSuccess){
   const u=(id:string)=>{const d=displacements.get(id)!;return d.ux*tx+d.uy*ty;};
   const loads=loadCase.nodalLoads.map(l=>({nodeId:l.nodeId,force:l.fx*tx+l.fy*ty}));
   const reactions=analysis.reactions.map(r=>({nodeId:r.nodeId,force:r.fx*tx+r.fy*ty}));
+  if(Math.abs([...loads,...reactions].reduce((sum,l)=>sum+l.force,0))>forceScale*1e-8)return fail("Результат не удовлетворяет равновесию актуальной модели; пересчитайте её.");
   let x=0;
   const rows=chain.map(({member,start,end},index)=>{
     const response=analysis.elements.find(e=>e.elementId===member.id)!;
@@ -73,7 +77,7 @@ export function axialReportData(project:Project,analysis:AnalysisSuccess){
   });
   if(rows.some(r=>{
     const response=analysis.elements.find(e=>e.elementId===r.member.id)!;
-    return response.diagram.some(p=>Math.abs(p.shearForce)>forceScale*1e-8||Math.abs(p.bendingMoment)>forceScale*Math.max(total,1)*1e-8||Math.abs(p.axialForce-r.N)>forceScale*1e-8)||Math.abs(r.N-[...r.rightLoads,...r.rightReactions].reduce((s,l)=>s+l.force,0))>forceScale*1e-8;
+    return Math.abs(r.length-Math.hypot(r.end.x-r.start.x,r.end.y-r.start.y))>Math.max(total,1)*1e-9||response.diagram.some(p=>Math.abs(p.shearForce)>forceScale*1e-8||Math.abs(p.bendingMoment)>forceScale*Math.max(total,1)*1e-8||Math.abs(p.axialForce-r.N)>forceScale*1e-8)||Math.abs(r.N-[...r.rightLoads,...r.rightReactions].reduce((s,l)=>s+l.force,0))>forceScale*1e-8;
   }))return fail("Результат не соответствует постоянному осевому усилию; осевой вывод не применён.");
   const positions=new Map([[origin.id,0],...rows.map(r=>[r.end.id,r.x1] as [string,number])]);
   const restraints=supports.map(s=>({node:project.model.nodes.find(n=>n.id===s.nodeId)!,x:positions.get(s.nodeId)!,reaction:reactions.filter(r=>r.nodeId===s.nodeId).reduce((sum,r)=>sum+r.force,0)})).sort((a,b)=>a.x-b.x);

@@ -46,6 +46,11 @@ function validateShape(data: unknown): asserts data is Project {
   requireRecord(data.metadata, "metadata");
   for (const key of ["id", "title", "description", "createdAt", "updatedAt"] as const) requireString(data.metadata[key], `metadata.${key}`);
 
+  if(data.metadata.areaSizing!==undefined){
+    const sizing=data.metadata.areaSizing;requireRecord(sizing,"metadata.areaSizing");requireString(sizing.modelSnapshot,"metadata.areaSizing.modelSnapshot");
+    for(const key of ["minimumBaseArea","tensionMPa","compressionMPa"] as const){requireNumber(sizing[key],`metadata.areaSizing.${key}`);if(sizing[key]<=0)throw new ProjectFormatError(`metadata.areaSizing.${key}: нужно положительное значение.`);}
+  }
+
   requireRecord(data.displayUnits, "displayUnits");
   for (const key of ["length", "force", "stress", "angle"] as const) requireString(data.displayUnits[key], `displayUnits.${key}`);
   if (!(["m", "mm"] as unknown[]).includes(data.displayUnits.length)) throw new ProjectFormatError("displayUnits.length: неподдерживаемая единица.");
