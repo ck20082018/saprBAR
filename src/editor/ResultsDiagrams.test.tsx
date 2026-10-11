@@ -7,7 +7,7 @@ import { PrintReport } from "./PrintReport";
 import { parseProjectJson } from "../model";
 import { analyzeProject } from "../solver";
 
-const project=parseProjectJson(readFileSync(new URL("../../examples/ivanov-corrected/IVANOV_SI.saprbar.json",import.meta.url),"utf8"));
+const project=parseProjectJson(readFileSync(new URL("../../tests/fixtures/ivanov-corrected/IVANOV_SI.saprbar.json",import.meta.url),"utf8"));
 const analysis=analyzeProject(project);
 if(!analysis.ok) throw new Error("Расчёт Иванова не выполнен");
 

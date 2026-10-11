@@ -49,7 +49,7 @@ describe("validateProject", () => {
 
 describe("project JSON", () => {
   it("читает поставляемый файловый пример", () => {
-    const source = readFileSync(new URL("../../examples/portal-frame.saprbar.json", import.meta.url), "utf8");
+    const source = readFileSync(new URL("../../tests/fixtures/portal-frame.saprbar.json", import.meta.url), "utf8");
     expect(parseProjectJson(source)).toEqual(exampleProject);
   });
 

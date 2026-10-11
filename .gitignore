@@ -1,7 +1,17 @@
+# Local dependencies and generated builds
 node_modules/
 dist/
 coverage/
-.env
 *.tsbuildinfo
 *.log
 .DS_Store
+._*
+
+# Local archive: old versions, exercises and exported reports
+/gitignore/
+/output/
+
+# Local environment files (keep the template)
+.env
+.env.*
+!.env.example

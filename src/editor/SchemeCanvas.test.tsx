@@ -7,7 +7,7 @@ import { importLegacyFiles } from "../legacy/importLegacy";
 import { analyzeProject } from "../solver";
 
 it("вписывает Иванова в SVG и замыкает эпюры на ось стержня", () => {
-  const file=(ext:string)=>({name:`IVANOV_SI.${ext}`,text:readFileSync(new URL(`../../examples/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
+  const file=(ext:string)=>({name:`IVANOV_SI.${ext}`,text:readFileSync(new URL(`../../tests/fixtures/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
   const imported=importLegacyFiles(file("CN"),file("LD"),file("MD"),{variant:"B",unitSystem:"SI"});
   if(!imported.ok) throw new Error("Ошибка комплекта");
   const result=analyzeProject(imported.project); if(!result.ok) throw new Error("Ошибка расчёта");
@@ -27,7 +27,7 @@ it("не разрешает проверку импорта до выбора е
 });
 
 it.each([0, Math.PI/2, Math.PI/4])("эпюра следует стержню при угле %s, ординаты перпендикулярны его оси", (angle) => {
-  const file=(ext:string)=>({name:`IVANOV_SI.${ext}`,text:readFileSync(new URL(`../../examples/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
+  const file=(ext:string)=>({name:`IVANOV_SI.${ext}`,text:readFileSync(new URL(`../../tests/fixtures/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
   const imported=importLegacyFiles(file("CN"),file("LD"),file("MD"),{variant:"B",unitSystem:"SI"});
   if(!imported.ok) throw new Error("Ошибка комплекта");
   const result=analyzeProject(imported.project); if(!result.ok) throw new Error("Ошибка расчёта");

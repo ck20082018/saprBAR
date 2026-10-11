@@ -5,7 +5,7 @@ import { parseProjectJson, serializeProject } from "../model";
 import { analyzeProject } from "../solver";
 import { createLegacyTemplate } from "./templates";
 
-const fixture=(name:string)=>({name,text:readFileSync(new URL(`../../examples/legacy-synthetic/${name}`,import.meta.url),"utf8")});
+const fixture=(name:string)=>({name,text:readFileSync(new URL(`../../tests/fixtures/legacy-synthetic/${name}`,import.meta.url),"utf8")});
 
 describe("импорт документированной структуры SAPR-BAR",()=>{
   it.each(["B","R"] as const)("создаёт валидируемый синтетический комплект варианта %s",(variant)=>{

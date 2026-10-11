@@ -4,7 +4,7 @@ import { importLegacyFiles } from "./importLegacy";
 import { analyzeProject } from "../solver";
 
 it("исправленный Иванов SI: размеры, баланс, усилия и аналитические перемещения", () => {
-  const file = (ext: string) => ({name:`IVANOV_SI.${ext}`, text:readFileSync(new URL(`../../examples/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
+  const file = (ext: string) => ({name:`IVANOV_SI.${ext}`, text:readFileSync(new URL(`../../tests/fixtures/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});
   const imported = importLegacyFiles(file("CN"),file("LD"),file("MD"),{variant:"B",unitSystem:"SI"});
   expect(imported.ok).toBe(true); if(!imported.ok) throw new Error(JSON.stringify(imported.issues));
   expect(imported.report.blockers).toEqual([]);
