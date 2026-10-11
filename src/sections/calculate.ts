@@ -1,4 +1,5 @@
 import polygonClipping from 'polygon-clipping';
+import {validateExpressions} from './expressions';
 import type {Moments,SectionGeometry,SectionPart,PartResult,SectionResult,Edge,Point} from './types';
 import {add,mul,rotate,vertices,edgesOf,pointOn,tangent,intersections,parameter,trimEdge,inside,norm,extrema,cross} from './geometry';
 export class SectionError extends Error {}
@@ -44,6 +45,7 @@ export function assertSectionGeometry(value:unknown):asserts value is SectionGeo
   }
  }
  if(!g.parts.some(p=>!p.cut))throw new SectionError('Добавьте хотя бы одну часть материала.');
+ validateExpressions(g);
 }
 function boundaries(parts:PartResult[]):Edge[]{
  const all=parts.flatMap((r,index)=>r.edges.map(edge=>({edge,index}))),scale=Math.max(...all.flatMap(({edge:e})=>e.kind==='arc'?[e.r]:[norm({x:e.b.x-e.a.x,y:e.b.y-e.a.y})])),eps=scale*1e-9;

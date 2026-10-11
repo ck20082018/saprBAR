@@ -1,9 +1,10 @@
 import {dimensionRows} from "./catalog";
 import {PartCalculations} from "./PartCalculations";
 import {useNumberFormat} from '../display/NumberFormat';
-import {inUnit,type SectionGeometry,type SectionResult,type Unit} from './types';
+import {inUnit,unitLength,type SectionGeometry,type SectionResult,type Unit} from './types';
 import {propertiesAtAxis} from './calculate';
 import {SectionDrawing,type DrawingScale} from './SectionDrawing';
+import {getLength} from './expressions';
 export function SectionReport({geometry,result,unit,angle=0,short=false,scale='fit'}:{geometry:SectionGeometry;result:SectionResult;unit:Unit;angle?:number;short?:boolean;scale?:DrawingScale}){
  const {n}=useNumberFormat(),u=(v:number,power=1)=>n(inUnit(v,unit,power)),r=result,p=propertiesAtAxis(r,angle),term=(v:number,sign:number,power:number)=>`(${sign<0?'−':''}${u(v,power)})`;
  const sum=(field:'area'|'jx'|'jy'|'jxy',power:number)=>r.parts.map(v=>term(v[field],v.sign,power)).join(' + ');
@@ -13,6 +14,7 @@ export function SectionReport({geometry,result,unit,angle=0,short=false,scale='f
  return <article className="rgr-document section-report"><h1>{short?'Краткая РГР':'Расчёт геометрических характеристик'}: {geometry.name}</h1>
   <section><h2>1. Разбиение сечения</h2><p>Числа округляются только для отображения; π и проверки используются без округления. Однородное сечение; оси x вправо, y вверх. Знак + — материал, − — вырез. Размеры в {unit}; повороты против часовой стрелки.</p>{geometry.a!==undefined&&<p>Дано: a={u(geometry.a)} {unit}; b={u(geometry.b!)} {unit}. Схема {geometry.scheme}; строка размеров {geometry.dimensionRow??'ручной ввод'}{overridden?' (размеры изменены вручную)':''}.</p>}
    {r.parts.map((v,i)=><p key={v.part.id}>Часть {i+1}: {v.part.name}; {v.part.cut?'вырез (−)':'материал (+)'}. Положение начала: ({u(v.part.x)}; {u(v.part.y)}) {unit}; α={n(v.part.angle*180/Math.PI)}°.</p>)}
+   {geometry.parts.flatMap((part,i)=>Object.entries(part.expressions??{}).map(([key,binding])=><p key={`${part.id}:${key}`} className="rgr-formula">Часть {i+1}, {key}: {binding.text} → при a={n((geometry.a??0)/unitLength[binding.unit])}, b={n((geometry.b??0)/unitLength[binding.unit])} {binding.unit} → {u(getLength(part,key))} {unit}.</p>))}
   </section>
   <section><h2>2. Характеристики отдельных частей</h2>{r.parts.map((v,i)=><div key={v.part.id}><h3>Часть {i+1} ({v.sign>0?"+":"−"})</h3><PartCalculations part={v} unit={unit}/><p className="rgr-formula">{formulas[v.part.shape.kind]} → A{i+1}={u(v.area,2)} {unit}²; C{i+1}=({u(v.cx)}; {u(v.cy)}) {unit}.</p>{!short&&<p>Моменты приведены к глобально ориентированным осям через центр каждой части; поворот учтён аналитически.</p>}<p className="rgr-formula">Jx{i+1}={u(v.jx,4)}; Jy{i+1}={u(v.jy,4)}; Jxy{i+1}={u(v.jxy,4)} {unit}⁴.</p></div>)}
    <table><thead><tr><th>№ / знак</th><th>A, {unit}²</th><th>xc, {unit}</th><th>yc, {unit}</th><th>Jx, {unit}⁴</th><th>Jy, {unit}⁴</th><th>Jxy, {unit}⁴</th></tr></thead><tbody>{r.parts.map((v,i)=><tr key={v.part.id}><td>{i+1} / {v.sign>0?'+':'−'}</td><td>{u(v.area,2)}</td><td>{u(v.cx)}</td><td>{u(v.cy)}</td><td>{u(v.jx,4)}</td><td>{u(v.jy,4)}</td><td>{u(v.jxy,4)}</td></tr>)}</tbody></table>

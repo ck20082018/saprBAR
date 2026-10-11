@@ -5,8 +5,9 @@ export type Primitive=
  | {kind:'trapezoid';width:number;height:number;top:number;shift:number}
  | {kind:'circle'|'semicircle';radius:number}
  | {kind:'polygon';vertices:Point[]};
-export interface SectionPart {id:string;name:string;cut:boolean;x:number;y:number;angle:number;shape:Primitive}
-export interface SectionGeometry {version:1;name:string;parts:SectionPart[];scheme?:number;dimensionRow?:number;a?:number;b?:number}
+export interface LengthExpression {text:string;unit:Unit}
+export interface SectionPart {id:string;name:string;cut:boolean;x:number;y:number;angle:number;shape:Primitive;expressions?:Record<string,LengthExpression>}
+export interface SectionGeometry {version:1;name:string;parts:SectionPart[];scheme?:number;dimensionRow?:number;a?:number;b?:number;referenceMode?:'variables'|'scale'}
 export type Unit='mm'|'cm'|'m';
 export const unitLength:Record<Unit,number>={mm:.001,cm:.01,m:1};
 export const inUnit=(v:number,unit:Unit,power=1)=>v/unitLength[unit]**power;
