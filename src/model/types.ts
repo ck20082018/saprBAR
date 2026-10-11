@@ -1,3 +1,4 @@
+import type {SectionGeometry} from "../sections/types";
 export const PROJECT_SCHEMA_VERSION = "1.0.0" as const;
 export const APP_VERSION = "0.1.0" as const;
 
@@ -40,6 +41,7 @@ export type SectionSource =
   | { kind: "circular"; diameter: number; innerDiameter: number };
 
 export interface Section {
+  calculator?: {geometry:SectionGeometry;axisAngle:number;principalPlaneConfirmed:boolean};
   id: EntityId;
   name: string;
   /** Площадь, m². */

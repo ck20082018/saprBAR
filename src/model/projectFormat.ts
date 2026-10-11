@@ -1,3 +1,4 @@
+import {assertSectionGeometry} from "../sections/calculate";
 import { PROJECT_SCHEMA_VERSION, type Project, type ValidationDiagnostic } from "./types";
 import { validateProject } from "./validation";
 
@@ -88,6 +89,12 @@ function validateShape(data: unknown): asserts data is Project {
     requireString(value.id, `model.sections[${index}].id`);
     requireString(value.name, `model.sections[${index}].name`);
     for (const key of ["area", "inertiaZ", "yMinus", "yPlus"] as const) requireNumber(value[key], `model.sections[${index}].${key}`);
+    if(value.calculator!==undefined){
+      requireRecord(value.calculator,`model.sections[${index}].calculator`);
+      requireNumber(value.calculator.axisAngle,`model.sections[${index}].calculator.axisAngle`);
+      requireBoolean(value.calculator.principalPlaneConfirmed,`model.sections[${index}].calculator.principalPlaneConfirmed`);
+      try{assertSectionGeometry(value.calculator.geometry);}catch(e){throw new ProjectFormatError(e instanceof Error?e.message:'Некорректная геометрия сечения.');}
+    }
     requireRecord(value.source, `model.sections[${index}].source`);
     requireString(value.source.kind, `model.sections[${index}].source.kind`);
     if (value.source.kind === "rectangle") {

@@ -1,3 +1,4 @@
+import {verifyCalculatedSection} from "../sections/projectSection";
 import type {
   FrameElement2D,
   Project,
@@ -60,6 +61,7 @@ function validateUnique<T>(
 
 function validateSection(section: Section, index: number, diagnostics: ValidationDiagnostic[]): void {
   const base = `model.sections[${index}]`;
+  if(section.calculator){try{verifyCalculatedSection(section);}catch(e){diagnostics.push(error("SECTION_GEOMETRY_INVALID",base,e instanceof Error?e.message:"Геометрия сечения неверна."));}}
   finitePositive(diagnostics, section.area, `${base}.area`, "Площадь сечения");
   finitePositive(diagnostics, section.inertiaZ, `${base}.inertiaZ`, "Момент инерции сечения");
   finitePositive(diagnostics, section.yMinus, `${base}.yMinus`, "Расстояние y−");
