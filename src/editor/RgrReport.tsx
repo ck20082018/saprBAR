@@ -1,3 +1,4 @@
+import {AssignmentRgrReport} from "./AssignmentRgrReport";
 import {useNumberFormat} from "../display/NumberFormat";
 import {formatNumber} from "../display/formatNumber";
 import {ShortRgrReport} from "./ShortRgrReport";
@@ -14,6 +15,7 @@ export function RgrReport({project,analysis,options,stale=false}:{project:Projec
   if(stale)return <article className="rgr-document"><p className="rgr-note">Модель изменена: пересчитайте её перед выводом отчёта.</p></article>;
   const data=axialReportData(project,analysis);
   if(!data.ok)return <article className="rgr-document"><h1>Отчёт РГР</h1><p className="rgr-note">{data.reason}</p><p>Для этой схемы доступен обычный отчёт с таблицами и эпюрами N/Q/M. Осевые формулы здесь не применяются.</p></article>;
+  if(options.reportKind==="assignment")return <AssignmentRgrReport project={project} data={data} options={options}/>;
   if(options.reportKind==="short")return <ShortRgrReport project={project} data={data} options={options}/>;
   const tension=positiveValue(options.tensionMPa),compression=positiveValue(options.compressionMPa),allowedU=positiveValue(options.displacementMM);
   const required=data.rows.map(r=>({row:r,ratio:r.section.area/data.baseArea,allow:r.N>=0?tension:compression}));

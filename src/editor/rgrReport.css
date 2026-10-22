@@ -5,3 +5,20 @@
 
 .rgr-settings{padding:12px 0}.rgr-settings label{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rgr-document{box-sizing:border-box;min-width:0}.rgr-document p,.rgr-document th,.rgr-document td{overflow-wrap:anywhere}.rgr-document table{table-layout:fixed}.rgr-short h1{font-size:21px}.rgr-short h2{font-size:18px;margin:16px 0 8px}.rgr-short .rgr-formula{margin:7px 0}.rgr-short p{margin:7px 0}.rgr-short .rgr-section-calculation{break-inside:auto}
 @media print{.rgr-document{width:100%;max-width:170mm}.rgr-document .rgr-formula{white-space:normal;overflow-wrap:anywhere}.rgr-short{font-size:11pt;line-height:1.25}.rgr-short h1{font-size:15pt}.print-report .rgr-short h2{font-size:12pt}.rgr-document table{width:100%;table-layout:fixed}.rgr-document td,.rgr-document th{white-space:normal;overflow-wrap:anywhere}.rgr-document .rgr-section-calculation{break-inside:auto}.rgr-document svg{max-width:100%;height:auto}}
+
+.rgr-assignment{font-size:18px;line-height:1.45}
+.rgr-assignment h1{font-size:23px;text-align:center;margin:0 0 8px}
+.rgr-assignment .rgr-assignment-subtitle{text-align:center;margin-bottom:24px}
+.rgr-assignment h2{font-size:20px;margin-top:22px}
+.rgr-assignment .rgr-formula{margin-left:0}
+@media print{.rgr-assignment{font-size:12pt;line-height:1.35}.print-report .rgr-assignment h2{font-size:14pt}.rgr-assignment h1{font-size:16pt}}
+@media print{
+ .rgr-assignment{font-size:11pt;line-height:1.25}
+ .rgr-assignment h2,.print-report .rgr-assignment h2{font-size:13pt;margin:14px 0 8px}
+ .rgr-assignment p{margin:6px 0}
+ .rgr-assignment .rgr-formula{margin:7px 0}
+ .rgr-assignment .rgr-section-calculation{break-inside:avoid}
+ .rgr-assignment .rgr-epures{break-before:page}
+ .rgr-assignment .rgr-scheme{max-height:55mm}
+ .rgr-assignment .rgr-chain-diagram{max-height:38mm}
+}

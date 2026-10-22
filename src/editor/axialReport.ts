@@ -3,7 +3,7 @@ import type { AnalysisSuccess } from "../solver";
 import { RecordReader } from "../legacy/parser";
 
 export interface RgrOptions {
-  reportKind?: "full" | "short"; includeGraphics?: boolean;
+  reportKind?: "full" | "short" | "assignment"; includeGraphics?: boolean;
   institution: string; discipline: string; student: string; group: string;
   teacher: string; city: string; year: string;
   tensionMPa: string; compressionMPa: string; displacementMM: string;

@@ -137,7 +137,18 @@ export interface LegacyImportInfo {
   originalFiles: { cn: string; ld: string; md: string };
 }
 
+/** Explicit export-only properties; do not enter the solver. SI except allowable stresses in MPa. */
+export interface LegacyExportSettings {
+  profile: "B-SI-linear-static-v1";
+  basename: string;
+  density: number;
+  thermalExpansion: number;
+  tensionMPa: number;
+  compressionMPa: number;
+}
+
 export interface Project {
+  legacyExport?: LegacyExportSettings;
   schemaVersion: typeof PROJECT_SCHEMA_VERSION;
   appVersion: string;
   metadata: ProjectMetadata;

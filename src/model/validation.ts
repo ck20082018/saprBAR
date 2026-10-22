@@ -105,6 +105,13 @@ function validateElementLength(
 export function validateProject(project: Project): ValidationResult {
   const diagnostics: ValidationDiagnostic[] = [];
 
+  if (project.legacyExport) {
+    const settings=project.legacyExport;
+    if(settings.profile!=="B-SI-linear-static-v1") diagnostics.push(error("EXPORT_PROFILE_UNSUPPORTED","legacyExport.profile","Неизвестный профиль экспорта."));
+    if(!/^[A-Za-z0-9_]{1,8}$/.test(settings.basename)||/^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])$/i.test(settings.basename)) diagnostics.push(error("EXPORT_NAME_INVALID","legacyExport.basename","Нужно допустимое DOS-имя из 1–8 латинских букв, цифр или _."));
+    for(const key of ["density","thermalExpansion","tensionMPa","compressionMPa"] as const) finitePositive(diagnostics,settings[key],`legacyExport.${key}`,key);
+    if(!Number.isFinite(settings.tensionMPa*1e6)||!Number.isFinite(settings.compressionMPa*1e6)) diagnostics.push(error("EXPORT_STRESS_OVERFLOW","legacyExport","Допускаемое напряжение не представимо в Па."));
+  }
   if (project.schemaVersion !== PROJECT_SCHEMA_VERSION) {
     diagnostics.push(error("SCHEMA_VERSION_UNSUPPORTED", "schemaVersion", `Поддерживается схема ${PROJECT_SCHEMA_VERSION}, получена ${project.schemaVersion}.`));
   }

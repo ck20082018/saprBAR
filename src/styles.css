@@ -20,3 +20,5 @@
 
 .precision-setting{display:flex;align-items:center;gap:8px;white-space:nowrap}.precision-setting select{padding:5px;min-width:48px}.rgr-settings select{padding:7px}
 @media print{@page{size:A4;margin:20mm}.print-report{width:100%;max-width:170mm}.print-report table{table-layout:fixed;width:100%}.print-report th,.print-report td{white-space:normal;overflow-wrap:anywhere}.print-report section{break-inside:auto}.print-report tr{break-inside:avoid}.print-report thead{display:table-header-group}}
+
+.legacy-export-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:16px 0}.legacy-export-options label{display:grid;gap:6px;font-size:.84rem}.legacy-export-options input{width:100%;min-width:0;padding:8px;border:1px solid #9ca8a3;border-radius:5px}@media(max-width:650px){.legacy-export-options{grid-template-columns:1fr}}

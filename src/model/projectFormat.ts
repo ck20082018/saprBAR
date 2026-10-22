@@ -151,6 +151,12 @@ function validateShape(data: unknown): asserts data is Project {
   if (data.analysisSettings.solverVersion !== null) throw new ProjectFormatError("analysisSettings.solverVersion: в текущей версии ожидалось null.");
   requireNumber(data.analysisSettings.singularityTolerance, "analysisSettings.singularityTolerance");
 
+  if (data.legacyExport !== undefined) {
+    requireRecord(data.legacyExport, "legacyExport");
+    requireString(data.legacyExport.profile, "legacyExport.profile");
+    requireString(data.legacyExport.basename, "legacyExport.basename");
+    for (const key of ["density", "thermalExpansion", "tensionMPa", "compressionMPa"] as const) requireNumber(data.legacyExport[key], `legacyExport.${key}`);
+  }
   if (data.legacyImport !== undefined) {
     requireRecord(data.legacyImport, "legacyImport");
     for (const key of ["source", "parserVersion", "cnFile", "ldFile", "mdFile", "variant", "unitSystem", "importedAt", "compatibility"] as const) requireString(data.legacyImport[key], `legacyImport.${key}`);
