@@ -99,3 +99,14 @@ it('old section file retains stretch mode until explicitly converted to variable
  expect(select('Режим a и b').value).toBe('scale');await change(document.querySelector<HTMLInputElement>('[aria-label="Размер a"]')!,'20');expect((draft.mock.calls.at(-1)![0].parts[0]!.shape as {width:number}).width).toBeCloseTo(.2,13);
  await change(document.querySelector<HTMLInputElement>('[aria-label="Ширина 1, cm"]')!,'3a');expect(select('Режим a и b').value).toBe('variables');await change(document.querySelector<HTMLInputElement>('[aria-label="Размер a"]')!,'38');expect((draft.mock.calls.at(-1)![0].parts[0]!.shape as {width:number}).width).toBeCloseTo(1.14,13);
 });
+it('учебный вид по умолчанию, экспорт и печать содержат те же семь шагов; прежние виды доступны',async()=>{
+ await click('Рассчитать сечение');
+ const kind=select('Вид отчёта сечения');expect(kind.value).toBe('textbook');
+ expect(document.querySelector('.textbook-section-report')).not.toBeNull();
+ expect(document.querySelectorAll('.section-preview h2')).toHaveLength(7);
+ await click('Скачать отчёт сечения');
+ const html=await downloaded!.text();expect(html).toContain('tb-frac');expect(html).toContain('textbook-section-report');
+ await click('Печать сечения / A4');expect(printed.mock.calls.at(-1)![0].props.textbook).toBe(true);
+ await change(kind,'full');expect(document.querySelectorAll('.section-preview h2')).toHaveLength(9);
+ await change(kind,'textbook');expect(document.querySelectorAll('.section-preview h2')).toHaveLength(7);
+});

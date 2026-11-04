@@ -5,6 +5,28 @@ import { SchemeCanvas } from "./SchemeCanvas";
 import { LegacyImportDialog } from "../legacy/LegacyImportDialog";
 import { importLegacyFiles } from "../legacy/importLegacy";
 import { analyzeProject } from "../solver";
+import { exampleProject } from "../examples/exampleProject";
+
+it("деформированная схема показывает прогиб между двумя заделками", () => {
+  const project = structuredClone(exampleProject);
+  project.model.nodes = [{ id: "n1", number: 1, x: 0, y: 0 }, { id: "n2", number: 2, x: 6, y: 0 }];
+  project.model.elements = [project.model.elements[0]!];
+  project.model.supports = project.model.nodes.map(n => ({ nodeId: n.id, ux: true, uy: true, rz: true }));
+  project.loadCases[0]!.nodalLoads = [];
+  project.loadCases[0]!.elementLoads = [{ id: "q", elementId: "e1", type: "uniform-local", qx: 0, qy: -2000 }];
+  const result = analyzeProject(project);
+  if (!result.ok) throw new Error(JSON.stringify(result.diagnostics));
+  const markup = renderToStaticMarkup(<SchemeCanvas project={project} selection={null} tool="select" snap={false} gridStep={1} elementStart={null} result={result} resultLayer="deformed" deformationScale={100} onSelect={()=>{}} onCreateNode={()=>{}} onCreateElement={()=>{}} onMoveNode={()=>{}}/>);
+  expect(markup).not.toMatch(/NaN|Infinity/);
+  const points = markup.match(/class="deformed" points="([^"]+)"/)![1]!.split(" ").map(p => p.split(",").map(Number));
+  expect(points).toHaveLength(21);
+  expect(points[0]![1]).toBeCloseTo(280, 10);
+  expect(points.at(-1)![1]).toBeCloseTo(280, 10);
+  // Independent fixed-fixed beam oracle, SVG Y points downward, scale = 660/6 px/m.
+  const section = project.model.sections[0]!, material = project.model.materials[0]!;
+  const sag = 2000 * 6 ** 4 / (384 * material.elasticModulus * section.inertiaZ);
+  expect(points[10]![1]).toBeCloseTo(280 + sag * 100 * 110, 9);
+});
 
 it("вписывает Иванова в SVG и замыкает эпюры на ось стержня", () => {
   const file=(ext:string)=>({name:`IVANOV_SI.${ext}`,text:readFileSync(new URL(`../../tests/fixtures/ivanov-corrected/IVANOV_SI.${ext}`,import.meta.url),"utf8")});

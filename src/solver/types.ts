@@ -1,6 +1,6 @@
 import type { EndReleases, EntityId } from "../model";
 
-export const SOLVER_VERSION = "linear-static-eb-1.0.0" as const;
+export const SOLVER_VERSION = "linear-static-eb-1.1.0" as const;
 
 export interface AnalysisNode {
   id: EntityId;
@@ -78,6 +78,8 @@ export interface NodeReaction {
 
 export interface DiagramPoint {
   x: number;
+  axialDisplacement: number;
+  transverseDisplacement: number;
   axialForce: number;
   shearForce: number;
   bendingMoment: number;

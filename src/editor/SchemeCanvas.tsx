@@ -177,8 +177,8 @@ export function SchemeCanvas(props: Props) {
 
       {props.result && props.resultLayer === "deformed" && props.project.model.elements.map((element) => {
         const ni=props.project.model.nodes.find((n)=>n.id===element.nodeI)!; const nj=props.project.model.nodes.find((n)=>n.id===element.nodeJ)!; const er=resultByElement.get(element.id)!;
-        const dx=nj.x-ni.x; const dy=nj.y-ni.y; const length=Math.hypot(dx,dy); const c=dx/length; const s=dy/length; const [ui,vi,ti,uj,vj,tj]=er.localDisplacements;
-        const points=er.diagram.map((_,index)=>{const z=index/(er.diagram.length-1);const n1=1-3*z*z+2*z*z*z;const n2=length*(z-2*z*z+z*z*z);const n3=3*z*z-2*z*z*z;const n4=length*(-z*z+z*z*z);const u=(1-z)*ui+z*uj;const v=n1*vi+n2*ti+n3*vj+n4*tj;const du=c*u-s*v;const dv=s*u+c*v;const p=screen(ni.x+dx*z+du*props.deformationScale,ni.y+dy*z+dv*props.deformationScale);return `${p.x},${p.y}`;}).join(" ");
+        const dx=nj.x-ni.x; const dy=nj.y-ni.y; const c=dx/er.length; const s=dy/er.length;
+        const points=er.diagram.map((point)=>{const z=point.x/er.length;const du=c*point.axialDisplacement-s*point.transverseDisplacement;const dv=s*point.axialDisplacement+c*point.transverseDisplacement;const p=screen(ni.x+dx*z+du*props.deformationScale,ni.y+dy*z+dv*props.deformationScale);return `${p.x},${p.y}`;}).join(" ");
         return <polyline key={element.id} className="deformed" points={points}/>;
       })}
       {props.result && ["axial","shear","moment"].includes(props.resultLayer) && props.project.model.elements.map((element) => {

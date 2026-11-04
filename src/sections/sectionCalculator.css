@@ -1,3 +1,36 @@
 .section-sketch{border:1px solid #cdd7d0;border-radius:8px;padding:12px;margin:16px 0}.section-sketch-canvas{display:block;width:100%;height:420px;touch-action:none;border:1px solid #b9c5bf;cursor:crosshair}.section-sketch-canvas:focus{outline:2px solid #14634f}
 .section-calculator{width:min(1440px,98vw);max-height:95vh;overflow:auto;background:#fff}.section-body{padding:16px}.section-settings{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:12px 0}.section-settings label{display:flex;flex-direction:column;gap:5px;font-size:14px;max-width:450px}.section-settings input,.section-settings select,.section-body>label input{padding:7px;min-width:90px;border:1px solid #b9c5bf;border-radius:5px}.section-settings input[type=checkbox]{min-width:0}.section-settings textarea{min-width:280px;min-height:65px}.section-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:12px}.section-parts fieldset{min-width:0;border:1px solid #cdd7d0;border-radius:8px}.section-parts input:not([type=checkbox]){max-width:160px}.section-drawing{margin:14px auto;max-width:900px}.section-drawing svg{display:block;width:100%;max-height:520px;background:#fff}.section-drawing figcaption{font-size:13px;margin-top:8px;text-align:center}.section-preview{background:#e6eae7;padding:12px}.section-report h1{font-size:22px}.section-report h2{font-size:18px}.section-report table{table-layout:fixed}.section-report th,.section-report td{overflow-wrap:anywhere;white-space:normal}.section-report .rgr-formula{overflow-wrap:anywhere}.section-report section{break-inside:auto}
 @media print{@page{size:A4;margin:20mm}.section-report{font-size:11pt;padding:0;max-width:170mm}.section-report .section-drawing{width:var(--drawing-width);max-width:none;margin:6mm auto;break-inside:avoid}.section-report .section-drawing svg{width:var(--drawing-width);height:var(--drawing-height);max-height:none;max-width:none}.section-report .section-drawing figcaption{font-size:9pt}.section-report tr{break-inside:avoid}.section-report table{font-size:9pt}.section-report h2{break-after:avoid}}
+
+/* Seven-step textbook report: typography is shared by preview, HTML and A4 print. */
+.textbook-section-report{font-family:"Times New Roman",serif;font-size:18px;line-height:1.4;max-width:900px}
+.textbook-section-report h1{font-size:23px;text-align:center;font-weight:normal;margin:0 0 8px}
+.textbook-section-report .tb-subtitle{text-align:center;margin:0 0 18px}
+.textbook-section-report .tb-solution{font-weight:bold;letter-spacing:.12em;margin:14px 0 6px}
+.textbook-section-report h2{font-size:18px;font-weight:normal;line-height:1.4;margin:16px 0 8px}
+.textbook-section-report h3{font-size:18px;font-weight:normal;margin:16px 0 8px}
+.textbook-section-report p{margin:8px 0;text-align:justify}
+.textbook-section-report sub,.textbook-section-report sup{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}
+.textbook-section-report sub{bottom:-.3em}.textbook-section-report sup{top:-.55em}
+.textbook-section-report .tb-var{display:inline-block;white-space:nowrap;font-family:"Cambria Math","Times New Roman",serif}
+.textbook-section-report .tb-formula{font-family:"Cambria Math","Times New Roman",serif;font-size:1.03em;line-height:2.2;margin:10px 0 10px 1.5em;overflow-wrap:anywhere;break-inside:avoid}
+.textbook-section-report .tb-frac{display:inline-flex;flex-direction:column;align-items:stretch;text-align:center;vertical-align:middle;line-height:1.25;margin:0 .18em;max-width:100%}
+.textbook-section-report .tb-frac>span{display:block;padding:.12em .25em;overflow-wrap:anywhere}
+.textbook-section-report .tb-frac>span:first-child{border-bottom:1px solid currentColor}
+.textbook-section-report .tb-sum{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1;min-width:1.7em;margin:0 .2em}
+.textbook-section-report .tb-sum>span:first-child,.textbook-section-report .tb-sum>span:last-child{font-size:.65em}
+.textbook-section-report .tb-sum>span:nth-child(2){font-size:1.7em;line-height:1.05}
+.textbook-section-report .tb-unit{white-space:nowrap;margin-left:.15em}
+.textbook-section-report .tb-rounding-note{font-size:.78em;margin-top:20px;border-top:1px solid #aaa;padding-top:8px}
+.textbook-section-report .textbook-drawing figcaption{text-align:center;font-size:.85em}
+.textbook-section-report .textbook-drawing svg{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+@media print{
+ .textbook-section-report{font-size:12pt;line-height:1.3;padding:0;width:170mm;max-width:100%}
+ .textbook-section-report h1{font-size:14pt}.textbook-section-report h2,.print-report .textbook-section-report h2{font-size:12pt;font-weight:normal;margin:12pt 0 6pt}
+ .textbook-section-report h3{font-size:12pt}.textbook-section-report .tb-formula{font-size:12pt;margin:7pt 0 7pt 6mm;line-height:2}
+ .textbook-section-report .tb-drawing-step{break-inside:avoid}.textbook-section-report .tb-part{break-inside:auto}
+ .textbook-section-report .textbook-drawing{break-inside:avoid;margin:3mm auto}.textbook-section-report .textbook-drawing figcaption{font-size:10pt}
+ .textbook-section-report .tb-rounding-note{font-size:9pt}
+}
+@media print{.textbook-section-report .tb-part,.textbook-section-report .tb-coordinates{break-inside:avoid}}
+@media print{.textbook-section-report .tb-rounding-note{display:none}}

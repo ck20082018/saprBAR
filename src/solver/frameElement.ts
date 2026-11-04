@@ -128,8 +128,13 @@ export function recoverLocalResponse(
     const axialForce = -nodeActions[0]! - state.qx * x;
     const shearForce = nodeActions[1]! + state.qy * x;
     const bendingMoment = -nodeActions[2]! + nodeActions[1]! * x + state.qy * x ** 2 / 2;
+    // docs/solver-theory.md §7: integrate N/EA and M/EI with recovered end rotations.
+    const axialDisplacement = local[0]! + (-nodeActions[0]! * x - state.qx * x ** 2 / 2) / (element.elasticModulus * element.area);
+    const transverseDisplacement = local[1]! + local[2]! * x + (-nodeActions[2]! * x ** 2 / 2 + nodeActions[1]! * x ** 3 / 6 + state.qy * x ** 4 / 24) / (element.elasticModulus * element.inertiaZ);
     diagram.push({
       x,
+      axialDisplacement,
+      transverseDisplacement,
       axialForce,
       shearForce,
       bendingMoment,

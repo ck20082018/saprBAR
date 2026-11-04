@@ -150,6 +150,11 @@ export function solveLinearStatic(input: AnalysisInput): AnalysisResult {
       diagram: response.diagram
     };
   });
+  if (elements.some((element) =>
+    !element.localDisplacements.every(Number.isFinite) ||
+    !element.localNodeActions.every(Number.isFinite) ||
+    element.diagram.some((point) => !Object.values(point).every(Number.isFinite))
+  )) return failure([{ code: "NUMERICAL_FAILURE", message: "Получены нечисловые поля перемещений, усилий или напряжений элемента." }]);
 
   let externalFx = 0;
   let externalFy = 0;

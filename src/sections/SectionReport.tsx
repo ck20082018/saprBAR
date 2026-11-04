@@ -1,3 +1,4 @@
+import {TextbookSectionReport} from "./TextbookSectionReport";
 import {dimensionRows} from "./catalog";
 import {PartCalculations} from "./PartCalculations";
 import {useNumberFormat} from '../display/NumberFormat';
@@ -5,8 +6,10 @@ import {inUnit,unitLength,type SectionGeometry,type SectionResult,type Unit} fro
 import {propertiesAtAxis} from './calculate';
 import {SectionDrawing,type DrawingScale} from './SectionDrawing';
 import {getLength} from './expressions';
-export function SectionReport({geometry,result,unit,angle=0,short=false,scale='fit'}:{geometry:SectionGeometry;result:SectionResult;unit:Unit;angle?:number;short?:boolean;scale?:DrawingScale}){
- const {n}=useNumberFormat(),u=(v:number,power=1)=>n(inUnit(v,unit,power)),r=result,p=propertiesAtAxis(r,angle),term=(v:number,sign:number,power:number)=>`(${sign<0?'−':''}${u(v,power)})`;
+export function SectionReport({geometry,result,unit,angle=0,short=false,scale='fit',textbook=false}:{geometry:SectionGeometry;result:SectionResult;unit:Unit;angle?:number;short?:boolean;scale?:DrawingScale;textbook?:boolean}){
+ const {n}=useNumberFormat();
+ if(textbook)return <TextbookSectionReport geometry={geometry} result={result} unit={unit} angle={angle} scale={scale}/>;
+ const u=(v:number,power=1)=>n(inUnit(v,unit,power)),r=result,p=propertiesAtAxis(r,angle),term=(v:number,sign:number,power:number)=>`(${sign<0?'−':''}${u(v,power)})`;
  const sum=(field:'area'|'jx'|'jy'|'jxy',power:number)=>r.parts.map(v=>term(v[field],v.sign,power)).join(' + ');
  const row=geometry.dimensionRow?dimensionRows[geometry.dimensionRow-1]:null;
  const overridden=!!row&&(Math.abs((geometry.a??0)-row.a*.01)>1e-12||Math.abs((geometry.b??0)-row.b*.01)>1e-12);

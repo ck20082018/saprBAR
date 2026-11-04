@@ -1,4 +1,5 @@
 import {SectionCalculator} from "./sections/SectionCalculator";
+import {assertSectionGeometry} from "./sections/calculate";
 import type {SectionGeometry} from "./sections/types";
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from "react";
 import { exampleProject } from "./examples/exampleProject";
@@ -52,7 +53,28 @@ export default function App() {
     setSectionPrint(null);setSectionsOpen(true);
   };
   const newProject=()=>{if(!window.confirm("Создать новый проект? Несохранённые изменения будут потеряны."))return;history.replace(finalizeEmptyProject(createEmptyProject()));setSelection(null);setAnalysis(null);setStale(false);setMessage("Создан новый проект. Добавьте узлы и стержни.");};
-  const loadFile=async(event:ChangeEvent<HTMLInputElement>)=>{const file=event.target.files?.[0];event.target.value="";if(!file)return;try{const loaded=parseProjectJson(await file.text());history.replace(loaded);setSelection(null);setAnalysis(null);setStale(false);setMessage(`Открыт проект «${loaded.metadata.title}».`);}catch(cause){const detail=cause instanceof ProjectFormatError?[cause.message,...cause.diagnostics.map((d)=>d.message)].join(" "):"Неизвестная ошибка.";setMessage(`Файл не открыт: ${detail}`);}};
+  const loadFile=async(event:ChangeEvent<HTMLInputElement>)=>{
+    const file=event.target.files?.[0];event.target.value="";if(!file)return;
+    try {
+      const source=await file.text();
+      let data;
+      try {data=JSON.parse(source);}catch {throw new Error("Некорректный JSON.");}
+      if(data?.format==="saprbar-section") {
+        if(data.version!==1)throw new Error("Неподдерживаемая версия файла сечения.");
+        assertSectionGeometry(data.geometry);
+        setSectionDraft(data.geometry);setSectionEditId(null);setSectionEditAngle(0);
+        setSectionPrint(null);setSectionsOpen(true);
+        setMessage(`Открыто сечение «${data.geometry.name}». Нажмите «Рассчитать сечение».`);
+        return;
+      }
+      const loaded=parseProjectJson(source);
+      history.replace(loaded);setSelection(null);setAnalysis(null);setStale(false);
+      setMessage(`Открыт проект «${loaded.metadata.title}».`);
+    } catch(cause) {
+      const detail=cause instanceof ProjectFormatError?[cause.message,...cause.diagnostics.map((d)=>d.message)].join(" "):cause instanceof Error?cause.message:"Неизвестная ошибка.";
+      setMessage(`Файл не открыт: ${detail}`);
+    }
+  };
   const save=()=>{try{downloadProject(project);setMessage("Проект сохранён в JSON.");}catch(cause){setMessage(cause instanceof ProjectFormatError?`${cause.message} ${cause.diagnostics.map((d)=>d.message).join(" ")}`:"Сохранение не выполнено.");}};
   const calculate=()=>{if(legacyBlockers.length){setMessage(`Расчёт заблокирован импортом: ${legacyBlockers.join(" ")}`);return;}const result=analyzeProject(project);setAnalysis(result);setStale(false);setResultLayer(result.ok?"axial":"none");setMessage(result.ok?`Расчёт выполнен: ${result.solverVersion}.`:`Расчёт остановлен: ${result.diagnostics.map((d)=>d.message).join(" ")}`);};
   const chooseTool=(next:EditorTool)=>{setTool(next);if(next!=="element")setElementStart(null);};

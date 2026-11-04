@@ -9,5 +9,5 @@ export function useNumberFormat() {
   return {places, n:(value:number, scientific=false)=>formatNumber(value,places,scientific), signed:(value:number)=>formatSigned(value,places)};
 }
 export function PrecisionSelect({value,onChange}: {value:number;onChange:(value:number)=>void}) {
-  return <label className="precision-setting">Знаков после запятой <select value={value} onChange={e=>onChange(decimalPlaces(Number(e.target.value)))}>{Array.from({length:9},(_,i)=><option key={i} value={i}>{i}</option>)}</select></label>;
+  return <label className="precision-setting">Знаков после запятой <select value={value} onChange={e=>onChange(decimalPlaces(Number(e.target.value)))}>{Array.from({length:13},(_,i)=><option key={i} value={i}>{i}</option>)}</select></label>;
 }

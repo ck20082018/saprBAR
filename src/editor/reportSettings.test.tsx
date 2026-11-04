@@ -32,7 +32,7 @@ it('precision rerenders computed text without solving/stale; dialog settings sur
  const analyze=vi.spyOn(solver,'analyzeProject');
  const precision=document.querySelector('.precision-setting select') as HTMLSelectElement;
  const previous=document.querySelector('.results-tables')!.textContent;
- await change(precision,'8');
+ await change(precision,'12');
  expect(document.querySelector('.results-tables')!.textContent).not.toBe(previous);
  expect(analyze).not.toHaveBeenCalled();expect(button('Отчёт РГР').disabled).toBe(false);expect(document.querySelector('.stale-banner')).toBeNull();
  await click('Отчёт РГР');
@@ -44,7 +44,7 @@ it('precision rerenders computed text without solving/stale; dialog settings sur
  await click('Закрыть');await click('Отчёт РГР');
  expect((document.querySelector('.rgr-settings select') as HTMLSelectElement).value).toBe('short');
  expect((document.querySelector('.rgr-settings input[type=checkbox]') as HTMLInputElement).checked).toBe(false);
- expect([...document.querySelectorAll('.precision-setting select')].every(s=>(s as HTMLSelectElement).value==='8')).toBe(true);
+ expect([...document.querySelectorAll('.precision-setting select')].every(s=>(s as HTMLSelectElement).value==='12')).toBe(true);
  await click('Печать / PDF');
  expect(window.print).toHaveBeenCalledTimes(1);
  expect(document.querySelector('.print-report .rgr-short')).not.toBeNull();

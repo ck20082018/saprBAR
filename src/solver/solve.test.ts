@@ -76,6 +76,26 @@ describe("линейная статика: аналитические этало
     expectNear(result.elements[0]!.diagram[20]!.bendingMoment, 0, 1e-8);
     expectNear(result.elements[0]!.localNodeActions[2], 0, 1e-8);
     expectNear(result.elements[0]!.localNodeActions[5], 0, 1e-8);
+    expectNear(result.elements[0]!.diagram[0]!.transverseDisplacement, 0, 1e-12);
+    expectNear(result.elements[0]!.diagram[10]!.transverseDisplacement, -5 * w * L ** 4 / (384 * E * I), 1e-12);
+    expectNear(result.elements[0]!.diagram[20]!.transverseDisplacement, 0, 1e-12);
+  });
+
+  it("консоль с равномерной нагрузкой: прогиб свободного конца v=-wL⁴/(8EI)", () => {
+    const E = 210e9;
+    const I = 8e-6;
+    const L = 3;
+    const w = 1_000;
+    const input = baseInput();
+    input.nodes = [{ id: "i", x: 0, y: 0 }, { id: "j", x: L, y: 0 }];
+    input.elements = [{ id: "e", nodeI: "i", nodeJ: "j", elasticModulus: E, area: 0.02, inertiaZ: I, yMinus: 0.1, yPlus: 0.1, releases: { rotationI: false, rotationJ: false } }];
+    input.supports = [{ nodeId: "i", ux: true, uy: true, rz: true }];
+    input.uniformLoads = [{ elementId: "e", qx: 0, qy: -w }];
+
+    const result = success(solveLinearStatic(input));
+    expectNear(result.elements[0]!.diagram[0]!.transverseDisplacement, 0, 1e-12);
+    expectNear(result.elements[0]!.diagram[20]!.transverseDisplacement, -w * L ** 4 / (8 * E * I), 1e-12);
+    expectNear(result.elements[0]!.diagram[20]!.transverseDisplacement, result.displacements[1]!.uy, 1e-12);
   });
 
   it("наклонный элемент: осевое перемещение корректно преобразуется в X/Y", () => {

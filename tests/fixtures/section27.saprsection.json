@@ -1,0 +1,54 @@
+{
+  "format": "saprbar-section",
+  "version": 1,
+  "unit": "cm",
+  "geometry": {
+    "version": 1,
+    "name": "Схема 27 — строка 4, a = 34 см, b = 12 см",
+    "parts": [
+      {
+        "id": "part-1",
+        "name": "Охватывающий прямоугольник 102 × 48 см",
+        "shape": {
+          "kind": "rectangle",
+          "width": 1.02,
+          "height": 0.48
+        },
+        "x": -0.51,
+        "y": 0,
+        "cut": false,
+        "angle": 0
+      },
+      {
+        "id": "part-2",
+        "name": "Верхний вырез 34 × 12 см",
+        "shape": {
+          "kind": "rectangle",
+          "width": 0.34,
+          "height": 0.12
+        },
+        "x": -0.16999999999999998,
+        "y": 0.36,
+        "cut": true,
+        "angle": 0
+      },
+      {
+        "id": "part-3",
+        "name": "Внутреннее отверстие 34 × 12 см",
+        "shape": {
+          "kind": "rectangle",
+          "width": 0.34,
+          "height": 0.12
+        },
+        "x": -0.16999999999999998,
+        "y": 0.12,
+        "cut": true,
+        "angle": 0
+      }
+    ],
+    "scheme": 27,
+    "a": 0.34,
+    "b": 0.12,
+    "dimensionRow": 4
+  }
+}
